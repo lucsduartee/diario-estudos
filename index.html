@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Diário de Estudos</title>
+<meta name="theme-color" content="#f5f7f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151a23" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="title-block">
+      <span class="tape" aria-hidden="true"></span>
+      <h1>Diário de Estudos</h1>
+      <p class="sub" id="trail-month">15 horas por semana, um bloco de cada vez</p>
+    </div>
+    <div class="nav">
+      <button id="prev" aria-label="Semana anterior">‹</button>
+      <span class="range" id="range"></span>
+      <button id="next" aria-label="Próxima semana">›</button>
+      <button id="today">Hoje</button>
+    </div>
+    <div class="status" id="status">Carregando…</div>
+  </header>
+
+  <section style="--hl:var(--cyber-wash)">
+    <h2>Metas da semana</h2>
+    <div class="goals" id="goals"></div>
+  </section>
+
+  <section style="--hl:var(--des-wash)">
+    <h2>Semana</h2>
+    <p class="hint">Marque cada bloco quando terminar. Perdeu um? A manhã de sexta fica livre para repor.</p>
+    <div class="week" id="week"></div>
+  </section>
+
+  <section style="--hl:var(--elet-wash)">
+    <h2 id="month-title">Rastreador do mês</h2>
+    <div class="tracker-scroll"><table class="tracker" id="tracker"></table></div>
+    <div class="legend">
+      <span><i class="cell done a-cyber"></i> feito</span>
+      <span><i class="cell planned a-cyber"></i> planejado, não feito</span>
+      <span><i class="cell off"></i> sem bloco no dia</span>
+    </div>
+  </section>
+
+  <section style="--hl:var(--fac-wash)">
+    <h2>Trilha</h2>
+    <p class="hint">A fase atual é calculada a partir de 20 de outubro de 2026. Com 4 h semanais, cyber chega ao nível de pentester júnior em cerca de 12 meses.</p>
+    <div class="trail" id="trail"></div>
+  </section>
+
+  <section style="--hl:var(--cyber-wash)">
+    <h2>Como chegamos aqui</h2>
+    <div class="summary">
+      <span class="date">Conversa de 20 de outubro de 2026</span>
+      <div>
+        <h3>A pergunta</h3>
+        <p>Dá para entrar em cybersecurity em 6 meses sendo dev? Sim, pela porta de AppSec ou DevSecOps, onde quem já programa tem vantagem. Pentest e red team em 6 meses é apertado, porque pedem rede, Linux e Active Directory, que ficam fora do dia a dia de dev.</p>
+      </div>
+      <div>
+        <h3>O ponto de partida</h3>
+        <ul>
+          <li>Stack atual: Node e Ruby.</li>
+          <li>Objetivo: atuar como pentester, com base sólida de AppSec.</li>
+          <li>Interesse em C++. Ele serve para exploração binária e engenharia reversa, não para pentest web. Antes dele vêm Python, C e assembly.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>As decisões</h3>
+        <ul>
+          <li>Três áreas de estudo além da faculdade: cybersecurity, eletrônica e desenho.</li>
+          <li>Carga semanal: cyber 4 h, eletrônica 4 h, faculdade 4 h e desenho 3 h, somando 15 h.</li>
+          <li>Janelas: manhã cedo e noite nos dias úteis, mais sábado e domingo.</li>
+          <li>Acompanhamento neste diário, salvo neste aparelho.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>O que isso muda</h3>
+        <ul>
+          <li>Com 4 h por semana, cyber chega a pentester júnior em cerca de 12 meses, não 6. A ordem é web e AppSec, Linux e redes, Active Directory e por fim eJPT ou PNPT.</li>
+          <li>C++ entra depois do mês 12, junto com exploração binária.</li>
+          <li>Do mês 7 em diante, eletrônica vira hardware hacking e passa a somar com cyber.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Em aberto</h3>
+        <ul>
+          <li>Confirmar em qual área você já tem o básico. Por enquanto, desenho e eletrônica começam do zero.</li>
+          <li>Levar os blocos para o Google Calendar.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="backup">
+    <span>Os dados ficam só neste aparelho.</span>
+    <button id="export">Exportar backup</button>
+    <label class="import">Importar backup<input type="file" id="import" accept="application/json" hidden></label>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
