@@ -22,6 +22,13 @@ const PLAN = [
    { id: "b", area: "des", h: 1, when: "tarde", focus: "Desenho livre de observação" }],
 ];
 const FREE = { 4: "Manhã livre: reponha um bloco perdido" };
+// água e sono: meta diária; exercício: meta semanal (OMS, 150 min)
+const HABITS = {
+  water:    { name: "Água", label: "Água", unit: "copos", goal: 8, step: 1, max: 30, per: "day" },
+  exercise: { name: "Exercício", label: "Exercício", unit: "min", goal: 150, step: 10, max: 600, per: "week" },
+  sleep:    { name: "Sono", label: "Sono (noite)", unit: "h", goal: 7, step: 0.5, max: 14, per: "day" },
+};
+const habitMet = (k, v) => HABITS[k].per === "day" ? v >= HABITS[k].goal : v > 0;
 const DAY_NAMES = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"];
 const MONTHS = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
 
@@ -78,7 +85,7 @@ function saveDays() {
   }
 }
 
-function dayState(key) { return days[key] || { done: {}, mood: 0, note: "" }; }
+function dayState(key) { return { done: {}, mood: 0, note: "", water: 0, exercise: 0, sleep: 0, ...days[key] }; }
 function patchDay(key, patch) {
   const cur = dayState(key);
   days[key] = { ...cur, ...patch, done: { ...cur.done, ...(patch.done || {}) } };
@@ -119,20 +126,42 @@ function ring(pct, cls) {
       stroke-dasharray="${c * p} ${c}" transform="rotate(-90 26 26)"/></svg>`;
 }
 
+function goalCard(cls, name, val, goal, unit, extra = "") {
+  return `<div class="goal ${cls} ${extra}">${ring(val / goal, cls)}
+      <div><div class="name">${name}</div><div class="val">${val} <small>de ${goal} ${unit}</small></div></div></div>`;
+}
+
 function renderGoals() {
   const done = { cyber: 0, elet: 0, fac: 0, des: 0 };
-  for (let i = 0; i < 7; i++) {
-    const st = dayState(iso(addDays(weekStart, i)));
-    PLAN[i].forEach(s => { if (st.done[s.id]) done[s.area] += s.h; });
-  }
+  const week = [...Array(7)].map((_, i) => dayState(iso(addDays(weekStart, i))));
+  week.forEach((st, i) => PLAN[i].forEach(s => { if (st.done[s.id]) done[s.area] += s.h; }));
   const total = Object.values(done).reduce((a, b) => a + b, 0);
   const goalTotal = Object.values(AREAS).reduce((a, b) => a + b.goal, 0);
-  const cards = Object.entries(AREAS).map(([k, a]) => `
-    <div class="goal a-${k}">${ring(done[k] / a.goal, "a-" + k)}
-      <div><div class="name">${a.name}</div><div class="val">${done[k]} <small>de ${a.goal} h</small></div></div></div>`);
-  cards.push(`<div class="goal total">${ring(total / goalTotal, "")}
-      <div><div class="name">Total</div><div class="val">${total} <small>de ${goalTotal} h</small></div></div></div>`);
+  const cards = Object.entries(AREAS).map(([k, a]) => goalCard("a-" + k, a.name, done[k], a.goal, "h"));
+  cards.push(goalCard("", "Total", total, goalTotal, "h", "total"));
   document.getElementById("goals").innerHTML = cards.join("");
+
+  const minutes = week.reduce((sum, st) => sum + st.exercise, 0);
+  document.getElementById("habit-goals").innerHTML = [
+    goalCard("a-water", "Água", week.filter(st => habitMet("water", st.water)).length, 7, "dias"),
+    goalCard("a-exercise", "Exercício", minutes, HABITS.exercise.goal, "min"),
+    goalCard("a-sleep", "Sono", week.filter(st => habitMet("sleep", st.sleep)).length, 7, "noites"),
+  ].join("");
+}
+
+function habitRow(key, st, k) {
+  const h = HABITS[k];
+  const row = document.createElement("div");
+  row.className = `habit a-${k}` + (h.per === "day" && habitMet(k, st[k]) ? " met" : "");
+  row.innerHTML = `<span class="label">${h.label}</span>
+    <button aria-label="Menos ${h.name.toLowerCase()}">−</button>
+    <span class="num">${st[k]}${h.per === "day" ? `/${h.goal}` : ""} ${h.unit}</span>
+    <button aria-label="Mais ${h.name.toLowerCase()}">+</button>`;
+  const [minus, plus] = row.querySelectorAll("button");
+  const set = v => { patchDay(key, { [k]: Math.min(h.max, Math.max(0, v)) }); render(); };
+  minus.onclick = () => set(st[k] - h.step);
+  plus.onclick = () => set(st[k] + h.step);
+  return row;
 }
 
 function renderWeek() {
@@ -149,7 +178,10 @@ function renderWeek() {
         ${key === iso(today) ? '<span class="today-tag">hoje</span>' : ""}
         <span class="day-date">${pad(d.getDate())} ${MONTHS[d.getMonth()].slice(0, 3)}</span></div>
       <ul class="slots"></ul>
+      <div class="habits" role="group" aria-label="Hábitos do dia"></div>
       <div class="mood" role="group" aria-label="Energia do dia">energia</div>`;
+    const habits = card.querySelector(".habits");
+    Object.keys(HABITS).forEach(k => habits.append(habitRow(key, st, k)));
     const ul = card.querySelector(".slots");
     PLAN[i].forEach(s => {
       const li = document.createElement("li");
@@ -206,14 +238,18 @@ function renderTracker() {
     html += `<th class="${now ? "now" : ""}" scope="col">${d}</th>`;
   }
   html += "</tr></thead><tbody>";
-  for (const [k, a] of Object.entries(AREAS)) {
-    html += `<tr class="a-${k}"><th class="row" scope="row">${a.name}</th>`;
+  const rows = [
+    ...Object.entries(AREAS).map(([k, a]) => [k, a.name, (date, st) => {
+      const slots = PLAN[(date.getDay() + 6) % 7].filter(s => s.area === k);
+      return slots.some(s => st.done[s.id]) ? "done" : slots.length ? "planned" : "off";
+    }]),
+    ...Object.entries(HABITS).map(([k, h]) => [k, h.name, (date, st) => habitMet(k, st[k]) ? "done" : "planned"]),
+  ];
+  for (const [k, name, cellClass] of rows) {
+    html += `<tr class="a-${k}"><th class="row" scope="row">${name}</th>`;
     for (let d = 1; d <= n; d++) {
-      const date = new Date(y, mo, d), wd = (date.getDay() + 6) % 7;
-      const slots = PLAN[wd].filter(s => s.area === k);
-      const st = dayState(iso(date));
-      const cls = slots.some(s => st.done[s.id]) ? "done" : slots.length ? "planned" : "off";
-      html += `<td><i class="cell ${cls}"></i></td>`;
+      const date = new Date(y, mo, d);
+      html += `<td><i class="cell ${cellClass(date, dayState(iso(date)))}"></i></td>`;
     }
     html += "</tr>";
   }
