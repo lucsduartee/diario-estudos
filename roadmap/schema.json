@@ -29,6 +29,7 @@
       "additionalProperties": false,
       "properties": {
         "id": { "type": "string", "pattern": "^[a-z]+-[0-9]{2,}$", "description": "Único no arquivo, por exemplo cyber-01." },
+        "startsOn": { "type": "string", "format": "date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "Para semanas presas ao calendário (como as do AVA): as sessões começam no primeiro bloco da área a partir desta data." },
         "phase": { "type": "string", "minLength": 1 },
         "title": { "type": "string", "minLength": 1, "description": "O que estudar na semana." },
         "objectives": { "$ref": "#/$defs/texts" },

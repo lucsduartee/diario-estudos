@@ -65,8 +65,9 @@ function saveDays() {
 
 // ---------- roadmap ----------
 // Vem do repo: roadmap/<área>.json segue roadmap/schema.json. Cada unidade é uma semana do roadmap,
-// e suas sessões ocupam, em ordem, os próximos blocos da área.
+// e suas sessões ocupam, em ordem, os próximos blocos da área (schedule em plan.js).
 let roadmap = {};
+let scheduled = {};
 const KINDS = { study: "Estudo", practice: "Prática", deliverable: "Entregável", review: "Revisão" };
 
 async function loadRoadmap() {
@@ -81,24 +82,8 @@ async function loadRoadmap() {
   return Object.fromEntries(entries);
 }
 
-const sessionsOf = area => (roadmap[area]?.units || []).flatMap((unit, u) => (unit.sessions || []).map(session => ({ unit, n: u + 1, session })));
-
-// Cada bloco da área, em ordem de calendário a partir de START, recebe a próxima sessão do roadmap.
-function* occurrences(area) {
-  for (let d = START; ; d = addDays(d, 1))
-    for (const s of PLAN[(d.getDay() + 6) % 7])
-      if (s.area === area) yield { key: iso(d), date: d, slot: s };
-}
-
-function roadmapItem(key, slot) {
-  const items = sessionsOf(slot.area);
-  let i = 0;
-  for (const o of occurrences(slot.area)) {
-    if (i >= items.length || o.key > key) return;
-    if (o.key === key && o.slot.id === slot.id) return items[i];
-    i++;
-  }
-}
+const scheduleOf = area => scheduled[area] || (scheduled[area] = schedule(roadmap[area]?.units || [], area).items);
+const roadmapItem = (key, slot) => scheduleOf(slot.area).find(o => o.key === key && o.slot.id === slot.id);
 
 const sessionHtml = ({ n, session: s }) => `<span class="kind">Semana ${n} · ${KINDS[s.kind] || s.kind} · ${s.minutes} min</span>${linkify(s.what)}` +
   (s.exercises?.length ? `<ul class="exercises">${s.exercises.map(e => `<li>${linkify(e)}</li>`).join("")}</ul>` : "");
@@ -305,7 +290,7 @@ const resourceHtml = r => `<a href="${escapeHtml(r.url)}" target="_blank" rel="n
 function renderRoadmap() {
   document.getElementById("roadmap-areas").innerHTML = Object.entries(AREAS).map(([area, a]) => {
     const doc = roadmap[area];
-    const when = occurrences(area);
+    const when = scheduleOf(area).values();
     const units = (doc?.units || []).map((unit, u) => {
       const sessions = (unit.sessions || []).map(s => {
         const o = when.next().value;
@@ -344,6 +329,6 @@ document.getElementById("import").onchange = e => { const f = e.target.files[0];
 
 render();
 setStatus("Salvo neste aparelho");
-loadRoadmap().then(r => { roadmap = r; render(); });
+loadRoadmap().then(r => { roadmap = r; scheduled = {}; render(); });
 
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");

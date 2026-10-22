@@ -4,22 +4,15 @@ import { readFileSync, readdirSync } from "node:fs";
 import { runInNewContext } from "node:vm";
 
 const root = new URL("..", import.meta.url);
-const { START, AREAS, PLAN } = runInNewContext(readFileSync(new URL("plan.js", root), "utf8") + ";({ START, AREAS, PLAN })");
+const { AREAS, schedule } = runInNewContext(readFileSync(new URL("plan.js", root), "utf8") + ";({ AREAS, schedule })");
 const KINDS = ["study", "practice", "deliverable", "review"];
-const UNIT_KEYS = ["id", "phase", "title", "objectives", "topics", "resources", "deliverable", "doneWhen", "sessions"];
+const UNIT_KEYS = ["id", "startsOn", "phase", "title", "objectives", "topics", "resources", "deliverable", "doneWhen", "sessions"];
 const SESSION_KEYS = ["kind", "minutes", "what", "exercises"];
 
 const errors = [], warnings = [];
 const isText = v => typeof v === "string" && v.trim() !== "";
 const isTexts = v => v === undefined || (Array.isArray(v) && v.every(isText));
 const isLink = v => v && isText(v.title) && (v.url === undefined || /^https?:\/\//.test(v.url));
-
-// blocos da área em ordem de calendário, como occurrences() em app.js
-function* blocks(area) {
-  for (let d = new Date(START); ; d.setDate(d.getDate() + 1))
-    for (const s of PLAN[(d.getDay() + 6) % 7])
-      if (s.area === area) yield { date: d.toISOString().slice(0, 10), slot: s };
-}
 
 for (const file of readdirSync(new URL("roadmap/", root)).filter(f => f.endsWith(".json") && f !== "schema.json")) {
   const area = file.replace(/\.json$/, "");
@@ -31,7 +24,7 @@ for (const file of readdirSync(new URL("roadmap/", root)).filter(f => f.endsWith
   if (!isText(doc.title)) at("title obrigatório");
   if (doc.source !== undefined && !isLink(doc.source)) at("source precisa de title e url http(s)");
   if (!Array.isArray(doc.units)) { at("units deve ser uma lista"); continue; }
-  const ids = new Set(), next = blocks(area);
+  const ids = new Set();
   doc.units.forEach((u, i) => {
     const p = `units[${i}]${u?.id ? ` (${u.id})` : ""}`;
     Object.keys(u).filter(k => !UNIT_KEYS.includes(k)).forEach(k => at(`${p}.${k} não existe no schema`));
@@ -39,6 +32,7 @@ for (const file of readdirSync(new URL("roadmap/", root)).filter(f => f.endsWith
     else if (ids.has(u.id)) at(`${p}.id repetido`);
     ids.add(u.id);
     if (!isText(u.title)) at(`${p}.title obrigatório`);
+    if (u.startsOn !== undefined && !(/^\d{4}-\d{2}-\d{2}$/.test(u.startsOn) && !isNaN(new Date(u.startsOn)))) at(`${p}.startsOn deve ser data AAAA-MM-DD`);
     for (const k of ["phase", "deliverable", "doneWhen"]) if (u[k] !== undefined && !isText(u[k])) at(`${p}.${k} deve ser texto`);
     for (const k of ["objectives", "topics"]) if (!isTexts(u[k])) at(`${p}.${k} deve ser lista de textos`);
     if (u.resources !== undefined && !(Array.isArray(u.resources) && u.resources.every(isLink))) at(`${p}.resources: cada item precisa de title e url http(s)`);
@@ -50,10 +44,14 @@ for (const file of readdirSync(new URL("roadmap/", root)).filter(f => f.endsWith
       if (!Number.isInteger(s.minutes) || s.minutes < 1) at(`${q}.minutes deve ser inteiro positivo`);
       if (!isText(s.what)) at(`${q}.what obrigatório`);
       if (!isTexts(s.exercises)) at(`${q}.exercises deve ser lista de textos`);
-      const b = next.next().value;
-      if (Number.isInteger(s.minutes) && s.minutes !== b.slot.h * 60)
-        warnings.push(`${file}: ${q} tem ${s.minutes} min e cai em ${b.date} (${b.slot.when}), bloco de ${b.slot.h * 60} min`);
     });
+  });
+  if (errors.length) continue;
+  const { items, overlaps } = schedule(doc.units, area);
+  overlaps.forEach(id => at(`${id} começa em startsOn, mas a semana anterior ainda ocupa blocos nessa data`));
+  items.forEach(({ key, slot, unit, session }) => {
+    if (session.minutes !== slot.h * 60)
+      warnings.push(`${file}: ${unit.id} (${session.kind}) tem ${session.minutes} min e cai em ${key} (${slot.when}), bloco de ${slot.h * 60} min`);
   });
   console.log(`${file}: ${doc.units.length} semanas, ${doc.units.reduce((n, u) => n + (u.sessions?.length || 0), 0)} sessões`);
 }
