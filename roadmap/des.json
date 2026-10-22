@@ -1,6 +1,2219 @@
 {
   "$schema": "./schema.json",
   "area": "des",
-  "title": "Desenho",
-  "units": []
+  "title": "Desenho para a vida inteira: currículo em espiral",
+  "source": {
+    "title": "Roadmap de desenho para a vida inteira: currículo em espiral com três horas semanais (Pesquisa aprofundada do ChatGPT)",
+    "url": "https://chatgpt.com/c/6ada3ebb-604c-83e9-a2ab-b27a21155a46"
+  },
+  "units": [
+    {
+      "id": "des-01",
+      "startsOn": "2026-10-26",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Linha deliberada: planejar, fantasmear e executar uma vez",
+      "objectives": [
+        "Traço único",
+        "usar braço/ombro",
+        "separar confiança de precisão"
+      ],
+      "topics": [
+        "Controle de linha"
+      ],
+      "resources": [
+        {
+          "title": "Drawabox — Ghosted Planes",
+          "url": "https://drawabox.com/lesson/1/15"
+        },
+        {
+          "title": "Bargue — índice",
+          "url": "https://bargue.mbivert.com/"
+        },
+        {
+          "title": "Gallica — Cours de dessin",
+          "url": "https://gallica.bnf.fr/ark:/12148/btv1b52517498w.item"
+        }
+      ],
+      "deliverable": "1 folha de exercícios + 1 cópia I,1 fotografadas",
+      "doneWhen": "Todas as repetições feitas; nenhum traço “consertado” por cima; erro de 20 linhas registrado; três diferenças escritas na cópia",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Drawabox Lição 1, Ghosted Lines/Ghosted Planes; 15 min redesenhar o método; 10 min três regras. O exercício explicitamente usa o método de ghosting para cada marca."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min: 24 linhas de 5–15 cm; 20 min: 12 planos quadriláteros; 20 min: diagonais + cruz em cada plano; 10 min: medir em mm o erro final de 20 linhas. Não repasse nenhum traço."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Bargue/Gérôme, Cours de dessin, Parte I, prancha I,1 — Eyes: 5 min eixos/ângulos; 45 min copiar um dos estudos de olhos; 10 min comparar. Prancha confirmada pelo índice."
+        }
+      ]
+    },
+    {
+      "id": "des-02",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Círculo, elipse, triângulo e retângulo como relações, não símbolos",
+      "objectives": [
+        "Elipses suaves",
+        "encaixar formas",
+        "observar espaço negativo"
+      ],
+      "topics": [
+        "Formas básicas"
+      ],
+      "resources": [
+        {
+          "title": "Drawing on the Right Side — currículo",
+          "url": "https://www.drawright.com/online-drawing-workshop-overview"
+        },
+        {
+          "title": "Bargue — índice",
+          "url": "https://bargue.mbivert.com/"
+        },
+        {
+          "title": "Gallica",
+          "url": "https://gallica.bnf.fr/ark:/12148/btv1b52517498w.item"
+        }
+      ],
+      "deliverable": "Página de elipses + folha de simplificação + cópia do nariz",
+      "doneWhen": "24 elipses concluídas; cada objeto tem construção visível; na cópia, cinco ângulos principais foram checados antes de detalhar",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Betty Edwards, exercícios oficiais de contorno e espaço negativo; 15 min diagramas; 10 min três regras. O currículo oficial identifica bordas/contorno e espaço negativo entre suas habilidades perceptivas centrais."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 20 elipses livres; 20 min 2 páginas com 24 elipses em 3 tamanhos, passando cada uma apenas 2 vezes; 20 min 12 objetos simples reduzidos a 2–4 formas planas; 10 min comparar espaços negativos"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Bargue/Gérôme, I,3 — Noses; copie um nariz reduzindo primeiro a triângulos/trapézios e depois refinando."
+        }
+      ]
+    },
+    {
+      "id": "des-03",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Transformar silhuetas em caixas, cilindros, esferas e cunhas",
+      "objectives": [
+        "Pensar em 3D",
+        "usar eixo",
+        "desenhar “através”"
+      ],
+      "topics": [
+        "Volume e construção"
+      ],
+      "resources": [
+        {
+          "title": "Bridgman — índice por capítulos",
+          "url": "https://drawingbooks.org/bridgman1/index.html"
+        },
+        {
+          "title": "Bargue — índice",
+          "url": "https://bargue.mbivert.com/"
+        },
+        {
+          "title": "Gallica",
+          "url": "https://gallica.bnf.fr/ark:/12148/btv1b52517498w.item"
+        }
+      ],
+      "deliverable": "Folha com 24 sólidos + 6 construções + pé",
+      "doneWhen": "Nos 6 objetos, volumes permanecem legíveis sem contorno final; eixo dos cilindros é consistente; construção do pé ficou visível",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Bridgman, Introduction; General Anatomy; Masses and Movements of the Body; 15 min redesenhar cabeça/caixa, tórax/caixa e cilindro; 10 min regras. Bridgman orienta pensar em massas → planos → linhas."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 12 caixas; 20 min 12 cilindros com eixo e elipses nas pontas; 20 min construir 6 objetos domésticos usando 2–5 volumes; 10 min desenhar linhas ocultas e verificar coerência"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Bargue/Gérôme, I,5 — Profile of the foot: copie primeiro como cunha + bloco do calcanhar; só depois contorno."
+        }
+      ]
+    },
+    {
+      "id": "des-04",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Horizonte e perspectiva de um ponto a partir de objetos reais",
+      "objectives": [
+        "Identificar horizonte",
+        "convergir ortogonais",
+        "preservar verticais"
+      ],
+      "topics": [
+        "Perspectiva"
+      ],
+      "resources": [
+        {
+          "title": "Drawabox — Lesson 1",
+          "url": "https://drawabox.com/lesson/1"
+        },
+        {
+          "title": "Bargue, Houses — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/333827"
+        }
+      ],
+      "deliverable": "Estudo de perspectiva + cópia arquitetônica",
+      "doneWhen": "Horizonte e VP marcados; todas as ortogonais principais foram prolongadas na conferência; pelo menos três erros anotados",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Drawabox Lição 1, perspectiva/caixas; 15 min diagramas com horizonte e VP; 10 min três regras. A lição introduz progressivamente caixas e convergência."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 6 caixas livres; 20 min 6 caixas em 1 ponto com régua só para prolongar linhas na conferência; 20 min desenhar um canto da mesa/quarto com 8 arestas; 10 min estender e marcar erros de convergência"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Charles Bargue, Houses (c. 1845), grafite, The Met: copiar apenas as massas arquitetônicas principais, ignorando detalhes. Página Open Access."
+        }
+      ]
+    },
+    {
+      "id": "des-05",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Comparar ângulos, larguras e alinhamentos antes de contornar",
+      "objectives": [
+        "Medição relativa",
+        "plumb lines",
+        "relações parte/todo"
+      ],
+      "topics": [
+        "Proporção e medição"
+      ],
+      "resources": [
+        {
+          "title": "DRSB — sighting",
+          "url": "https://www.drawright.com/online-drawing-workshop-overview"
+        },
+        {
+          "title": "Ingres — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/366344"
+        }
+      ],
+      "deliverable": "Folha de razões + retrato medido",
+      "doneWhen": "Oito landmarks registrados; medir novamente a referência e o desenho e anotar cinco discrepâncias proporcionais; sem reiniciar a folha",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Drawing on the Right Side, habilidade de sighting: angles and relationships; 15 min demonstrar lápis como unidade de medida; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 10 estimativas de razões largura/altura em objetos; 20 min desenhar 4 objetos medindo unidade relativa; 20 min retrato simplificado de foto em que marque 8 landmarks antes do contorno; 10 min conferir razões"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Jean-AugusteDominique Ingres, Madame Jean-AugusteDominique Ingres, née Madeleine Chapelle (1814), grafite, Met; copiar cabeça e ombros com oito landmarks medidos antes."
+        }
+      ]
+    },
+    {
+      "id": "des-06",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Ver luz como famílias de valores, não “esfumar bonito”",
+      "objectives": [
+        "Escala tonal",
+        "separar luz/sombra",
+        "modelar sólidos"
+      ],
+      "topics": [
+        "Luz e valor"
+      ],
+      "resources": [
+        {
+          "title": "Gurney — edição oficial",
+          "url": "https://www.simonandschuster.com/books/Color-and-Light/James-Gurney/James-Gurney-Art/9780740797712"
+        },
+        {
+          "title": "Dürer — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/459211"
+        }
+      ],
+      "deliverable": "Escala + sólidos + estudo de cabeça",
+      "doneWhen": "Sete degraus distinguíveis; nas cópias, nenhuma textura antes da divisão luz/sombra; identifique terminator e sombra projetada onde existirem",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: James Gurney, Color and Light, cap. Light and Form, especialmente “Form Principle”, “Separation of Light and Shadow” e “Cast Shadows”; 15 min diagramas; 10 min regras. Esses tópicos constam do sumário catalogado da obra."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min escala de 7 valores; 20 min esfera, cubo e cilindro sob uma fonte imaginada usando 5 valores; 20 min 3 ovos/objetos brancos sob luminária, cada um em 4 valores; 10 min conferir agrupamento luz/sombra"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Albrecht Dürer, Head of a Young Woman (1522), Met; copie cabeça/rosto reduzindo a cinco valores de grafite. A ficha do Met registra desenho em giz preto e realce branco sobre papel preparado e o classifica como domínio público."
+        }
+      ]
+    },
+    {
+      "id": "des-07",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Descrever superfície por padrão de sombra, não por “pelinhos”",
+      "objectives": [
+        "Observar unidades de textura",
+        "controlar densidade",
+        "evitar contorno de cada detalhe"
+      ],
+      "topics": [
+        "Textura"
+      ],
+      "resources": [
+        {
+          "title": "Drawabox — Texture",
+          "url": "https://drawabox.com/lesson/2/texture"
+        },
+        {
+          "title": "Dürer — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/459214"
+        }
+      ],
+      "deliverable": "Três faixas de textura + dois travesseiros",
+      "doneWhen": "Cada faixa funciona do claro ao denso sem “pintar cinza”; na cópia, cada conjunto de traços tem direção explicável pela dobra",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Drawabox Lição 2, Texture and Detail, observação e sombras projetadas; 15 min decompor três texturas; 10 min regras. A lição trata textura como resultado de compreender formas e sombras projetadas, não copiar marcas indiscriminadamente."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 6 amostras de hachura; 20 min 3 faixas 5×12 cm — madeira, tecido, casca — com gradiente de densidade; 20 min 2 pequenos objetos texturizados, 10 min cada; 10 min anotar quais marcas descrevem forma"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Dürer, Selfportrait, Study of a Hand and a Pillow… / Six Studies of Pillows (1493), Met; copie dois estudos de travesseiro, focando dobras e mudanças de direção."
+        }
+      ]
+    },
+    {
+      "id": "des-08",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Organizar grandes massas antes de desenhar objetos",
+      "objectives": [
+        "Thumbnail",
+        "foco",
+        "equilíbrio",
+        "negativo/positivo"
+      ],
+      "topics": [
+        "Composição"
+      ],
+      "resources": [
+        {
+          "title": "Speed — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/14264"
+        },
+        {
+          "title": "Rembrandt — Rijksmuseum",
+          "url": "https://www.rijksmuseum.nl/en/collection/object/The-Pancake-Woman--55127b8438898fa7e7e1de096b62cdf0"
+        }
+      ],
+      "deliverable": "Página com 8 thumbnails + estudo de Rembrandt",
+      "doneWhen": "Oito miniaturas completas; cada uma legível a um braço de distância; indique em uma frase qual é o foco e como as massas o sustentam",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Harold Speed, caps. Rhythm: Balance e introdução a Rhythm; 15 min reduzir três imagens a manchas; 10 min regras. Os capítulos constam do sumário da edição Project Gutenberg."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 6 retângulos 5×7 cm; 20 min fazer 8 thumbnails de 2–3 valores; 20 min escolher 2 e variar posição do foco quatro vezes; 10 min justificar escolha"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Rembrandt, The Pancake Woman (c. 1635), Rijksmuseum; copie em três massas: fundo, agrupamento principal, acentos; depois acrescente linha seletiva."
+        }
+      ]
+    },
+    {
+      "id": "des-09",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Capturar ação antes de anatomia",
+      "objectives": [
+        "Linha de ação",
+        "eixo ombro/quadril",
+        "peso"
+      ],
+      "topics": [
+        "Gesto"
+      ],
+      "resources": [
+        {
+          "title": "Loomis — edição oficial",
+          "url": "https://www.penguinrandomhouse.com/books/209825/figure-drawing-by-andrew-loomis/"
+        },
+        {
+          "title": "Rembrandt — Rijksmuseum",
+          "url": "https://www.rijksmuseum.nl/en/collection/RP-T-1889-A-2046%28R%29"
+        }
+      ],
+      "deliverable": "25 gestos + cópia",
+      "doneWhen": "Todos os gestos têm linha de ação e apoio identificável; não desenhar olhos/dedos nos estudos rápidos; cópia inclui eixo de peso anotado",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Loomis, Figure Drawing for All It's Worth, The Approach to Figure Drawing, “Movement in the Mannikin Frame”; 15 min redesenhar manequins; 10 min regras. O sumário verificado inclui proporção, mannikin frame e seu movimento."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 10 gestos de 30 s; 20 min 10 de 1 min; 20 min 5 de 4 min com linha de ação + tórax/pelve + membros; 10 min marcar em cada um apoio e direção"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Rembrandt, Standing Man with a Stick, Facing Right (c. 1629–30), Rijksmuseum; faça primeiro gesto de 2 min, depois cópia de 43 min sobre ele."
+        }
+      ]
+    },
+    {
+      "id": "des-10",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Manequim: cabeça, caixa torácica, pelve e membros",
+      "objectives": [
+        "Proporção global",
+        "massas",
+        "articulações"
+      ],
+      "topics": [
+        "Figura humana"
+      ],
+      "resources": [
+        {
+          "title": "Loomis — PRH",
+          "url": "https://www.penguinrandomhouse.com/books/209825/figure-drawing-by-andrew-loomis/"
+        },
+        {
+          "title": "Bargue — índice",
+          "url": "https://bargue.mbivert.com/"
+        },
+        {
+          "title": "Gallica",
+          "url": "https://gallica.bnf.fr/ark:/12148/btv1b52517498w.item"
+        }
+      ],
+      "deliverable": "12 construções + cabeça Bargue",
+      "doneWhen": "Em todos os manequins, tórax e pelve são volumes orientados, não ovais planos; quatro landmarks proporcionais conferidos",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Loomis, “ Ideal Proportion, Male/Female ”, “Quick Set-up of Proportions”, “We Begin to Draw: First the Mannikin Frame”; 15 min reconstruir um manequim sem olhar; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 4 esqueletos gestuais; 20 min 4 manequins frontais/laterais; 20 min 4 em poses simples de referência; 10 min conferir cabeça/torso/pelve"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Bargue/Gérôme, I,31 — Nero as a child; copie primeiro envelope + eixo + grandes planos, depois refine."
+        }
+      ]
+    },
+    {
+      "id": "des-11",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Ver crescimento, direção e agrupamento antes de detalhes",
+      "objectives": [
+        "Silhueta",
+        "ritmo orgânico",
+        "observação direta"
+      ],
+      "topics": [
+        "Observação do natural"
+      ],
+      "resources": [
+        {
+          "title": "Ruskin — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/30325"
+        },
+        {
+          "title": "Van Gogh — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/335537"
+        }
+      ],
+      "deliverable": "Três estudos do natural + recorte Van Gogh",
+      "doneWhen": "Planta observada presencialmente; pelo menos três famílias direcionais identificadas; textura não apaga a grande silhueta",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Ruskin, The Elements of Drawing, Letter II: Sketching from Nature; 15 min fazer notas visuais de ramificação/folha; 10 min regras. A edição gratuita do Gutenberg organiza o texto exatamente nessas “Letters”."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 6 silhuetas de folhas/galhos; 20 min 2 plantas de 10 min, só contorno/negativo; 20 min 1 estudo de 20 min com grandes valores; 10 min comparar com o objeto real"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Vincent van Gogh, Wheat Field (julho de 1888), Met; copie um recorte central, procurando famílias de direção do traço em vez de cada haste."
+        }
+      ]
+    },
+    {
+      "id": "des-12",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Contorno seletivo apoiado em formas internas",
+      "objectives": [
+        "Economizar linha",
+        "procurar eixos",
+        "variar contorno por função"
+      ],
+      "topics": [
+        "Linha + forma"
+      ],
+      "resources": [
+        {
+          "title": "Speed — Gutenberg",
+          "url": "https://www.gutenberg.org/files/14264/14264-h/14264-h.htm"
+        },
+        {
+          "title": "Dürer — NGA",
+          "url": "https://www.nga.gov/artworks/6625-ecce-homo"
+        }
+      ],
+      "deliverable": "12 estudos de objetos + recorte Dürer",
+      "doneWhen": "Segunda versão de cada objeto usa menos linhas sem perder estrutura; nenhuma linha adicionada sem função anotável",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Speed, caps. Line Drawing e Line Drawing: Practical; 15 min três pequenos estudos de linha; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 20 linhas longas; 20 min 6 objetos com envelope geométrico antes do contorno; 20 min redesenhar os mesmos 6 usando metade das linhas; 10 min comparar"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Dürer, Ecce Homo (1512), NGA; copie apenas cabeça, ombros e linhas do manto, estudando como poucas direções descrevem forma. A NGA oferece downloads Open Access dessas obras."
+        }
+      ]
+    },
+    {
+      "id": "des-13",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Fazer sólidos ocupar o mesmo espaço",
+      "objectives": [
+        "Coerência espacial",
+        "sobreposição",
+        "escala com profundidade"
+      ],
+      "topics": [
+        "Volume + perspectiva"
+      ],
+      "resources": [
+        {
+          "title": "Drawabox — Form Intersections",
+          "url": "https://drawabox.com/lesson/2/8/step1"
+        },
+        {
+          "title": "Piranesi — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/360443"
+        }
+      ],
+      "deliverable": "Duas páginas de sólidos + estudo Piranesi",
+      "doneWhen": "Cada grupo contém caixa, cilindro e esfera; sobreposição não contradiz profundidade; horizonte/convergências assinalados na cópia",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Drawabox Lição 2, Form Intersections; 15 min reconstruir uma interseção; 10 min regras. O objetivo declarado do exercício é fazer formas parecerem sólidas e coerentes no mesmo espaço."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 8 sólidos; 20 min 2 grupos de 5 sólidos sobrepostos; 20 min 4 objetos domésticos construídos dentro de caixas; 10 min verificar convergências"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Giovanni Battista Piranesi, View along the Via del Corso of the Palazzo dell'Accademia…, Met; copie apenas arquitetura central e chão, marcando horizonte e principais convergências."
+        }
+      ]
+    },
+    {
+      "id": "des-14",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Medir a figura antes de “desenhar a pessoa”",
+      "objectives": [
+        "Envelope",
+        "cabeça como unidade",
+        "landmarks"
+      ],
+      "topics": [
+        "Proporção + figura"
+      ],
+      "resources": [
+        {
+          "title": "Loomis — PRH",
+          "url": "https://www.penguinrandomhouse.com/books/209825/figure-drawing-by-andrew-loomis/"
+        },
+        {
+          "title": "Sargent — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/12227"
+        }
+      ],
+      "deliverable": "Seis estudos proporcionais + Sargent",
+      "doneWhen": "Dez landmarks conferidos no estudo longo; relação de altura entre as duas figuras de Sargent foi medida, não adivinhada",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Loomis, “ Proportions by Arcs and Head Units ” e “Proportion in Relation to the Horizon”; 15 min dois diagramas; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min medir 5 poses; 20 min 5 figuras de 4 min com caixa delimitadora + cabeçaunidade; 20 min uma figura de 20 min com 10 landmarks; 10 min medir desvios"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: John Singer Sargent, Woman and Child (1885–86), Met; copie as duas figuras apenas até o nível de grandes contornos e massas, registrando proporções relativas."
+        }
+      ]
+    },
+    {
+      "id": "des-15",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Subordinar detalhe à estrutura tonal",
+      "objectives": [
+        "Família de luz/sombra",
+        "textura dentro do valor",
+        "acento"
+      ],
+      "topics": [
+        "Valor + textura"
+      ],
+      "resources": [
+        {
+          "title": "Gurney — oficial",
+          "url": "https://www.simonandschuster.com/books/Color-and-Light/James-Gurney/James-Gurney-Art/9780740797712"
+        },
+        {
+          "title": "Dürer — NGA",
+          "url": "https://www.nga.gov/artworks/598-knight-death-and-devil"
+        }
+      ],
+      "deliverable": "Dois estudos de tecido + recorte Dürer",
+      "doneWhen": "Versão de 3 valores já é legível; hachura nunca atravessa arbitrariamente a mudança de plano; foco tem maior contraste que áreas secundárias",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Gurney, “Separation of Light and Shadow”, “Cast Shadows”, “Occlusion Shadows”; 15 min diagramas; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min escala 5 valores; 20 min desenhar tecido enrugado em 3 valores; 20 min repetir em 5 valores adicionando textura só depois; 10 min comparar legibilidade"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Dürer, Knight, Death and the Devil (1513), NGA; não copie a gravura inteira: recorte da cabeça/pescoço do cavalo + armadura adjacente, primeiro em três valores e então hachura."
+        }
+      ]
+    },
+    {
+      "id": "des-16",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Transformar uma cena observada em massas selecionadas",
+      "objectives": [
+        "Simplificar",
+        "enquadrar",
+        "hierarquia"
+      ],
+      "topics": [
+        "Composição + observação"
+      ],
+      "resources": [
+        {
+          "title": "Ruskin — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/30325"
+        },
+        {
+          "title": "Rembrandt — Rijksmuseum",
+          "url": "https://www.rijksmuseum.nl/en/collection/object/Cottage-with-White-Paling-among-Trees--6a733a37b29ac994144ec5e8e5282497"
+        }
+      ],
+      "deliverable": "8 thumbnails + desenho A5 + Rembrandt",
+      "doneWhen": "O desenho A5 segue um thumbnail escolhido; detalhes ocupam menos tempo/área que grandes massas; foco declarado em uma frase",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Ruskin, Letter III: On Color and Composition, ignorando a parte cromática e focando organização; 15 min três diagramas; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min escolher uma janela/canto externo; 20 min 8 thumbnails de 2 valores; 20 min desenhar a melhor opção em A5, 3–5 valores; 10 min marcar foco, maior massa e negativo principal"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Rembrandt, Cottage with White Paling among Trees (c. 1648), Rijksmuseum; copie em massas antes da vegetação."
+        }
+      ]
+    },
+    {
+      "id": "des-17",
+      "phase": "Ciclo 1: Fundação perceptiva",
+      "title": "Repetir a semana 1 em condições semelhantes",
+      "objectives": [
+        "Medir, não impressionar",
+        "comparar linha",
+        "documentar mudança"
+      ],
+      "topics": [
+        "Revisão"
+      ],
+      "resources": [
+        {
+          "title": "Drawabox — Ghosted Planes",
+          "url": "https://drawabox.com/lesson/1/15"
+        },
+        {
+          "title": "Bargue — índice",
+          "url": "https://bargue.mbivert.com/"
+        },
+        {
+          "title": "Gallica",
+          "url": "https://gallica.bnf.fr/ark:/12148/btv1b52517498w.item"
+        }
+      ],
+      "deliverable": "Montagem/foto S1 vs S17 + tabela de 20 erros de endpoint nas duas semanas",
+      "doneWhen": "Só está pronto se exercícios e cópia forem repetidos; registre o que melhorou, piorou e ficou igual. Não vale redesenhar para “vencer” a comparação",
+      "sessions": [
+        {
+          "kind": "review",
+          "minutes": 60,
+          "what": "20 min reler Ghosted Planes; 20 min rever sem redesenhar as folhas S1; 10 min prever erros atuais por escrito; 10 min preparar mesma escala de trabalho."
+        },
+        {
+          "kind": "review",
+          "minutes": 60,
+          "what": "Repita S1: 24 linhas; 12 planos; diagonais/cruzes; medir erro final de 20 linhas. Use mesmo tamanho aproximado e lápis"
+        },
+        {
+          "kind": "review",
+          "minutes": 60,
+          "what": "Master copy: Repita exatamente Bargue I,1 — Eyes, sem olhar sua cópia da S1 durante os 45 min; compare ambas só nos 10 min finais."
+        }
+      ]
+    },
+    {
+      "id": "des-18",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Curvas deliberadas, sobreposição e espessura seletiva",
+      "objectives": [
+        "Curvas longas",
+        "pontos intermediários",
+        "peso de linha funcional"
+      ],
+      "topics": [
+        "Controle de linha"
+      ],
+      "resources": [
+        {
+          "title": "How to Draw — editora",
+          "url": "https://designstudiopress.com/products/how-to-draw"
+        },
+        {
+          "title": "Bargue — Hands",
+          "url": "https://bargue.mbivert.com/hands/"
+        },
+        {
+          "title": "Gallica",
+          "url": "https://gallica.bnf.fr/ark:/12148/btv1b52517498w.item"
+        }
+      ],
+      "deliverable": "Página de curvas + 8 objetos + mão Bargue",
+      "doneWhen": "Curvas passam pelos pontos sem segmentos “peludos”; peso de linha aparece apenas onde você consegue explicar sobreposição/foco",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Robertson & Thomas Bertling, How to Draw, cap. inicial sobre Drawing Materials and Skills e prática de curvas/elipses; 15 min diagramas; 10 min regras. O livro oficial parte de habilidades básicas e avança para grids/elipses/perspectiva."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 20 retas + 20 curvas; 20 min 16 curvas passando por 3–5 pontos marcados; 20 min 8 objetos desenhados com linha única e peso só em sobreposições; 10 min marcar hesitações"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Bargue/Gérôme, I,11 — Hands in profile; copie uma das mãos priorizando gesto de contorno e sobreposições."
+        }
+      ]
+    },
+    {
+      "id": "des-19",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Elipses orientadas em planos e formas encaixadas",
+      "objectives": [
+        "Grau da elipse",
+        "eixo menor",
+        "simetria aproximada"
+      ],
+      "topics": [
+        "Formas básicas"
+      ],
+      "resources": [
+        {
+          "title": "How to Draw",
+          "url": "https://designstudiopress.com/products/how-to-draw"
+        },
+        {
+          "title": "Bargue — Hands",
+          "url": "https://bargue.mbivert.com/hands/"
+        },
+        {
+          "title": "Gallica",
+          "url": "https://gallica.bnf.fr/ark:/12148/btv1b52517498w.item"
+        }
+      ],
+      "deliverable": "36 elipses em planos + 8 cilindros + mão",
+      "doneWhen": "Eixo menor de cada elipse acompanha eixo do cilindro; mão contém construção visível sob o refinamento",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Draw, material de ellipses and rotations; 15 min desenhar eixo/major/minor; 10 min regras. A descrição bibliográfica confirma que grids e elipses dos capítulos iniciais fundamentam formas complexas posteriores."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 20 elipses; 20 min 2 páginas com 18 elipses inscritas em planos inclinados; 20 min 8 cilindros orientados em direções diferentes; 10 min conferir eixo"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Bargue/Gérôme, I,14 — Hand holding a whetstone; simplifique palma em bloco e dedos em cilindros/cunhas antes do contorno."
+        }
+      ]
+    },
+    {
+      "id": "des-20",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Interseção e adição de massas",
+      "objectives": [
+        "Soldar formas",
+        "respeitar superfície existente",
+        "pensar em seções"
+      ],
+      "topics": [
+        "Volume e construção"
+      ],
+      "resources": [
+        {
+          "title": "Drawabox — Form Intersections",
+          "url": "https://drawabox.com/lesson/2/8/step1"
+        },
+        {
+          "title": "Leonardo — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/337494"
+        }
+      ],
+      "deliverable": "8 interseções + 4 construções + Leonardo",
+      "doneWhen": "Nas massas adicionadas, desenhe como a forma abraça a anterior; não altere apenas a silhueta; três relações espaciais anotadas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Drawabox Form Intersections + conceito de construção; 15 min duas interseções explicadas; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 8 sólidos; 20 min 4 pares caixacilindro e 4 caixa-esfera com linha de interseção tentativa; 20 min construir 4 objetos com massa-base + 2 massas adicionadas; 10 min análise"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Leonardo da Vinci, Compositional Sketches for the Virgin Adoring the Christ Child … Diagram of a Perspectival Projection (c. 1480–85), Met; copie os pequenos estudos figurais como massas, não acabamento."
+        }
+      ]
+    },
+    {
+      "id": "des-21",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Perspectiva de dois pontos e escala consistente",
+      "objectives": [
+        "Dois VPs",
+        "dividir plano",
+        "cilindros em caixas"
+      ],
+      "topics": [
+        "Perspectiva"
+      ],
+      "resources": [
+        {
+          "title": "How to Draw",
+          "url": "https://designstudiopress.com/products/how-to-draw"
+        },
+        {
+          "title": "Piranesi — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/360372"
+        }
+      ],
+      "deliverable": "Grade + caixas/cilindros + Piranesi",
+      "doneWhen": "Os dois conjuntos horizontais convergem separadamente; repetições no chão diminuem coerentemente; eixo do candelabro permanece estável",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Robertson, How to Draw, seções sobre physical parallel lines, divisão/multiplicação em perspectiva e grids de dois pontos; 15 min diagramas; 10 min regras. O livro é explicitamente estruturado para ensinar grids perspectivos antes de formas complexas."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 4 caixas; 20 min 6 caixas 2P em alturas diferentes; 20 min grade simples de 2P com 6 postes igualmente espaçados + 3 cilindros encaixados; 10 min prolongar convergências"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Piranesi, Perspective view of the same candelabrum… (1778–80), Met; copie base e seção cilíndrica principal, tratando ornamento como secundário."
+        }
+      ]
+    },
+    {
+      "id": "des-22",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Medição relacional: comparar distâncias entre landmarks",
+      "objectives": [
+        "Relações internas",
+        "triangulação",
+        "inclinação"
+      ],
+      "topics": [
+        "Proporção e medição"
+      ],
+      "resources": [
+        {
+          "title": "Speed — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/14264"
+        },
+        {
+          "title": "Ingres, Paganini — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/337364"
+        }
+      ],
+      "deliverable": "Página de triangulação + retrato medido",
+      "doneWhen": "Doze landmarks presentes; cinco relações de distância referência/desenho registradas; erro é corrigido por estrutura, não “empurrando” contorno",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Speed, cap. Rhythm: Proportion; 15 min três diagramas relacionais; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 10 razões em objetos; 20 min 4 desenhos com triangulação de 5 pontos; 20 min retrato de 20 min: coloque 12 landmarks antes do contorno; 10 min medir"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Ingres, Niccolò Paganini, Met; copie busto/cabeça usando uma unidadebase e 10 landmarks antes do acabamento."
+        }
+      ]
+    },
+    {
+      "id": "des-23",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Bordas: dura, suave e perdida dentro da estrutura de valor",
+      "objectives": [
+        "Separação de famílias",
+        "borda como mudança de plano/luz",
+        "luz refletida"
+      ],
+      "topics": [
+        "Luz e valor"
+      ],
+      "resources": [
+        {
+          "title": "Gurney — oficial",
+          "url": "https://www.simonandschuster.com/books/Color-and-Light/James-Gurney/James-Gurney-Art/9780740797712"
+        },
+        {
+          "title": "Sargent — NGA",
+          "url": "https://www.nga.gov/artworks/184267-olimpio-fusco"
+        }
+      ],
+      "deliverable": "Seis sólidos + estudo Sargent",
+      "doneWhen": "Cinco valores distinguíveis; seis bordas da cópia marcadas D/S/P; não esfumar todas as transições igualmente",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Gurney, cap. Light and Form: “Half Shadows”, “Reflected Light”, “Threequarter Lighting”; 15 min diagramas; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "7; 20 min 3 esferas com luz frontal, 3/4 e lateral; 20 min 3 estudos de cubo/cilindro enfatizando bordas dura/suave/perdida; 10 min etiquetar bordas"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: John Singer Sargent, Olimpio Fusco (c. 1900–10), NGA; copie cabeça/colarinho em 5 valores e classifique seis bordas."
+        }
+      ]
+    },
+    {
+      "id": "des-24",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Textura seguindo superfície e profundidade",
+      "objectives": [
+        "Densidade",
+        "perspectiva",
+        "direção de plano"
+      ],
+      "topics": [
+        "Textura"
+      ],
+      "resources": [
+        {
+          "title": "Drawabox — Texture",
+          "url": "https://drawabox.com/lesson/2/texture"
+        },
+        {
+          "title": "Van Gogh — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/336318"
+        }
+      ],
+      "deliverable": "4 sólidos texturizados + 2 faixas + Van Gogh",
+      "doneWhen": "Textura acompanha orientação dos sólidos; mudanças de escala reforçam profundidade; grandes massas continuam legíveis a distância",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Drawabox, Texture and Detail, “observation and memory”, “cast shadows”, “detail density”; 15 min três diagramas; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 4 cilindros com linhas de contorno; 20 min aplicar madeira/pedra a 4 planos orientados; 20 min duas faixas em que textura fica menor/densa em profundidade; 10 min checar"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Van Gogh, Street in Saintes-Mariesde-la-Mer (1888), Met; copie metade inferior da rua/prédios, observando como direção/densidade dos traços diferencia materiais e planos."
+        }
+      ]
+    },
+    {
+      "id": "des-25",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Composição por contraste, direção e agrupamento",
+      "objectives": [
+        "Hierarquia",
+        "fluxo visual",
+        "variedade grande/médio/pequeno"
+      ],
+      "topics": [
+        "Composição"
+      ],
+      "resources": [
+        {
+          "title": "Speed — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/14264"
+        },
+        {
+          "title": "Leonardo — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/337494"
+        }
+      ],
+      "deliverable": "16 thumbnails + 4 estudos Leonardo",
+      "doneWhen": "Cada thumbnail tem foco indicado; pelo menos três soluções estruturalmente diferentes; não mudar assunto para criar variedade",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Speed, Rhythm: Variety of Mass, Unity of Mass, Balance; 15 min três esquemas; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "thumbnails 2 valores; 20 min 6 thumbnails 3 valores variando foco; 20 min pegar um e fazer 4 versões mudando só distribuição grande/médio/pequeno; 10 min escolher"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Compositional Sketches for the Virgin Adoring the Christ Child…, Met; copie 4 pequenos esquemas composicionais da folha, um ao lado do outro."
+        }
+      ]
+    },
+    {
+      "id": "des-26",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Gesto como relação entre ritmo e massas",
+      "objectives": [
+        "Contrapposto",
+        "curvas opostas",
+        "centro de gravidade"
+      ],
+      "topics": [
+        "Gesto"
+      ],
+      "resources": [
+        {
+          "title": "Loomis — PRH",
+          "url": "https://www.penguinrandomhouse.com/books/209825/figure-drawing-by-andrew-loomis/"
+        },
+        {
+          "title": "Degas — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/334326"
+        }
+      ],
+      "deliverable": "25 gestos + Degas",
+      "doneWhen": "A maioria das poses mostra direção antes de contorno; apoio/peso está assinalado; nada de mãos/rostos detalhados nos gestos rápidos",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Loomis, “Movement in the Mannikin Frame”, “Sketching the Figure in Action”; 15 min 3 manequins; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 10×30 s; 20 min 10×1 min; 20 min 5×4 min com tórax/pelve em caixas; 10 min desenhar linha vertical do centro de gravidade"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Degas, Dancer on pointe (c. 1878), Met; 3 min gesto, 42 min cópia estrutural, 10 min comparação."
+        }
+      ]
+    },
+    {
+      "id": "des-27",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Construir torso como duas massas interligadas",
+      "objectives": [
+        "Caixa torácica",
+        "pelve",
+        "inclinação/torção"
+      ],
+      "topics": [
+        "Figura humana"
+      ],
+      "resources": [
+        {
+          "title": "Bridgman — índice",
+          "url": "https://drawingbooks.org/bridgman1/index.html"
+        },
+        {
+          "title": "Bargue — Torsos",
+          "url": "https://bargue.mbivert.com/torsos/"
+        },
+        {
+          "title": "Gallica",
+          "url": "https://gallica.bnf.fr/ark:/12148/btv1b52517498w.item"
+        }
+      ],
+      "deliverable": "14 torsos + Bargue",
+      "doneWhen": "Tórax e pelve têm orientações diferentes quando a pose exige; linha central e inclinação dos ombros/pelve presentes",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Bridgman, Masses and Movements of the Body, depois Trunk/Torse/Pelvis; 15 min redesenhar três relações tórax-pelve; 10 min regras. O índice da edição identifica essas seções; a abordagem de Bridgman enfatiza blocos e wedging."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 6 pares tórax-pelve; 20 min 6 torsos de referência em 3 min; 20 min 2 torsos de 10 min com planos; 10 min conferir eixo"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Bargue/Gérôme, I,55 — Belvedere Torso, rear view; copie apenas grandes planos do torso, sem acabamento de superfície."
+        }
+      ]
+    },
+    {
+      "id": "des-28",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Construir formas naturais a partir de massas, não símbolos",
+      "objectives": [
+        "Simplificação",
+        "sobreposição",
+        "crescimento"
+      ],
+      "topics": [
+        "Observação do natural"
+      ],
+      "resources": [
+        {
+          "title": "Drawabox — Animals/ Major Masses",
+          "url": "https://drawabox.com/lesson/5/1/masses"
+        },
+        {
+          "title": "Raphael school — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/340611"
+        }
+      ],
+      "deliverable": "10 estudos naturais + 2 animais simples + Rafael",
+      "doneWhen": "Nenhum animal começa pelo contorno; todas as formas naturais têm eixo ou massa-base; três sobreposições identificadas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Drawabox Lição 5, Major Masses e Additional Masses — use o raciocínio, não o homework oficial; 15 min reconstruções; 10 min regras. A lição descreve crânio, caixa torácica e outras massas como base de construção animal."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 6 frutas/sementes em volumes; 20 min 4 folhas/galhos construídos por eixo + forma; 20 min 2 animais de foto em 10 min só massas principais; 10 min avaliar sobreposições"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Escola de Rafael, Fragment of a Tapestry Cartoon: Foot in a Buskin, Drapery, and a Plant, Met; copie a planta e a dobra adjacente, procurando construção e sobreposição."
+        }
+      ]
+    },
+    {
+      "id": "des-29",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Economia: sugerir forma com menos marcas",
+      "objectives": [
+        "Hierarquia de linha",
+        "simplificação",
+        "borda perdida"
+      ],
+      "topics": [
+        "Linha + forma"
+      ],
+      "resources": [
+        {
+          "title": "Speed — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/14264"
+        },
+        {
+          "title": "Rembrandt — Rijksmuseum",
+          "url": "https://www.rijksmuseum.nl/en/collection/object/Self-portrait-with-Tousled-Hair--f4b5b8a2cef8aaeab0e8665a72c77f6a"
+        }
+      ],
+      "deliverable": "8 estudos limitados por linha + Rembrandt",
+      "doneWhen": "Contagem respeitada; versão curta ainda reconhecível; na cópia você marca três áreas em que Rembrandt não “explica tudo”",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Speed, Rhythm: Variety of Line e Unity of Line; 15 min reduzir um desenho a 20 linhas; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 20 curvas/retas; 20 min desenhar 4 objetos em no máximo 25 linhas cada; 20 min os mesmos 4 em no máximo 12 linhas; 10 min comparar informação perdida/ganha"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Rembrandt, Self-portrait with Tousled Hair (c. 1628–29), Rijksmuseum; copie cabeça/ombros focando mudanças de energia, pressão aparente e omissões."
+        }
+      ]
+    },
+    {
+      "id": "des-30",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Rotação de caixas/cilindros e repetição em profundidade",
+      "objectives": [
+        "Rotação",
+        "eixo",
+        "escala"
+      ],
+      "topics": [
+        "Volume + perspectiva"
+      ],
+      "resources": [
+        {
+          "title": "How to Draw",
+          "url": "https://designstudiopress.com/products/how-to-draw"
+        },
+        {
+          "title": "Piranesi — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/360372"
+        }
+      ],
+      "deliverable": "Rotação de caixas/cilindros + Piranesi estrutural",
+      "doneWhen": "Cada sequência varia gradualmente; elipses obedecem eixo; cópia de Piranesi pode ser explicada com 5–8 sólidos principais",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Robertson, capítulos iniciais sobre grids e elipses; 15 min desenhar um cilindro em três orientações; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "caixas; 20 min sequência de 8 caixas girando; 20 min 6 cilindros em planos diferentes + uma fileira de 6 objetos diminuindo; 10 min conferir"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Perspective view of the same candelabrum…, Met — segunda visita: agora copie base + coluna + topo como sólidos encaixados, não ornamento."
+        }
+      ]
+    },
+    {
+      "id": "des-31",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Figura inteira: landmarks + manequim + contorno",
+      "objectives": [
+        "Cabeçaunidade",
+        "membros",
+        "apoio"
+      ],
+      "topics": [
+        "Proporção + figura"
+      ],
+      "resources": [
+        {
+          "title": "Loomis — PRH",
+          "url": "https://www.penguinrandomhouse.com/books/209825/figure-drawing-by-andrew-loomis/"
+        },
+        {
+          "title": "Bargue — Figures",
+          "url": "https://bargue.mbivert.com/complete-figures/"
+        },
+        {
+          "title": "Gallica",
+          "url": "https://gallica.bnf.fr/ark:/12148/btv1b52517498w.item"
+        }
+      ],
+      "deliverable": "6 figuras + Achilles",
+      "doneWhen": "A figura longa e Bargue têm landmarks medidos antes do contorno; pés/apóio não são deixados para o último minuto",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Loomis, “Landmarks You Should Know”, “Adding Bulk to the Frame”, “Drawing the Mannikin from Any Viewpoint”; 15 min reconstrução; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 5 figuras medidas; 20 min 5 manequins de 4 min; 20 min 1 figura longa com 12 landmarks; 10 min checagem proporcional"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Bargue/Gérôme, I,68 — Achilles; copie a figura inteira como envelope + linha de ação + grandes massas; detalhe só se sobrar tempo."
+        }
+      ]
+    },
+    {
+      "id": "des-32",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Construir textura dentro de uma hierarquia tonal",
+      "objectives": [
+        "Agrupar valores",
+        "preservar foco",
+        "hachura orientada"
+      ],
+      "topics": [
+        "Valor + textura"
+      ],
+      "resources": [
+        {
+          "title": "Gurney — oficial",
+          "url": "https://www.simonandschuster.com/books/Color-and-Light/James-Gurney/James-Gurney-Art/9780740797712"
+        },
+        {
+          "title": "Speed — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/14264"
+        },
+        {
+          "title": "Dürer — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/360018"
+        }
+      ],
+      "deliverable": "Estudos de material + recorte Melencolia",
+      "doneWhen": "A miniatura em três valores permanece legível antes da textura; acentos mais escuros estão concentrados deliberadamente",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Gurney, Light and Form + Speed, Mass Drawing; 20 min Gurney, 15 min Speed, 15 min diagramas, 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min escala 7; 20 min 2 materiais × 3 valores; 20 min repetir os dois em 5 valores, mantendo área focal de maior contraste; 10 min comparar"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Dürer, Melencolia I (1514), Met; copie poliedro + chão/objetos imediatamente adjacentes, primeiro 3 grandes valores, depois hachura."
+        }
+      ]
+    },
+    {
+      "id": "des-33",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Compor duas ou três figuras sem perder o todo",
+      "objectives": [
+        "Agrupamento",
+        "negativo",
+        "foco"
+      ],
+      "topics": [
+        "Composição + observação"
+      ],
+      "resources": [
+        {
+          "title": "Speed — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/14264"
+        },
+        {
+          "title": "Sargent — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/12275"
+        }
+      ],
+      "deliverable": "8 thumbnails + 2 estudos + Sargent",
+      "doneWhen": "Figuras funcionam como grupo antes de rostos/mãos; espaço entre as duas figuras foi desenhado conscientemente; foco definido",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Speed, Balance, Proportion, mais 10 min reanalisando thumbnails da S25; 15 min esquemas; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "observar pessoas/cadeiras ou usar referência própria; 20 min 8 thumbnails de agrupamentos; 20 min desenvolver 2 thumbnails em 10 min; 10 min marcar negativos principais"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Sargent, Two Women in a Café (fim da década de 1880), Met; copie as duas figuras + mesa apenas como grandes linhas/massas."
+        }
+      ]
+    },
+    {
+      "id": "des-34",
+      "phase": "Ciclo 2: Construção espacial",
+      "title": "Repetir a semana 18 e medir economia/curva",
+      "objectives": [
+        "Comparar fluidez",
+        "hesitação",
+        "linha seletiva"
+      ],
+      "topics": [
+        "Revisão"
+      ],
+      "resources": [
+        {
+          "title": "How to Draw",
+          "url": "https://designstudiopress.com/products/how-to-draw"
+        },
+        {
+          "title": "Bargue — Hands",
+          "url": "https://bargue.mbivert.com/hands/"
+        },
+        {
+          "title": "Gallica",
+          "url": "https://gallica.bnf.fr/ark:/12148/btv1b52517498w.item"
+        }
+      ],
+      "deliverable": "S18 vs S34 lado a lado + contagens",
+      "doneWhen": "Quantidades idênticas; registrar hesitações/correções em ambas; escrever uma mudança técnica observável, não “parece melhor”",
+      "sessions": [
+        {
+          "kind": "review",
+          "minutes": 60,
+          "what": "20 min reler o trecho de curvas de Robertson; 20 min olhar S18 sem redesenhar; 10 min listar três erros previstos; 10 min preparar mesmo formato."
+        },
+        {
+          "kind": "review",
+          "minutes": 60,
+          "what": "Repita S18: 20 retas + 20 curvas; 16 curvas por pontos; 8 objetos com peso funcional; registre quantas curvas tiveram correção/hesitação"
+        },
+        {
+          "kind": "review",
+          "minutes": 60,
+          "what": "Master copy: Repita Bargue I,11 — Hands in profile, mesma mão da S18, sem olhar a cópia antiga até o fim."
+        }
+      ]
+    },
+    {
+      "id": "des-35",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Linha expressiva sem sacrificar construção",
+      "objectives": [
+        "Velocidade adequada",
+        "espessura/ênfase",
+        "omissão consciente"
+      ],
+      "topics": [
+        "Controle de linha"
+      ],
+      "resources": [
+        {
+          "title": "Speed — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/14264"
+        },
+        {
+          "title": "Sargent — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/15662"
+        }
+      ],
+      "deliverable": "12 desenhos limitados + Sargent",
+      "doneWhen": "Sem retrabalho de contorno; cada linha da versão limitada pode ser classificada como estrutura, sobreposição, acento ou contorno",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "25 min Speed Variety/Unity of Line; 10 min rever Ghosting; 15 min estudos de 10/20/40 linhas; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 20 linhas/curvas; 20 min desenhar 4 objetos em 90 s e novamente em 4 min; 20 min 4 objetos em no máximo 15 linhas; 10 min marcar linhas estruturais vs descritivas"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Sargent, Caricature of a Man (1880–82), grafite, Met; copie buscando o mínimo de marcas que mantém gesto e caráter."
+        }
+      ]
+    },
+    {
+      "id": "des-36",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "De formas primitivas a formas orgânicas complexas",
+      "objectives": [
+        "Seção transversal",
+        "taper",
+        "mudança de eixo"
+      ],
+      "topics": [
+        "Formas básicas"
+      ],
+      "resources": [
+        {
+          "title": "Bridgman — índice",
+          "url": "https://drawingbooks.org/bridgman1/index.html"
+        },
+        {
+          "title": "Bargue — índice",
+          "url": "https://bargue.mbivert.com/"
+        },
+        {
+          "title": "Gallica",
+          "url": "https://gallica.bnf.fr/ark:/12148/btv1b52517498w.item"
+        }
+      ],
+      "deliverable": "16 formas + 4 braços + Bargue",
+      "doneWhen": "Seções revelam orientação espacial; braço Bargue continua legível quando você cobre mentalmente o contorno e olha só construção interna",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Bridgman, Arm/Forearm/Shoulder como massas que se sobrepõem e formam cunhas; 15 min diagramas; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 8 cilindros cônicos; 20 min 8 formas orgânicas com 3 seções transversais cada; 20 min 4 braços construídos como massas simples; 10 min conferir eixos"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Bargue/Gérôme, I,24 — Arm of Moses, by Michelangelo; copie primeiro como 4–6 volumes, depois planos externos. O índice confirma a prancha I,24."
+        }
+      ]
+    },
+    {
+      "id": "des-37",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Planos sobre massas orgânicas",
+      "objectives": [
+        "Converter curva em planos",
+        "encaixar partes",
+        "preservar gesto"
+      ],
+      "topics": [
+        "Volume e construção"
+      ],
+      "resources": [
+        {
+          "title": "Loomis — PRH",
+          "url": "https://www.penguinrandomhouse.com/books/209825/figure-drawing-by-andrew-loomis/"
+        },
+        {
+          "title": "Raphael school — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/340610"
+        }
+      ],
+      "deliverable": "14 construções + estudo Rafael",
+      "doneWhen": "Pelo menos cinco mudanças de plano explicitadas no estudo final; linhas internas explicam volume, não decoram",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Loomis, Block Forms, Planes, Foreshortening, and Lighting; 15 min simplificar esfera/cilindro em planos; 10 min regras. O livro inclui explicitamente essa seção."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 6 sólidos facetados; 20 min transformar 4 mãos simples e 4 cabeças ovais em planos; 20 min 2 estudos de braço/mão de 10 min; 10 min anotar mudança de plano"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Escola de Rafael, Fragment … Outstretched Hand, Body of a Seraph, and a Wing, Met; copie mão + início do braço como massas/planos antes do detalhe."
+        }
+      ]
+    },
+    {
+      "id": "des-38",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Três pontos, inclinação e campo de visão com parcimônia",
+      "objectives": [
+        "Convergência vertical",
+        "rotação",
+        "evitar distorção gratuita"
+      ],
+      "topics": [
+        "Perspectiva"
+      ],
+      "resources": [
+        {
+          "title": "How to Draw",
+          "url": "https://designstudiopress.com/products/how-to-draw"
+        },
+        {
+          "title": "Piranesi — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/360270"
+        }
+      ],
+      "deliverable": "9 caixas + minicena + Piranesi",
+      "doneWhen": "Três famílias de arestas identificadas; verticais só convergem quando a visão escolhida exige; erros são marcados prolongando linhas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Robertson, fundamentos de perspectiva/grid e aplicação a formas; 15 min diagrama 1P/2P/3P lado a lado; 10 min regras. A obra é concebida justamente para evoluir dos fundamentos perspectivos para objetos e ambientes complexos."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 3 caixas 2P; 20 min 6 caixas 3P olhando acima/abaixo; 20 min miniesquina urbana com 6 prédios em 3P; 10 min prolongar três famílias de linhas"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Piranesi, Veduta dell'Anfiteatro Flavio detto il Colosseo…, Met; faça um recorte arquitetônico central, identificando antes as famílias de convergência."
+        }
+      ]
+    },
+    {
+      "id": "des-39",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Medir sob escorço: comparar o que se vê, não o que “deveria” existir",
+      "objectives": [
+        "Comprimentos aparentes",
+        "sobreposição",
+        "landmarks"
+      ],
+      "topics": [
+        "Proporção e medição"
+      ],
+      "resources": [
+        {
+          "title": "Loomis — PRH",
+          "url": "https://www.penguinrandomhouse.com/books/209825/figure-drawing-by-andrew-loomis/"
+        },
+        {
+          "title": "Degas — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/834320"
+        }
+      ],
+      "deliverable": "12 estudos escorçados + Degas",
+      "doneWhen": "Pelo menos seis medidas aparentes registradas; não alongar membro para corresponder ao “tamanho anatômico esperado”",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Loomis, Foreshortening em “Block Forms, Planes, Foreshortening, and Lighting”; 15 min dois diagramas; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min mão própria: 5 poses escorçadas de 2 min; 20 min 5 cilindros/membros de referência escorçados; 20 min 2 estudos de 10 min com medição de largura/comprimento aparente; 10 min conferir"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Degas, Study of a Nude (Dancer at the Barre) (1884–1900), Met; copie torso/pernas como eixos e volumes, medindo comprimentos aparentes."
+        }
+      ]
+    },
+    {
+      "id": "des-40",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Hierarquia tonal: focalizar com contraste e bordas",
+      "objectives": [
+        "Grandes famílias",
+        "acento",
+        "borda perdida"
+      ],
+      "topics": [
+        "Luz e valor"
+      ],
+      "resources": [
+        {
+          "title": "Gurney — oficial",
+          "url": "https://www.simonandschuster.com/books/Color-and-Light/James-Gurney/James-Gurney-Art/9780740797712"
+        },
+        {
+          "title": "Dürer — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/459211"
+        }
+      ],
+      "deliverable": "4 mapas + estudo 7 valores + Dürer",
+      "doneWhen": "Estrutura de 3 valores sobrevive à versão de 7; detalhe não cria contraste maior fora do foco; classifique 8 bordas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Gurney, Light and Form e “Chroma and Value” apenas no que se aplica a valor; 15 min três mapas tonais; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min escala 9; 20 min 4 thumbnails da mesma foto em 3 valores; 20 min desenvolver um em 7 valores preservando o agrupamento inicial; 10 min comparar"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Dürer, Head of a Young Woman — segunda cópia, agora com objetivo diferente da S6: bordas e hierarquia, não apenas escala tonal."
+        }
+      ]
+    },
+    {
+      "id": "des-41",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Hierarquia de textura: detalhar seletivamente",
+      "objectives": [
+        "Escala",
+        "densidade",
+        "foco",
+        "material"
+      ],
+      "topics": [
+        "Textura"
+      ],
+      "resources": [
+        {
+          "title": "Drawabox — Texture",
+          "url": "https://drawabox.com/lesson/2/texture"
+        },
+        {
+          "title": "Dürer — NGA",
+          "url": "https://www.nga.gov/artworks/598-knight-death-and-devil"
+        }
+      ],
+      "deliverable": "4 gradientes + 3 profundidades + recorte Dürer",
+      "doneWhen": "O foco é identificável sem explicação verbal; 75% da área não tem o mesmo nível de detalhe que os 25% principais",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Drawabox, “Detail density”, textura implícita vs explícita; 15 min analisar duas referências; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 4 gradientes; 20 min mesma textura em primeiro/médio/fundo; 20 min desenho de um objeto complexo em que só 25% da área recebe detalhe máximo; 10 min marcar mapa de densidade"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Dürer, Knight, Death and the Devil — novo recorte: cabeça do cavaleiro + elmo/armadura, estudando onde a gravura comprime ou reduz informação."
+        }
+      ]
+    },
+    {
+      "id": "des-42",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Projetar composição em séries, não casar com a primeira ideia",
+      "objectives": [
+        "Alternativas",
+        "leitura em thumbnail",
+        "direção dominante"
+      ],
+      "topics": [
+        "Composição"
+      ],
+      "resources": [
+        {
+          "title": "Speed — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/14264"
+        },
+        {
+          "title": "Leonardo — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/337494"
+        }
+      ],
+      "deliverable": "13 thumbnails + estudos Leonardo",
+      "doneWhen": "Pelo menos cinco soluções não são meras translações da mesma distribuição; escolha final justificada por foco, equilíbrio e fluxo",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Speed, Balance/Proportion/Unity of Mass; 15 min analisar Leonardo; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min escolher um tema banal — mesa, pessoa lendo ou planta; 25 min 10 thumbnails de 2,5 min; 15 min 3 variações de 5 min da melhor; 10 min escolher por critérios escritos"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Leonardo, Compositional Sketches for the Virgin Adoring the Christ Child…; copie os esquemas mais soltos, observando que explorar uma composição pode exigir várias tentativas na mesma folha."
+        }
+      ]
+    },
+    {
+      "id": "des-43",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Gesto + volume sob restrição de tempo",
+      "objectives": [
+        "Ação",
+        "rotação",
+        "massas rápidas"
+      ],
+      "topics": [
+        "Gesto"
+      ],
+      "resources": [
+        {
+          "title": "Loomis — PRH",
+          "url": "https://www.penguinrandomhouse.com/books/209825/figure-drawing-by-andrew-loomis/"
+        },
+        {
+          "title": "Sargent — NGA",
+          "url": "https://www.nga.gov/artworks/184240-studies-heaven-and-hell"
+        }
+      ],
+      "deliverable": "24 gestos + Sargent",
+      "doneWhen": "Torção aparece no relacionamento tórax/pelve, não em contorno “ondulado”; três poses têm centro de gravidade anotado",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Loomis, The Figure in Action: Turning and Twisting; 15 min três reconstruções; 10 min regras. A edição catalogada lista “Turning and Twisting” entre suas seções principais."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 10×30 s; 20 min 10×1 min; 20 min 4×5 min com linha de ação, tórax, pelve e dois eixos de membros; 10 min selecionar 3 mais/menos claros"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Sargent, Studies for “Heaven” and “Hell” (1903–16), NGA; escolha uma figura do estudo, 3 min gesto + 42 min construção/cópia."
+        }
+      ]
+    },
+    {
+      "id": "des-44",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Torso em planos, massas e luz",
+      "objectives": [
+        "Estrutura",
+        "anatomia funcional mínima",
+        "plano"
+      ],
+      "topics": [
+        "Figura humana"
+      ],
+      "resources": [
+        {
+          "title": "Bridgman — índice",
+          "url": "https://drawingbooks.org/bridgman1/index.html"
+        },
+        {
+          "title": "Loomis — PRH",
+          "url": "https://www.penguinrandomhouse.com/books/209825/figure-drawing-by-andrew-loomis/"
+        },
+        {
+          "title": "Bargue — Torsos",
+          "url": "https://bargue.mbivert.com/torsos/"
+        },
+        {
+          "title": "Gallica",
+          "url": "https://gallica.bnf.fr/ark:/12148/btv1b52517498w.item"
+        }
+      ],
+      "deliverable": "10 torsos + Belvedere Torso",
+      "doneWhen": "Linha central, caixa torácica e pelve presentes nos estudos; cópia contém mapa explícito de pelo menos 6 planos",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Bridgman, Trunk, Torse, Pelvis + Loomis Block Forms/Planes; 15 min esquema; 10 min regras. Bridgman organiza o corpo por massas e wedging, e Loomis trata explicitamente blocos/planos."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 4 torsos-caixa; 20 min 4 torsos de 5 min com linha central/costelas/pelve; 20 min 2 torsos de 10 min facetados; 10 min revisar planos"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Bargue/Gérôme, I,63 — Belvedere Torso, front view; copie grandes planos e transições, sem tentar acabamento acadêmico completo."
+        }
+      ]
+    },
+    {
+      "id": "des-45",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Cena observada: perspectiva + textura + seleção",
+      "objectives": [
+        "Profundidade",
+        "ritmo",
+        "simplificação"
+      ],
+      "topics": [
+        "Observação do natural"
+      ],
+      "resources": [
+        {
+          "title": "Ruskin — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/30325"
+        },
+        {
+          "title": "Van Gogh — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/336318"
+        }
+      ],
+      "deliverable": "4 thumbnails + 2 estudos do local + Van Gogh",
+      "doneWhen": "Há primeiro, médio e fundo legíveis; textura diminui/subordina-se fora do foco; horizonte e três sobreposições anotados",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Ruskin, Letter II: Sketching from Nature, revendo o princípio de observação; 15 min analisar Van Gogh; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 4 thumbnails de local real; 20 min estudo de profundidade só linhas/overlap; 20 min mesmo local em 4 valores + textura focal; 10 min comparar com cena/foto de registro"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Van Gogh, Street in SaintesMaries-de-laMer — segunda visita: copie composição inteira em miniatura, reduzida a estrutura perspectivorítmica."
+        }
+      ]
+    },
+    {
+      "id": "des-46",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Integrar contorno, dobra e volume com linha seletiva",
+      "objectives": [
+        "Linha descritiva",
+        "cruzar forma",
+        "ritmo"
+      ],
+      "topics": [
+        "Linha + forma"
+      ],
+      "resources": [
+        {
+          "title": "Speed — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/14264"
+        },
+        {
+          "title": "Dürer — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/459214"
+        }
+      ],
+      "deliverable": "8 estudos + Dürer mão/travesseiro",
+      "doneWhen": "Linhas internas mudam direção com a forma; limite de linhas respeitado; nenhuma área é “preenchida” por ansiedade",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Speed Line Drawing: Practical + revisão de Dürer S7; 15 min diagramas; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 20 linhas/curvas; 20 min 4 estudos de tecido usando no máximo 30 linhas; 20 min 4 mãos/objetos usando linhas de contorno + 3 linhas transversais cada; 10 min classificação"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Dürer, Selfportrait, Study of a Hand and a Pillow… — copie a mão e um travesseiro, agora integrando contorno, linhas internas e volume."
+        }
+      ]
+    },
+    {
+      "id": "des-47",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Construir objeto complexo por caixas, cilindros, cortes e rotações",
+      "objectives": [
+        "Planejamento",
+        "simetria",
+        "subformas"
+      ],
+      "topics": [
+        "Volume + perspectiva"
+      ],
+      "resources": [
+        {
+          "title": "How to Draw",
+          "url": "https://designstudiopress.com/products/how-to-draw"
+        },
+        {
+          "title": "Piranesi — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/360372"
+        }
+      ],
+      "deliverable": "4 decomposições + 2 construções + Piranesi",
+      "doneWhen": "Você consegue circundar os sólidos primários na versão final; detalhe não altera a perspectivabase; simetria conferida por eixo",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Robertson, fundamentos de grids/elipses e transferência de escala; 15 min decompor três objetos complexos; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 4 caixas/cilindros; 20 min decompor 4 objetos — caneca, grampeador, garrafa, cadeira — em vistas simples; 20 min desenhar 2 em perspectiva a partir da construção; 10 min conferir"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Piranesi, Perspective view of the same candelabrum… — terceira visita: escolha uma seção ornamentada e reduza-a a sólidos antes de copiar detalhes."
+        }
+      ]
+    },
+    {
+      "id": "des-48",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Figura inteira com escorço e landmarks",
+      "objectives": [
+        "Envelope",
+        "ação",
+        "massas",
+        "medição aparente"
+      ],
+      "topics": [
+        "Proporção + figura"
+      ],
+      "resources": [
+        {
+          "title": "Loomis — PRH",
+          "url": "https://www.penguinrandomhouse.com/books/209825/figure-drawing-by-andrew-loomis/"
+        },
+        {
+          "title": "Degas — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/834320"
+        }
+      ],
+      "deliverable": "5 figuras + Degas",
+      "doneWhen": "Todas têm envelope antes do contorno; na longa, cinco relações proporcionais foram medidas antes e depois",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Loomis, “Proportions by Arcs and Head Units”, “Landmarks”, “Foreshortening”; 15 min mapa; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min medir 4 poses; 20 min 4 figuras de 5 min com 10 landmarks; 20 min 1 figura de 20 min com construção completa; 10 min registrar 5 desvios"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Degas, Study of a Nude (Dancer at the Barre) — segunda visita: cópia de figura inteira orientada por proporções e escorço, não acabamento."
+        }
+      ]
+    },
+    {
+      "id": "des-49",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Valores primeiro, material depois",
+      "objectives": [
+        "Hierarquia",
+        "oclusão",
+        "textura localizada"
+      ],
+      "topics": [
+        "Valor + textura"
+      ],
+      "resources": [
+        {
+          "title": "Gurney — oficial",
+          "url": "https://www.simonandschuster.com/books/Color-and-Light/James-Gurney/James-Gurney-Art/9780740797712"
+        },
+        {
+          "title": "Dürer — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/360018"
+        }
+      ],
+      "deliverable": "Duas versões da naturezamorta + Dürer",
+      "doneWhen": "A versão texturizada mantém as mesmas quatro famílias tonais; materiais diferem por borda/marca, não só por escurecimento",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "35 min: Gurney “Occlusion Shadows”, “Reflected Light”, “Separation of Light and Shadow”; 15 min esquema; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min escala 7; 20 min naturezamorta de 3 objetos em somente 4 valores; 20 min redesenhar a mesma acrescentando textura sem mudar as quatro famílias; 10 min comparar"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Dürer, Melencolia I — copie poliedro + esfera e arredores imediatos, diferenciando materiais sem destruir valores globais."
+        }
+      ]
+    },
+    {
+      "id": "des-50",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Síntese: desenhar uma cena real como imagem organizada",
+      "objectives": [
+        "Thumbnail",
+        "perspectiva",
+        "valor",
+        "foco",
+        "seleção"
+      ],
+      "topics": [
+        "Composição + observação"
+      ],
+      "resources": [
+        {
+          "title": "Speed — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/14264"
+        },
+        {
+          "title": "Ruskin — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/30325"
+        },
+        {
+          "title": "Rembrandt — Rijksmuseum",
+          "url": "https://www.rijksmuseum.nl/en/collection/object/The-Pancake-Woman--55127b8438898fa7e7e1de096b62cdf0"
+        }
+      ],
+      "deliverable": "4 thumbnails + desenho A5 + Rembrandt",
+      "doneWhen": "O desenho final deriva de um thumbnail; horizonte/estrutura, valor e foco aparecem antes dos detalhes; registre 3 decisões de omissão",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "20 min Speed Balance/Proportion; 15 min Ruskin Composition; 15 min analisar uma cena real; 10 min regras."
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "10 min 4 thumbnails de uma cena observada; 10 min escolher e fazer estrutura perspectivoproporcional; 25 min desenho A5 em 4–6 valores; 5 min textura focal; 10 min avaliação"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Master copy: Rembrandt, The Pancake Woman — segunda visita: copie composição inteira em miniatura, limitando-se a 5 valores e linhas seletivas."
+        }
+      ]
+    },
+    {
+      "id": "des-51",
+      "phase": "Ciclo 3: Integração e variação",
+      "title": "Repetir a semana 35 e fechar o primeiro macro-ciclo",
+      "objectives": [
+        "Comparar economia",
+        "confiança",
+        "função da linha"
+      ],
+      "topics": [
+        "Revisão"
+      ],
+      "resources": [
+        {
+          "title": "Speed — Gutenberg",
+          "url": "https://www.gutenberg.org/ebooks/14264"
+        },
+        {
+          "title": "Sargent — Met",
+          "url": "https://www.metmuseum.org/art/collection/search/15662"
+        }
+      ],
+      "deliverable": "Painel S35 vs S51 + uma página “ano 1 em dados”",
+      "doneWhen": "Quantidades iguais; compare hesitações, número de correções e clareza com restrição de 15 linhas; escreva três mudanças e a prioridade do próximo ciclo",
+      "sessions": [
+        {
+          "kind": "review",
+          "minutes": 60,
+          "what": "20 min rever Speed/ghosting; 20 min observar S35 sem desenhar; 10 min registrar previsões; 10 min preparar formato igual."
+        },
+        {
+          "kind": "review",
+          "minutes": 60,
+          "what": "Repita S35: 20 linhas/curvas; 4 objetos em 90 s e 4 min; 4 objetos em até 15 linhas. Use objetos equivalentes em complexidade e mesmo papel/lápis"
+        },
+        {
+          "kind": "review",
+          "minutes": 60,
+          "what": "Master copy: Repita exatamente Sargent, Caricature of a Man, sem consultar a S35 durante a cópia; compare só ao terminar."
+        }
+      ]
+    }
+  ]
 }

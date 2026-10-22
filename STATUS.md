@@ -46,7 +46,7 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
 ## Como publicar
 
 1. Altere os arquivos.
-2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v7`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
+2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v8`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
 3. Faça commit e push na `main`. O Pages publica sozinho em cerca de 1 minuto.
 
 O app instalado só pega a versão nova na segunda vez que é aberto.
@@ -85,3 +85,4 @@ Para testar local: `python3 -m http.server 8765` nesta pasta e abrir http://127.
 - Roadmap de cyber (48 semanas, plano de 12 meses do relatório de pentest e red team) e de eletrônica (52 semanas de automação residencial), com cache `diario-v6`.
 - Roadmap padronizado em `roadmap/schema.json` (semanas com sessões), validado por `scripts/check-roadmap.mjs`, com o plano movido para `plan.js`.
 - Faculdade importada do Painel do Bimestre (4º bimestre de 2026) com `startsOn` por semana do AVA, com cache `diario-v7`.
+- Roadmap de desenho (51 semanas em 3 ciclos de 17, currículo em espiral com master copies), começando em 26/10/2026, com cache `diario-v8`.
