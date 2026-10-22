@@ -41,7 +41,7 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
 ## Como publicar
 
 1. Altere os arquivos.
-2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v3`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
+2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v4`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
 3. Faça commit e push na `main`. O Pages publica sozinho em cerca de 1 minuto.
 
 O app instalado só pega a versão nova na segunda vez que é aberto.
