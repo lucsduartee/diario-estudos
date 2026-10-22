@@ -17,7 +17,7 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
 | `roadmap/` | Um JSON por área, no formato de `roadmap/schema.json` |
 | `scripts/check-roadmap.mjs` | Valida os JSON do roadmap |
 | `scripts/import-univesp.mjs` | Gera `roadmap/fac.json` a partir do bimestre extraído pela skill `/univesp` |
-| `app.css` | Visual de tela e-ink: tons de cinza, fonte Literata, áreas e hábitos distinguidos pelo traço da borda, tema claro e escuro |
+| `app.css` | Visual de tela e-ink: tons de cinza, fonte Literata, tema claro e escuro |
 | `sw.js` | Service worker cache-first, incluindo as Google Fonts |
 | `manifest.webmanifest` e `icons/` | Instalação como app |
 
@@ -47,7 +47,7 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
 ## Como publicar
 
 1. Altere os arquivos.
-2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v11`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
+2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v12`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
 3. Faça commit e push na `main`. O Pages publica sozinho em cerca de 1 minuto.
 
 O app instalado só pega a versão nova na segunda vez que é aberto.
@@ -90,3 +90,4 @@ Para testar local: `python3 -m http.server 8765` nesta pasta e abrir http://127.
 - Trilha passa a vir dos roadmaps; o foco fixo do bloco só aparece sem sessão; bloco depois do fim do roadmap avisa para atualizar o JSON; `sourcePace` em cyber e eletrônica; cache `diario-v9`.
 - Hábito de leitura: registro de minutos sem meta, com cache `diario-v10`.
 - Visual e-ink (cinza, Literata, sem cor nem animação) e botão de tema automático/claro/escuro salvo no navegador, com cache `diario-v11`.
+- Sem traço diferente por área: todos os blocos com o mesmo estilo, cache `diario-v12`.
