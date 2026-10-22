@@ -9,29 +9,6 @@ const habitMet = (k, v) => HABITS[k].per === "day" ? v >= HABITS[k].goal : v > 0
 const DAY_NAMES = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"];
 const MONTHS = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
 
-const TRAIL = [
-  { area: "cyber", pace: "4 h por semana · terça, quinta e sábado", phases: [
-    { from: 1, to: 3, what: "Web e AppSec", html: 'Labs da <a href="https://portswigger.net/web-security" target="_blank" rel="noopener">PortSwigger Academy</a> guiados pelo <a href="https://owasp.org/Top10/" target="_blank" rel="noopener">OWASP Top 10</a>. Inclua <a href="https://portswigger.net/web-security/prototype-pollution" target="_blank" rel="noopener">prototype pollution</a> (Node) e o <a href="https://guides.rubyonrails.org/security.html" target="_blank" rel="noopener">Rails Security Guide</a>.' },
-    { from: 4, to: 6, what: "Linux, redes e Python", html: 'Trilhas iniciais do <a href="https://tryhackme.com/" target="_blank" rel="noopener">TryHackMe</a>, Nmap e enumeração. Escreva seus scripts de exploit em Python.' },
-    { from: 7, to: 9, what: "Escalação de privilégio e Active Directory", html: 'Máquinas Easy do <a href="https://www.hackthebox.com/" target="_blank" rel="noopener">Hack The Box</a>, Kerberoasting e BloodHound. Um write-up por máquina.' },
-    { from: 10, to: 12, what: "Certificação prática", html: '<a href="https://ine.com/learning/certifications/internal-penetration-testing-ejpt" target="_blank" rel="noopener">eJPT</a> ou <a href="https://certifications.tcm-sec.com/pnpt/" target="_blank" rel="noopener">PNPT</a>, com um relatório de pentest no portfólio.' },
-    { from: 13, to: 99, what: "C, C++ e binário", html: 'Assembly, C e exploração binária no <a href="https://pwn.college/" target="_blank" rel="noopener">pwn.college</a>. C++ moderno entra aqui.' },
-  ]},
-  { area: "elet", pace: "4 h por semana · terça, quinta e sábado", phases: [
-    { from: 1, to: 2, what: "Fundamentos", html: '<a href="https://learn.sparkfun.com/tutorials/voltage-current-resistance-and-ohms-law" target="_blank" rel="noopener">Lei de Ohm</a>, multímetro, circuitos em série e paralelo, LEDs e resistores na protoboard.' },
-    { from: 3, to: 4, what: "Arduino", html: 'Entrada e saída digital, PWM e sensores analógicos com os <a href="https://docs.arduino.cc/built-in-examples/" target="_blank" rel="noopener">exemplos oficiais</a>.' },
-    { from: 5, to: 6, what: "Solda e projeto fechado", html: '<a href="https://learn.sparkfun.com/tutorials/how-to-solder-through-hole-soldering" target="_blank" rel="noopener">Solda through-hole</a> e um projeto completo em placa perfurada.' },
-    { from: 7, to: 99, what: "Hardware hacking", html: 'UART, analisador lógico e dump de firmware. É aqui que eletrônica encontra cyber.' },
-  ]},
-  { area: "des", pace: "3 h por semana · segunda, quarta e domingo", phases: [
-    { from: 1, to: 3, what: "Linhas, elipses e caixas", html: 'Lições 0 e 1 do <a href="https://drawabox.com/" target="_blank" rel="noopener">Drawabox</a>. O bloco de domingo é desenho livre, como o próprio método pede.' },
-    { from: 4, to: 6, what: "Formas e perspectiva", html: 'Lição 2 do Drawabox e perspectiva de dois pontos aplicada a objetos da sua mesa.' },
-    { from: 7, to: 99, what: "Observação", html: 'Objetos, mãos e ambientes do natural. Escolha um tema por mês.' },
-  ]},
-  { area: "fac", pace: "4 h por semana · segunda, quarta, sexta e domingo", phases: [
-    { from: 1, to: 99, what: "Calendário da faculdade", html: 'Segue as semanas do AVA. Domingo de manhã você planeja as entregas da semana.' },
-  ]},
-];
 
 // ---------- datas ----------
 const pad = n => String(n).padStart(2, "0");
@@ -196,14 +173,15 @@ function renderWeek() {
       b.className = `slot a-${s.area}` + (st.done[s.id] ? " done" : "");
       b.setAttribute("aria-pressed", st.done[s.id] ? "true" : "false");
       b.innerHTML = `<span class="box">${CHECK}</span><span><span class="meta">${AREAS[s.area].name} · ${s.when} · ${s.h} h</span><span class="focus"></span></span>`;
-      b.querySelector(".focus").textContent = s.focus;
+      const item = roadmapItem(key, s);
+      b.querySelector(".focus").textContent = item ? item.unit.title : s.focus;
       b.onclick = () => { patchDay(key, { done: { [s.id]: !st.done[s.id] } }); render(); };
       li.append(b);
-      const item = roadmapItem(key, s);
-      if (item) {
+      const last = scheduleOf(s.area).slice(-1)[0];
+      if (item || (last && key > last.key)) {
         const p = document.createElement("p");
         p.className = `todo a-${s.area}`;
-        p.innerHTML = sessionHtml(item);
+        p.innerHTML = item ? sessionHtml(item) : `<span class="kind">Roadmap terminou em ${shortDate(last.date)}</span>Atualize roadmap/${s.area}.json.`;
         li.append(p);
       }
       ul.append(li);
@@ -271,16 +249,37 @@ function renderTracker() {
   document.getElementById("tracker").innerHTML = html + "</tbody>";
 }
 
+const DAY_SHORT = ["seg", "ter", "qua", "qui", "sex", "sáb", "dom"];
+
+// Fases da trilha = trechos seguidos de semanas com o mesmo phase no roadmap da área.
+function phasesOf(area) {
+  const phases = [];
+  for (const o of scheduleOf(area)) {
+    const name = o.unit.phase || "Roadmap";
+    const last = phases[phases.length - 1];
+    if (last && last.name === name) { last.to = o; last.units.add(o.unit.id); }
+    else phases.push({ name, from: o, to: o, units: new Set([o.unit.id]) });
+  }
+  return phases;
+}
+
 function renderTrail() {
-  const m = trailMonth(addDays(weekStart, 3));
-  document.getElementById("trail-month").textContent = `Mês ${m} da trilha · 15 horas por semana`;
-  document.getElementById("trail").innerHTML = TRAIL.map(t => `
-    <div class="track a-${t.area}"><span class="tape" aria-hidden="true"></span>
-      <h3>${AREAS[t.area].name}</h3><p class="pace">${t.pace}</p>
-      <ol>${t.phases.map(p => `
-        <li class="phase ${m >= p.from && m <= p.to ? "current" : m > p.to ? "past" : ""}">
-          <div class="when">${p.to >= 99 ? (p.from === 1 ? "sempre" : `mês ${p.from} em diante`) : `meses ${p.from}–${p.to}`}</div>
-          <div class="what">${p.what}</div><p>${p.html}</p></li>`).join("")}</ol></div>`).join("");
+  const ref = iso(addDays(weekStart, 3));
+  document.getElementById("trail-month").textContent = `Mês ${trailMonth(addDays(weekStart, 3))} da trilha · 15 horas por semana`;
+  document.getElementById("trail").innerHTML = Object.entries(AREAS).map(([area, a]) => {
+    const doc = roadmap[area], phases = phasesOf(area);
+    const blocks = PLAN.flatMap((day, i) => day.filter(s => s.area === area).map(s => `${DAY_SHORT[i]} ${s.when}`));
+    const pace = `${a.goal} h por semana · ${blocks.join(", ")}` + (doc?.sourcePace ? `. A fonte do roadmap supõe ${escapeHtml(doc.sourcePace)}, então ele vai levar mais tempo que o previsto por ela.` : "");
+    const list = phases.map(p => `
+        <li class="phase ${ref >= p.from.key && ref <= p.to.key ? "current" : ref > p.to.key ? "past" : ""}">
+          <div class="when">${shortDate(p.from.date)} a ${shortDate(p.to.date)} · ${p.units.size} semana${p.units.size > 1 ? "s" : ""}</div>
+          <div class="what">${escapeHtml(p.name)}</div></li>`).join("");
+    const end = phases.length ? phases[phases.length - 1].to : null;
+    const ended = end && ref > end.key ? `<p class="pace">O roadmap terminou em ${shortDate(end.date)}. Atualize roadmap/${area}.json.</p>` : "";
+    return `<div class="track a-${area}"><span class="tape" aria-hidden="true"></span>
+      <h3>${a.name}</h3><p class="pace">${pace}</p>${ended}
+      ${list ? `<ol>${list}</ol>` : `<p class="pace">Sem roadmap em roadmap/${area}.json.</p>`}</div>`;
+  }).join("");
 }
 
 const shortDate = d => `${DAY_NAMES[(d.getDay() + 6) % 7].slice(0, 3).toLowerCase()} ${pad(d.getDate())}/${pad(d.getMonth() + 1)}`;

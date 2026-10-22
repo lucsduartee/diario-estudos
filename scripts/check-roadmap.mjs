@@ -23,6 +23,7 @@ for (const file of readdirSync(new URL("roadmap/", root)).filter(f => f.endsWith
   if (doc.area !== area) at(`area deve ser "${area}"`);
   if (!isText(doc.title)) at("title obrigatório");
   if (doc.source !== undefined && !isLink(doc.source)) at("source precisa de title e url http(s)");
+  if (doc.sourcePace !== undefined && !isText(doc.sourcePace)) at("sourcePace deve ser texto");
   if (!Array.isArray(doc.units)) { at("units deve ser uma lista"); continue; }
   const ids = new Set();
   doc.units.forEach((u, i) => {

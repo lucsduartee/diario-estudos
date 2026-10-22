@@ -30,7 +30,7 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
   - Exercício: 150 min por semana.
   - Sono: 7 h por noite, anotado no dia em que você acorda.
 - Rastreador do mês, com estudo e hábitos.
-- Trilha por área, com a fase calculada a partir de 20/10/2026.
+- Trilha por área gerada dos roadmaps: uma fase por trecho seguido de semanas com o mesmo `phase`, com datas, a fase da semana em tela destacada e, quando o roadmap traz `sourcePace`, o aviso de que a fonte supõe mais horas do que a área tem.
 - Roadmap por área, lido de `roadmap/<área>.json`: semanas com sessões em ordem. A primeira sessão cai no primeiro bloco da área a partir de 20/10/2026, a segunda no seguinte, e o card mostra a sessão (tipo, minutos, o que fazer e exercícios), com links clicáveis. O botão Roadmap do cabeçalho mostra cada semana completa, com as datas das sessões, só para leitura.
 - Botões de exportar e importar backup em JSON, só com os dias. O import também aceita o formato `{days, roadmap}` de `c645ae3`, e usa só os `days`.
 
@@ -46,7 +46,7 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
 ## Como publicar
 
 1. Altere os arquivos.
-2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v8`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
+2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v9`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
 3. Faça commit e push na `main`. O Pages publica sozinho em cerca de 1 minuto.
 
 O app instalado só pega a versão nova na segunda vez que é aberto.
@@ -86,3 +86,4 @@ Para testar local: `python3 -m http.server 8765` nesta pasta e abrir http://127.
 - Roadmap padronizado em `roadmap/schema.json` (semanas com sessões), validado por `scripts/check-roadmap.mjs`, com o plano movido para `plan.js`.
 - Faculdade importada do Painel do Bimestre (4º bimestre de 2026) com `startsOn` por semana do AVA, com cache `diario-v7`.
 - Roadmap de desenho (51 semanas em 3 ciclos de 17, currículo em espiral com master copies), começando em 26/10/2026, com cache `diario-v8`.
+- Trilha passa a vir dos roadmaps; o foco fixo do bloco só aparece sem sessão; bloco depois do fim do roadmap avisa para atualizar o JSON; `sourcePace` em cyber e eletrônica; cache `diario-v9`.
