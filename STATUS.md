@@ -27,13 +27,14 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
   - Sono: 7 h por noite, anotado no dia em que você acorda.
 - Rastreador do mês, com estudo e hábitos.
 - Trilha por área, com a fase calculada a partir de 20/10/2026.
-- Roadmap por área (botão no cabeçalho): lista ordenada do que fazer em cada bloco. O item 1 cai no primeiro bloco da área a partir de 20/10/2026, o item 2 no seguinte, e a descrição aparece no card, com links clicáveis.
-- Botões de exportar e importar backup em JSON, no formato `{days, roadmap}`. O import ainda aceita o formato antigo, só com os dias.
+- Roadmap por área, lido de `roadmap/<área>.json`: lista ordenada do que fazer em cada bloco. O item 1 cai no primeiro bloco da área a partir de 20/10/2026, o item 2 no seguinte, e a descrição aparece no card, com links clicáveis. O botão Roadmap do cabeçalho mostra cada item com a data em que cai, só para leitura.
+- Botões de exportar e importar backup em JSON, só com os dias. O import também aceita o formato `{days, roadmap}` de `c645ae3`, e usa só os `days`.
 
 ## Decisões
 
 - **Dados só no aparelho**, no `localStorage` com a chave `diario-estudos-v1` e um documento por data ISO (`{done, mood, note, water, exercise, sleep}`). Campo ausente conta como zero, então backups antigos continuam valendo.
-- **Roadmap na chave `diario-estudos-roadmap-v1`**, como `{área: [descrição, ...]}`. O encaixe é pelo calendário, não pelo check: bloco perdido não empurra os próximos itens.
+- **Roadmap no repo, não no aparelho.** Um arquivo por área (`cyber`, `elet`, `fac`, `des`, as chaves de `AREAS`), cada um uma lista de textos. Fica igual em todos os aparelhos e não entra no backup. O editor local de `c645ae3` saiu, junto com a chave `diario-estudos-roadmap-v1`.
+- **Encaixe pelo calendário, não pelo check:** bloco perdido não empurra os próximos itens.
 - **Hospedagem no GitHub Pages**, a partir da branch `main` na raiz. O Pages grátis exige repo público.
 - **Nada migrado do artifact.** O banco dele só tinha um dia vazio.
 - **Metas de hábito com fonte:** OMS para exercício (150 min por semana), AASM para sono (7 h ou mais), EFSA para água (2,0 a 2,5 L por dia).
@@ -41,10 +42,16 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
 ## Como publicar
 
 1. Altere os arquivos.
-2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v4`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
+2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v5`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
 3. Faça commit e push na `main`. O Pages publica sozinho em cerca de 1 minuto.
 
 O app instalado só pega a versão nova na segunda vez que é aberto.
+
+### Como atualizar o roadmap
+
+1. Edite `roadmap/<área>.json`, uma lista de textos em ordem. Link `http(s)` vira clicável e `\n` quebra a linha.
+2. Suba o `CACHE` em `sw.js` e publique como acima. Sem isso, o app instalado continua com o roadmap antigo, porque o service worker é cache-first.
+3. Área sem itens fica com `[]`. Não apague o arquivo: ele está no `ASSETS` do `sw.js`, e um arquivo faltando faz a instalação do service worker falhar.
 
 Para testar local: `python3 -m http.server 8765` nesta pasta e abrir http://127.0.0.1:8765/
 
@@ -64,3 +71,4 @@ Para testar local: `python3 -m http.server 8765` nesta pasta e abrir http://127.
 - `83573b3`: PWA portado do artifact.
 - `8f33aac`: hábitos de água, exercício e sono, com metas.
 - Roadmap por área encaixado nos blocos da semana, com cache `diario-v3`.
+- Roadmap passa a vir de `roadmap/<área>.json` no repo, com a view só de leitura e cache `diario-v5`.

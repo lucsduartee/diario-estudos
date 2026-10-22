@@ -66,32 +66,42 @@ const trailMonth = d => Math.max(1, Math.floor((d - START) / 86400000 / 30.44) +
 
 let weekStart = mondayOf(today);
 const pendingNotes = {};
-let editing = false;
+let showingRoadmap = false;
 
 // ---------- persistência ----------
 const LOCAL_KEY = "diario-estudos-v1";
-// roadmap: { área: [descrição da 1ª ocorrência, da 2ª, ...] }
-const ROADMAP_KEY = "diario-estudos-roadmap-v1";
 const setStatus = t => { document.getElementById("status").textContent = t; };
 
-function load(key) {
-  try { return JSON.parse(localStorage.getItem(key) || "{}"); } catch { return {}; }
+function loadDays() {
+  try { return JSON.parse(localStorage.getItem(LOCAL_KEY) || "{}"); } catch { return {}; }
 }
-let days = load(LOCAL_KEY);
-let roadmap = load(ROADMAP_KEY);
+let days = loadDays();
 
-function save(key, value) {
+function saveDays() {
   try {
-    localStorage.setItem(key, JSON.stringify(value));
+    localStorage.setItem(LOCAL_KEY, JSON.stringify(days));
     setStatus("Salvo neste aparelho");
   } catch {
     setStatus("Não foi possível salvar neste aparelho");
   }
 }
-const saveDays = () => save(LOCAL_KEY, days);
-const saveRoadmap = () => save(ROADMAP_KEY, roadmap);
 
 // ---------- roadmap ----------
+// Vem do repo: roadmap/<área>.json é a lista, em ordem, do que fazer em cada bloco da área.
+let roadmap = {};
+
+async function loadRoadmap() {
+  const entries = await Promise.all(Object.keys(AREAS).map(async area => {
+    try {
+      const items = await (await fetch(`roadmap/${area}.json`)).json();
+      return [area, Array.isArray(items) ? items : []];
+    } catch {
+      return [area, []];
+    }
+  }));
+  return Object.fromEntries(entries);
+}
+
 // Cada bloco da área, em ordem de calendário a partir de START, recebe o próximo item do roadmap.
 function* occurrences(area) {
   for (let d = START; ; d = addDays(d, 1))
@@ -121,7 +131,7 @@ function patchDay(key, patch) {
 
 // ---------- backup ----------
 function exportBackup() {
-  const blob = new Blob([JSON.stringify({ days, roadmap }, null, 2)], { type: "application/json" });
+  const blob = new Blob([JSON.stringify(days, null, 2)], { type: "application/json" });
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
   a.download = `diario-estudos-${iso(today)}.json`;
@@ -133,9 +143,8 @@ async function importBackup(file) {
   try {
     const imported = JSON.parse(await file.text());
     if (!imported || typeof imported !== "object" || Array.isArray(imported)) throw new Error("invalid backup");
-    // backup antigo é só o objeto de dias, sem roadmap
-    if (imported.days) { days = imported.days; roadmap = imported.roadmap || {}; saveRoadmap(); }
-    else days = imported;
+    // backups de c645ae3 a 2c5afb6 vieram como {days, roadmap}; o roadmap agora mora no repo
+    days = imported.days || imported;
     saveDays();
     render();
     setStatus("Backup importado");
@@ -306,67 +315,38 @@ function renderTrail() {
 }
 
 const shortDate = d => `${DAY_NAMES[(d.getDay() + 6) % 7].slice(0, 3).toLowerCase()} ${pad(d.getDate())}/${pad(d.getMonth() + 1)}`;
-let roadmapSaveTimer;
-
 function renderRoadmap() {
-  const root = document.getElementById("roadmap-areas");
-  root.replaceChildren();
-  for (const [area, a] of Object.entries(AREAS)) {
-    const items = roadmap[area] || [];
-    const setItems = next => { roadmap[area] = next; saveRoadmap(); renderRoadmap(); };
-    const box = document.createElement("div");
-    box.className = `track road a-${area}`;
-    box.innerHTML = `<h3>${a.name}</h3><ol></ol><button class="add">Adicionar item</button>`;
-    const ol = box.querySelector("ol");
+  document.getElementById("roadmap-areas").innerHTML = Object.entries(AREAS).map(([area, a]) => {
     const when = occurrences(area);
-    items.forEach((text, i) => {
+    const items = roadmap[area] || [];
+    const list = items.map((text, i) => {
       const o = when.next().value;
-      const li = document.createElement("li");
-      li.className = "road-item";
-      li.innerHTML = `<div class="when">#${i + 1} · ${shortDate(o.date)} · ${o.slot.when}</div>
-        <textarea rows="2" aria-label="${a.name}, item ${i + 1}"></textarea>
-        <div class="tools"><button aria-label="Subir item">↑</button><button aria-label="Descer item">↓</button><button aria-label="Remover item">×</button></div>`;
-      const ta = li.querySelector("textarea");
-      ta.value = text;
-      ta.placeholder = "O que fazer nesse bloco…";
-      ta.oninput = () => { items[i] = ta.value; clearTimeout(roadmapSaveTimer); roadmapSaveTimer = setTimeout(saveRoadmap, 700); };
-      const [up, down, del] = li.querySelectorAll("button");
-      const swap = j => { const next = [...items]; [next[i], next[j]] = [next[j], next[i]]; setItems(next); };
-      up.disabled = i === 0; down.disabled = i === items.length - 1;
-      up.onclick = () => swap(i - 1);
-      down.onclick = () => swap(i + 1);
-      del.onclick = () => setItems(items.filter((_, j) => j !== i));
-      ol.append(li);
-    });
-    box.querySelector(".add").onclick = () => {
-      setItems([...items, ""]);
-      document.querySelector(`.road.a-${area} li:last-child textarea`).focus();
-    };
-    root.append(box);
-  }
+      return `<li class="road-item"><div class="when">#${i + 1} · ${shortDate(o.date)} · ${o.slot.when}</div><p>${linkify(text)}</p></li>`;
+    }).join("");
+    return `<div class="track road a-${area}"><h3>${a.name}</h3>
+      ${items.length ? `<ol>${list}</ol>` : `<p class="pace">Sem itens em roadmap/${area}.json.</p>`}</div>`;
+  }).join("");
 }
 
 function render() {
   const end = addDays(weekStart, 6);
   document.getElementById("range").textContent =
     `${pad(weekStart.getDate())}/${pad(weekStart.getMonth() + 1)} – ${pad(end.getDate())}/${pad(end.getMonth() + 1)}`;
-  document.body.classList.toggle("editing", editing);
-  document.getElementById("toggle-roadmap").textContent = editing ? "Voltar ao diário" : "Roadmap";
-  if (editing) { renderRoadmap(); return; }
+  document.body.classList.toggle("roadmap-view", showingRoadmap);
+  document.getElementById("toggle-roadmap").textContent = showingRoadmap ? "Voltar ao diário" : "Roadmap";
+  if (showingRoadmap) { renderRoadmap(); return; }
   renderGoals(); renderWeek(); renderTracker(); renderTrail();
 }
 
 document.getElementById("prev").onclick = () => { weekStart = addDays(weekStart, -7); render(); };
 document.getElementById("next").onclick = () => { weekStart = addDays(weekStart, 7); render(); };
 document.getElementById("today").onclick = () => { weekStart = mondayOf(today); render(); };
-document.getElementById("toggle-roadmap").onclick = () => {
-  if (roadmapSaveTimer) { clearTimeout(roadmapSaveTimer); saveRoadmap(); }
-  editing = !editing; render(); scrollTo(0, 0);
-};
+document.getElementById("toggle-roadmap").onclick = () => { showingRoadmap = !showingRoadmap; render(); scrollTo(0, 0); };
 document.getElementById("export").onclick = exportBackup;
 document.getElementById("import").onchange = e => { const f = e.target.files[0]; if (f) importBackup(f); e.target.value = ""; };
 
 render();
 setStatus("Salvo neste aparelho");
+loadRoadmap().then(r => { roadmap = r; render(); });
 
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
