@@ -1,9 +1,10 @@
 const FREE = { 4: "Manhã livre: reponha um bloco perdido" };
-// água e sono: meta diária; exercício: meta semanal (OMS, 150 min)
+// água e sono: meta diária; exercício: meta semanal (OMS, 150 min); leitura: só registro, sem meta
 const HABITS = {
   water:    { name: "Água", label: "Água", unit: "copos", goal: 8, step: 1, max: 30, per: "day" },
   exercise: { name: "Exercício", label: "Exercício", unit: "min", goal: 150, step: 10, max: 600, per: "week" },
   sleep:    { name: "Sono", label: "Sono (noite)", unit: "h", goal: 7, step: 0.5, max: 14, per: "day" },
+  reading:  { name: "Leitura", label: "Leitura", unit: "min", step: 10, max: 600, per: "log" },
 };
 const habitMet = (k, v) => HABITS[k].per === "day" ? v >= HABITS[k].goal : v > 0;
 const DAY_NAMES = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"];
@@ -68,7 +69,7 @@ const sessionHtml = ({ n, session: s }) => `<span class="kind">Semana ${n} · ${
 const escapeHtml = t => t.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const linkify = t => escapeHtml(t).replace(/https?:\/\/[^\s<]*[^\s<.,;:!?)]/g, u => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`);
 
-function dayState(key) { return { done: {}, mood: 0, note: "", water: 0, exercise: 0, sleep: 0, ...days[key] }; }
+function dayState(key) { return { done: {}, mood: 0, note: "", water: 0, exercise: 0, sleep: 0, reading: 0, ...days[key] }; }
 function patchDay(key, patch) {
   const cur = dayState(key);
   days[key] = { ...cur, ...patch, done: { ...cur.done, ...(patch.done || {}) } };
@@ -110,6 +111,12 @@ function ring(pct, cls) {
       stroke-dasharray="${c * p} ${c}" transform="rotate(-90 26 26)"/></svg>`;
 }
 
+// hábito sem meta: o anel mostra em quantos dias da semana houve registro
+function logCard(cls, name, val, unit, share) {
+  return `<div class="goal ${cls}">${ring(share, cls)}
+      <div><div class="name">${name}</div><div class="val">${val} <small>${unit}</small></div></div></div>`;
+}
+
 function goalCard(cls, name, val, goal, unit, extra = "") {
   return `<div class="goal ${cls} ${extra}">${ring(val / goal, cls)}
       <div><div class="name">${name}</div><div class="val">${val} <small>de ${goal} ${unit}</small></div></div></div>`;
@@ -130,6 +137,7 @@ function renderGoals() {
     goalCard("a-water", "Água", week.filter(st => habitMet("water", st.water)).length, 7, "dias"),
     goalCard("a-exercise", "Exercício", minutes, HABITS.exercise.goal, "min"),
     goalCard("a-sleep", "Sono", week.filter(st => habitMet("sleep", st.sleep)).length, 7, "noites"),
+    logCard("a-reading", "Leitura", week.reduce((sum, st) => sum + st.reading, 0), "min na semana", week.filter(st => st.reading > 0).length / 7),
   ].join("");
 }
 

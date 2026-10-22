@@ -8,6 +8,7 @@
   --water:#2f7fc1; --water-wash:#d6e7f5;
   --exercise:#d9762b; --exercise-wash:#f7e2d0;
   --sleep:#4b5bb5; --sleep-wash:#dde1f4;
+  --reading:#8a6a2f; --reading-wash:#efe5d2;
   --hand:"Gaegu","Comic Neue","Comic Sans MS",cursive;
   --body:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
   color-scheme:light;
@@ -16,12 +17,12 @@
   --paper:#151a23; --dot:#2a3140; --card:#1c2230; --ink:#e8eaf0; --ink-soft:#9ba4b6; --line:#2d3545;
   --cyber:#5cc5b3; --cyber-wash:#1d3a37; --elet:#e8bd55; --elet-wash:#3a311d;
   --des:#f28f97; --des-wash:#3e2529; --fac:#ab9df1; --fac-wash:#2b2747;
-  --water:#6fb3ea; --water-wash:#1c3247; --exercise:#f0a466; --exercise-wash:#3d2c1d; --sleep:#97a3ec; --sleep-wash:#252a45; color-scheme:dark}}
+  --water:#6fb3ea; --water-wash:#1c3247; --exercise:#f0a466; --exercise-wash:#3d2c1d; --sleep:#97a3ec; --sleep-wash:#252a45; --reading:#d9b673; --reading-wash:#3a301d; color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#151a23; --dot:#2a3140; --card:#1c2230; --ink:#e8eaf0; --ink-soft:#9ba4b6; --line:#2d3545;
   --cyber:#5cc5b3; --cyber-wash:#1d3a37; --elet:#e8bd55; --elet-wash:#3a311d;
   --des:#f28f97; --des-wash:#3e2529; --fac:#ab9df1; --fac-wash:#2b2747;
-  --water:#6fb3ea; --water-wash:#1c3247; --exercise:#f0a466; --exercise-wash:#3d2c1d; --sleep:#97a3ec; --sleep-wash:#252a45; color-scheme:dark}
+  --water:#6fb3ea; --water-wash:#1c3247; --exercise:#f0a466; --exercise-wash:#3d2c1d; --sleep:#97a3ec; --sleep-wash:#252a45; --reading:#d9b673; --reading-wash:#3a301d; color-scheme:dark}
 
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background-color:var(--paper);background-image:radial-gradient(var(--dot) 1px,transparent 1.3px);background-size:22px 22px;
@@ -37,7 +38,7 @@ button{font:inherit;color:inherit}
 .a-cyber{--c:var(--cyber);--w:var(--cyber-wash)} .a-elet{--c:var(--elet);--w:var(--elet-wash)}
 .a-des{--c:var(--des);--w:var(--des-wash)} .a-fac{--c:var(--fac);--w:var(--fac-wash)}
 .a-water{--c:var(--water);--w:var(--water-wash)} .a-exercise{--c:var(--exercise);--w:var(--exercise-wash)}
-.a-sleep{--c:var(--sleep);--w:var(--sleep-wash)}
+.a-sleep{--c:var(--sleep);--w:var(--sleep-wash)} .a-reading{--c:var(--reading);--w:var(--reading-wash)}
 
 /* cabeçalho */
 header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 24px}
