@@ -2,5 +2,1114 @@
   "$schema": "./schema.json",
   "area": "cyber",
   "title": "Pentest e Red Team em 12 meses",
-  "units": []
+  "source": {
+    "title": "Roadmap de estudos em cibersegurança para migração de Fullstack a Pentest e Red Team em 6–12 meses (Pesquisa aprofundada do ChatGPT, roadmap sustentável de doze meses)",
+    "url": "https://chatgpt.com/c/6ada0786-cf78-83e9-90a4-3fccb6f61474"
+  },
+  "units": [
+    {
+      "id": "cyber-01",
+      "phase": "Mês 1",
+      "title": "TCP/IP, addressing e sub-redes",
+      "deliverable": "Exercícios de rede resolvidos",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: TCP/IP, addressing e sub-redes"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: TCP/IP, addressing e sub-redes"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Exercícios de rede resolvidos"
+        }
+      ]
+    },
+    {
+      "id": "cyber-02",
+      "phase": "Mês 1",
+      "title": "DNS, ARP, TCP/UDP/ICMP",
+      "deliverable": "Capturas comentadas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: DNS, ARP, TCP/UDP/ICMP"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: DNS, ARP, TCP/UDP/ICMP"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Capturas comentadas"
+        }
+      ]
+    },
+    {
+      "id": "cyber-03",
+      "phase": "Mês 1",
+      "title": "HTTP/S, TLS e proxy",
+      "deliverable": "Fluxo request/TLS documentado",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: HTTP/S, TLS e proxy"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: HTTP/S, TLS e proxy"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Fluxo request/TLS documentado"
+        }
+      ]
+    },
+    {
+      "id": "cyber-04",
+      "phase": "Mês 1",
+      "title": "Wireshark/tcpdump e revisão",
+      "deliverable": "Mini análise de PCAP",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Wireshark/tcpdump e revisão"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Wireshark/tcpdump e revisão"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Mini análise de PCAP"
+        }
+      ]
+    },
+    {
+      "id": "cyber-05",
+      "phase": "Mês 2",
+      "title": "Linux administração",
+      "deliverable": "VM configurada do zero",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Linux administração"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Linux administração"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "VM configurada do zero"
+        }
+      ]
+    },
+    {
+      "id": "cyber-06",
+      "phase": "Mês 2",
+      "title": "Linux permissions/processes/services",
+      "deliverable": "Checklist de investigação",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Linux permissions/processes/services"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Linux permissions/processes/services"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Checklist de investigação"
+        }
+      ]
+    },
+    {
+      "id": "cyber-07",
+      "phase": "Mês 2",
+      "title": "Windows + PowerShell",
+      "deliverable": "Scripts administrativos simples",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Windows + PowerShell"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Windows + PowerShell"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Scripts administrativos simples"
+        }
+      ]
+    },
+    {
+      "id": "cyber-08",
+      "phase": "Mês 2",
+      "title": "Python/Bash/PowerShell",
+      "deliverable": "Toolkit pessoal de automação",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Python/Bash/PowerShell"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Python/Bash/PowerShell"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Toolkit pessoal de automação"
+        }
+      ]
+    },
+    {
+      "id": "cyber-09",
+      "phase": "Mês 3",
+      "title": "OWASP Top 10/WSTG",
+      "deliverable": "Mapa de classes de falhas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: OWASP Top 10/WSTG"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: OWASP Top 10/WSTG"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Mapa de classes de falhas"
+        }
+      ]
+    },
+    {
+      "id": "cyber-10",
+      "phase": "Mês 3",
+      "title": "Burp básico e recon web",
+      "deliverable": "Labs iniciais",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Burp básico e recon web"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Burp básico e recon web"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Labs iniciais"
+        }
+      ]
+    },
+    {
+      "id": "cyber-11",
+      "phase": "Mês 3",
+      "title": "Authn, sessão e access control",
+      "deliverable": "10+ labs temáticos",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Authn, sessão e access control"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Authn, sessão e access control"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "10+ labs temáticos"
+        }
+      ]
+    },
+    {
+      "id": "cyber-12",
+      "phase": "Mês 3",
+      "title": "Injection e XSS",
+      "deliverable": "Relatório de vulnerabilidade",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Injection e XSS"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Injection e XSS"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Relatório de vulnerabilidade"
+        }
+      ]
+    },
+    {
+      "id": "cyber-13",
+      "phase": "Mês 4",
+      "title": "SSRF e server-side vulnerabilities",
+      "deliverable": "Labs intermediários",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: SSRF e server-side vulnerabilities"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: SSRF e server-side vulnerabilities"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Labs intermediários"
+        }
+      ]
+    },
+    {
+      "id": "cyber-14",
+      "phase": "Mês 4",
+      "title": "APIs REST e tokens",
+      "deliverable": "API vulnerável avaliada",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: APIs REST e tokens"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: APIs REST e tokens"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "API vulnerável avaliada"
+        }
+      ]
+    },
+    {
+      "id": "cyber-15",
+      "phase": "Mês 4",
+      "title": "Business logic e advanced access control",
+      "deliverable": "Labs sem hints",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Business logic e advanced access control"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Business logic e advanced access control"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Labs sem hints"
+        }
+      ]
+    },
+    {
+      "id": "cyber-16",
+      "phase": "Mês 4",
+      "title": "Projeto web completo",
+      "deliverable": "Relatório + correções",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Projeto web completo"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Projeto web completo"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Relatório + correções"
+        }
+      ]
+    },
+    {
+      "id": "cyber-17",
+      "phase": "Mês 5",
+      "title": "Reconhecimento e scanning",
+      "deliverable": "Checklist de enumeração",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Reconhecimento e scanning"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Reconhecimento e scanning"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Checklist de enumeração"
+        }
+      ]
+    },
+    {
+      "id": "cyber-18",
+      "phase": "Mês 5",
+      "title": "Enumeração por serviço",
+      "deliverable": "Duas máquinas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Enumeração por serviço"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Enumeração por serviço"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Duas máquinas"
+        }
+      ]
+    },
+    {
+      "id": "cyber-19",
+      "phase": "Mês 5",
+      "title": "Linux privilege escalation",
+      "deliverable": "Duas máquinas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Linux privilege escalation"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Linux privilege escalation"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Duas máquinas"
+        }
+      ]
+    },
+    {
+      "id": "cyber-20",
+      "phase": "Mês 5",
+      "title": "Windows privilege escalation",
+      "deliverable": "Duas máquinas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Windows privilege escalation"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Windows privilege escalation"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Duas máquinas"
+        }
+      ]
+    },
+    {
+      "id": "cyber-21",
+      "phase": "Mês 6",
+      "title": "Metasploit e validação",
+      "deliverable": "Caso documentado",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Metasploit e validação"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Metasploit e validação"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Caso documentado"
+        }
+      ]
+    },
+    {
+      "id": "cyber-22",
+      "phase": "Mês 6",
+      "title": "Automação de tarefas repetitivas",
+      "deliverable": "CLI em Python",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Automação de tarefas repetitivas"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Automação de tarefas repetitivas"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "CLI em Python"
+        }
+      ]
+    },
+    {
+      "id": "cyber-23",
+      "phase": "Mês 6",
+      "title": "HTB/VulnHub sem walkthrough",
+      "deliverable": "3–4 máquinas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: HTB/VulnHub sem walkthrough"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: HTB/VulnHub sem walkthrough"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "3–4 máquinas"
+        }
+      ]
+    },
+    {
+      "id": "cyber-24",
+      "phase": "Mês 6",
+      "title": "Simulado e relatório",
+      "deliverable": "Pentest de infraestrutura",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Simulado e relatório"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Simulado e relatório"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Pentest de infraestrutura"
+        }
+      ]
+    },
+    {
+      "id": "cyber-25",
+      "phase": "Mês 7",
+      "title": "Fundamentos AD",
+      "deliverable": "Diagrama de domínio",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Fundamentos AD"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Fundamentos AD"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Diagrama de domínio"
+        }
+      ]
+    },
+    {
+      "id": "cyber-26",
+      "phase": "Mês 7",
+      "title": "LDAP/SMB/DNS no AD",
+      "deliverable": "Inventário de lab",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: LDAP/SMB/DNS no AD"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: LDAP/SMB/DNS no AD"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Inventário de lab"
+        }
+      ]
+    },
+    {
+      "id": "cyber-27",
+      "phase": "Mês 7",
+      "title": "Kerberos/NTLM/SPN",
+      "deliverable": "Fluxos explicados",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Kerberos/NTLM/SPN"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Kerberos/NTLM/SPN"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Fluxos explicados"
+        }
+      ]
+    },
+    {
+      "id": "cyber-28",
+      "phase": "Mês 7",
+      "title": "BloodHound e attack paths",
+      "deliverable": "Grafo comentado",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: BloodHound e attack paths"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: BloodHound e attack paths"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Grafo comentado"
+        }
+      ]
+    },
+    {
+      "id": "cyber-29",
+      "phase": "Mês 8",
+      "title": "GOAD ou CRTP",
+      "deliverable": "Primeiros objetivos",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: GOAD ou CRTP"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: GOAD ou CRTP"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Primeiros objetivos"
+        }
+      ]
+    },
+    {
+      "id": "cyber-30",
+      "phase": "Mês 8",
+      "title": "Trusts/delegação/misconfigurations",
+      "deliverable": "Cadeia documentada",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Trusts/delegação/misconfigurations"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Trusts/delegação/misconfigurations"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Cadeia documentada"
+        }
+      ]
+    },
+    {
+      "id": "cyber-31",
+      "phase": "Mês 8",
+      "title": "ATT&CK mapping",
+      "deliverable": "Matriz ATT&CK do lab",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: ATT&CK mapping"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: ATT&CK mapping"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Matriz ATT&CK do lab"
+        }
+      ]
+    },
+    {
+      "id": "cyber-32",
+      "phase": "Mês 8",
+      "title": "AD assessment completo",
+      "deliverable": "Relatório profissional",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: AD assessment completo"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: AD assessment completo"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Relatório profissional"
+        }
+      ]
+    },
+    {
+      "id": "cyber-33",
+      "phase": "Mês 9",
+      "title": "Containers/Docker security",
+      "deliverable": "Lab vulnerável",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Containers/Docker security"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Containers/Docker security"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Lab vulnerável"
+        }
+      ]
+    },
+    {
+      "id": "cyber-34",
+      "phase": "Mês 9",
+      "title": "Fundamentos cloud IAM",
+      "deliverable": "Threat model simples",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Fundamentos cloud IAM"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Fundamentos cloud IAM"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Threat model simples"
+        }
+      ]
+    },
+    {
+      "id": "cyber-35",
+      "phase": "Mês 9",
+      "title": "Aplicações cloud e secrets",
+      "deliverable": "Avaliação de lab",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Aplicações cloud e secrets"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Aplicações cloud e secrets"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Avaliação de lab"
+        }
+      ]
+    },
+    {
+      "id": "cyber-36",
+      "phase": "Mês 9",
+      "title": "Secure remediation",
+      "deliverable": "Pull request de correção",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Secure remediation"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Secure remediation"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Pull request de correção"
+        }
+      ]
+    },
+    {
+      "id": "cyber-37",
+      "phase": "Mês 10",
+      "title": "PTES/NIST e scoping",
+      "deliverable": "Rules of Engagement",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: PTES/NIST e scoping"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: PTES/NIST e scoping"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Rules of Engagement"
+        }
+      ]
+    },
+    {
+      "id": "cyber-38",
+      "phase": "Mês 10",
+      "title": "Adversary emulation",
+      "deliverable": "Plano ATT&CK",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Adversary emulation"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Adversary emulation"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Plano ATT&CK"
+        }
+      ]
+    },
+    {
+      "id": "cyber-39",
+      "phase": "Mês 10",
+      "title": "C2 conceitual e OPSEC",
+      "deliverable": "Diagrama operacional",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: C2 conceitual e OPSEC"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: C2 conceitual e OPSEC"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Diagrama operacional"
+        }
+      ]
+    },
+    {
+      "id": "cyber-40",
+      "phase": "Mês 10",
+      "title": "Purple-team mindset",
+      "deliverable": "Findings + sinais defensivos",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Purple-team mindset"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Purple-team mindset"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Findings + sinais defensivos"
+        }
+      ]
+    },
+    {
+      "id": "cyber-41",
+      "phase": "Mês 11",
+      "title": "Revisão por gaps",
+      "deliverable": "Matriz de lacunas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Revisão por gaps"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Revisão por gaps"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Matriz de lacunas"
+        }
+      ]
+    },
+    {
+      "id": "cyber-42",
+      "phase": "Mês 11",
+      "title": "Máquinas/labs avançados",
+      "deliverable": "Execução cronometrada",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Máquinas/labs avançados"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Máquinas/labs avançados"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Execução cronometrada"
+        }
+      ]
+    },
+    {
+      "id": "cyber-43",
+      "phase": "Mês 11",
+      "title": "OSCP/CRTP/eJPT prep",
+      "deliverable": "Simulado",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: OSCP/CRTP/eJPT prep"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: OSCP/CRTP/eJPT prep"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Simulado"
+        }
+      ]
+    },
+    {
+      "id": "cyber-44",
+      "phase": "Mês 11",
+      "title": "Certificação ou mock exam completo",
+      "deliverable": "Resultado mensurável",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Certificação ou mock exam completo"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Certificação ou mock exam completo"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Resultado mensurável"
+        }
+      ]
+    },
+    {
+      "id": "cyber-45",
+      "phase": "Mês 12",
+      "title": "Capstone",
+      "deliverable": "Execução completa",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Capstone"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Capstone"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Execução completa"
+        }
+      ]
+    },
+    {
+      "id": "cyber-46",
+      "phase": "Mês 12",
+      "title": "Report writing e revisão por pares",
+      "deliverable": "Relatório final",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Report writing e revisão por pares"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Report writing e revisão por pares"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Relatório final"
+        }
+      ]
+    },
+    {
+      "id": "cyber-47",
+      "phase": "Mês 12",
+      "title": "Portfólio, entrevistas e currículo",
+      "deliverable": "Assets públicos",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Portfólio, entrevistas e currículo"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Portfólio, entrevistas e currículo"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Assets públicos"
+        }
+      ]
+    },
+    {
+      "id": "cyber-48",
+      "phase": "Mês 12",
+      "title": "Candidaturas + planejamento do próximo ano",
+      "deliverable": "Career review",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Candidaturas + planejamento do próximo ano"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Candidaturas + planejamento do próximo ano"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Career review"
+        }
+      ]
+    }
+  ]
 }
