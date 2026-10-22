@@ -284,7 +284,7 @@ function renderTrail() {
           <div class="what">${escapeHtml(p.name)}</div></li>`).join("");
     const end = phases.length ? phases[phases.length - 1].to : null;
     const ended = end && ref > end.key ? `<p class="pace">O roadmap terminou em ${shortDate(end.date)}. Atualize roadmap/${area}.json.</p>` : "";
-    return `<div class="track a-${area}"><span class="tape" aria-hidden="true"></span>
+    return `<div class="track a-${area}">
       <h3>${a.name}</h3><p class="pace">${pace}</p>${ended}
       ${list ? `<ol>${list}</ol>` : `<p class="pace">Sem roadmap em roadmap/${area}.json.</p>`}</div>`;
   }).join("");
@@ -331,6 +331,23 @@ document.getElementById("prev").onclick = () => { weekStart = addDays(weekStart,
 document.getElementById("next").onclick = () => { weekStart = addDays(weekStart, 7); render(); };
 document.getElementById("today").onclick = () => { weekStart = mondayOf(today); render(); };
 document.getElementById("toggle-roadmap").onclick = () => { showingRoadmap = !showingRoadmap; render(); scrollTo(0, 0); };
+// tema: automático (segue o sistema), claro ou escuro; a escolha fica só neste navegador
+const THEMES = { auto: "automático", light: "claro", dark: "escuro" };
+const THEME_KEY = "diario-estudos-tema";
+function applyTheme(theme) {
+  if (theme === "auto") delete document.documentElement.dataset.theme;
+  else document.documentElement.dataset.theme = theme;
+  document.getElementById("toggle-theme").textContent = `Tema: ${THEMES[theme]}`;
+}
+let theme = "auto";
+try { theme = THEMES[localStorage.getItem(THEME_KEY)] ? localStorage.getItem(THEME_KEY) : "auto"; } catch {}
+applyTheme(theme);
+document.getElementById("toggle-theme").onclick = () => {
+  const order = Object.keys(THEMES);
+  theme = order[(order.indexOf(theme) + 1) % order.length];
+  applyTheme(theme);
+  try { localStorage.setItem(THEME_KEY, theme); } catch {}
+};
 document.getElementById("export").onclick = exportBackup;
 document.getElementById("import").onchange = e => { const f = e.target.files[0]; if (f) importBackup(f); e.target.value = ""; };
 

@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Diário de Estudos</title>
-<meta name="theme-color" content="#f5f7f4" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#151a23" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ecebe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="manifest" href="manifest.webmanifest">
@@ -13,14 +13,13 @@
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="app.css">
 </head>
 <body>
 <div class="wrap">
   <header>
     <div class="title-block">
-      <span class="tape" aria-hidden="true"></span>
       <h1>Diário de Estudos</h1>
       <p class="sub" id="trail-month">15 horas por semana, um bloco de cada vez</p>
     </div>
@@ -30,34 +29,37 @@
       <button id="next" aria-label="Próxima semana">›</button>
       <button id="today">Hoje</button>
     </div>
-    <button class="toggle-roadmap" id="toggle-roadmap">Roadmap</button>
+    <div class="header-actions">
+      <button class="toggle-roadmap" id="toggle-roadmap">Roadmap</button>
+      <button class="toggle-theme" id="toggle-theme">Tema: automático</button>
+    </div>
     <div class="status" id="status">Carregando…</div>
   </header>
 
-  <section class="roadmap" style="--hl:var(--cyber-wash)">
+  <section class="roadmap">
     <h2>Roadmap</h2>
     <p class="hint">Cada área tem sua lista em <code>roadmap/&lt;área&gt;.json</code> no repo. O item 1 vai para o primeiro bloco a partir de 20 de outubro de 2026, o item 2 para o seguinte, e assim por diante. Bloco perdido não empurra os próximos: reponha na manhã livre de sexta.</p>
     <div class="trail" id="roadmap-areas"></div>
   </section>
 
-  <section style="--hl:var(--cyber-wash)">
+  <section>
     <h2>Metas da semana</h2>
     <div class="goals" id="goals"></div>
   </section>
 
-  <section style="--hl:var(--water-wash)">
+  <section>
     <h2>Hábitos da semana</h2>
     <p class="hint">Água: 8 copos de 250 ml por dia. Exercício: 150 min na semana. Sono: 7 h por noite, anotado no dia em que você acorda. Leitura: só registra os minutos lidos, sem meta.</p>
     <div class="goals" id="habit-goals"></div>
   </section>
 
-  <section style="--hl:var(--des-wash)">
+  <section>
     <h2>Semana</h2>
     <p class="hint">Marque cada bloco quando terminar. Perdeu um? A manhã de sexta fica livre para repor.</p>
     <div class="week" id="week"></div>
   </section>
 
-  <section style="--hl:var(--elet-wash)">
+  <section>
     <h2 id="month-title">Rastreador do mês</h2>
     <div class="tracker-scroll"><table class="tracker" id="tracker"></table></div>
     <div class="legend">
@@ -68,13 +70,13 @@
     </div>
   </section>
 
-  <section style="--hl:var(--fac-wash)">
+  <section>
     <h2>Trilha</h2>
     <p class="hint">As fases vêm dos roadmaps em <code>roadmap/&lt;área&gt;.json</code>. A fase destacada é a da semana que está na tela.</p>
     <div class="trail" id="trail"></div>
   </section>
 
-  <section style="--hl:var(--cyber-wash)">
+  <section>
     <h2>Como chegamos aqui</h2>
     <div class="summary">
       <span class="date">Conversa de 20 de outubro de 2026</span>

@@ -1,5 +1,5 @@
 // Troque a versão a cada deploy para o app instalado buscar os arquivos novos.
-const CACHE = "diario-v10";
+const CACHE = "diario-v11";
 const ASSETS = ["./", "index.html", "app.css", "plan.js", "app.js", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png",
   "roadmap/cyber.json", "roadmap/elet.json", "roadmap/fac.json", "roadmap/des.json"];
 
