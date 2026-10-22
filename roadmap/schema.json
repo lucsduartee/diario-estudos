@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Roadmap de uma área do Diário de Estudos",
+  "description": "Cada unidade é uma semana do roadmap. As sessões ocupam, em ordem, os blocos da área no plano semanal (plan.js), a partir de 20/10/2026.",
+  "type": "object",
+  "required": ["area", "title", "units"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "area": { "enum": ["cyber", "elet", "fac", "des"], "description": "Chave da área em AREAS (plan.js); igual ao nome do arquivo." },
+    "title": { "type": "string", "minLength": 1 },
+    "source": { "$ref": "#/$defs/link", "description": "De onde veio o roadmap." },
+    "units": { "type": "array", "items": { "$ref": "#/$defs/unit" } }
+  },
+  "$defs": {
+    "link": {
+      "type": "object",
+      "required": ["title"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "pattern": "^https?://" }
+      }
+    },
+    "texts": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "unit": {
+      "type": "object",
+      "required": ["id", "title", "sessions"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z]+-[0-9]{2,}$", "description": "Único no arquivo, por exemplo cyber-01." },
+        "phase": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1, "description": "O que estudar na semana." },
+        "objectives": { "$ref": "#/$defs/texts" },
+        "topics": { "$ref": "#/$defs/texts" },
+        "resources": { "type": "array", "items": { "$ref": "#/$defs/link" } },
+        "deliverable": { "type": "string", "minLength": 1 },
+        "doneWhen": { "type": "string", "minLength": 1, "description": "Critério de pronto." },
+        "sessions": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/session" } }
+      }
+    },
+    "session": {
+      "type": "object",
+      "required": ["kind", "minutes", "what"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "enum": ["study", "practice", "deliverable", "review"] },
+        "minutes": { "type": "integer", "minimum": 1, "description": "Tempo de dedicação planejado." },
+        "what": { "type": "string", "minLength": 1, "description": "O que fazer no bloco." },
+        "exercises": { "$ref": "#/$defs/texts" }
+      }
+    }
+  }
+}

@@ -1,26 +1,3 @@
-const START = new Date(2026, 9, 20);
-const AREAS = {
-  cyber: { name: "Cybersecurity", goal: 4 },
-  elet:  { name: "Eletrônica", goal: 4 },
-  fac:   { name: "Faculdade", goal: 4 },
-  des:   { name: "Desenho", goal: 3 },
-};
-// índice 0 = segunda
-const PLAN = [
-  [{ id: "am", area: "des", h: 1, when: "manhã", focus: "Linhas e elipses (aquecimento + exercício)" },
-   { id: "pm", area: "fac", h: 1, when: "noite", focus: "Videoaulas e leitura" }],
-  [{ id: "am", area: "cyber", h: 1, when: "manhã", focus: "Teoria do tema da fase" },
-   { id: "pm", area: "elet", h: 1, when: "noite", focus: "Teoria e cálculo" }],
-  [{ id: "am", area: "des", h: 1, when: "manhã", focus: "Lição da semana" },
-   { id: "pm", area: "fac", h: 1, when: "noite", focus: "Atividades e exercícios" }],
-  [{ id: "am", area: "cyber", h: 1, when: "manhã", focus: "Labs curtos" },
-   { id: "pm", area: "elet", h: 1, when: "noite", focus: "Montagem na protoboard" }],
-  [{ id: "pm", area: "fac", h: 1, when: "noite", focus: "Revisão e entregas" }],
-  [{ id: "a", area: "cyber", h: 2, when: "manhã", focus: "Lab longo + write-up" },
-   { id: "b", area: "elet", h: 2, when: "tarde", focus: "Projeto da fase" }],
-  [{ id: "a", area: "fac", h: 1, when: "manhã", focus: "Planejar a semana da faculdade" },
-   { id: "b", area: "des", h: 1, when: "tarde", focus: "Desenho livre de observação" }],
-];
 const FREE = { 4: "Manhã livre: reponha um bloco perdido" };
 // água e sono: meta diária; exercício: meta semanal (OMS, 150 min)
 const HABITS = {
@@ -87,22 +64,26 @@ function saveDays() {
 }
 
 // ---------- roadmap ----------
-// Vem do repo: roadmap/<área>.json é a lista, em ordem, do que fazer em cada bloco da área.
+// Vem do repo: roadmap/<área>.json segue roadmap/schema.json. Cada unidade é uma semana do roadmap,
+// e suas sessões ocupam, em ordem, os próximos blocos da área.
 let roadmap = {};
+const KINDS = { study: "Estudo", practice: "Prática", deliverable: "Entregável", review: "Revisão" };
 
 async function loadRoadmap() {
   const entries = await Promise.all(Object.keys(AREAS).map(async area => {
     try {
-      const items = await (await fetch(`roadmap/${area}.json`)).json();
-      return [area, Array.isArray(items) ? items : []];
+      const doc = await (await fetch(`roadmap/${area}.json`)).json();
+      return [area, Array.isArray(doc.units) ? doc : null];
     } catch {
-      return [area, []];
+      return [area, null];
     }
   }));
   return Object.fromEntries(entries);
 }
 
-// Cada bloco da área, em ordem de calendário a partir de START, recebe o próximo item do roadmap.
+const sessionsOf = area => (roadmap[area]?.units || []).flatMap((unit, u) => (unit.sessions || []).map(session => ({ unit, n: u + 1, session })));
+
+// Cada bloco da área, em ordem de calendário a partir de START, recebe a próxima sessão do roadmap.
 function* occurrences(area) {
   for (let d = START; ; d = addDays(d, 1))
     for (const s of PLAN[(d.getDay() + 6) % 7])
@@ -110,14 +91,17 @@ function* occurrences(area) {
 }
 
 function roadmapItem(key, slot) {
-  const items = roadmap[slot.area] || [];
+  const items = sessionsOf(slot.area);
   let i = 0;
   for (const o of occurrences(slot.area)) {
-    if (i >= items.length || o.key > key) return "";
+    if (i >= items.length || o.key > key) return;
     if (o.key === key && o.slot.id === slot.id) return items[i];
     i++;
   }
 }
+
+const sessionHtml = ({ n, session: s }) => `<span class="kind">Semana ${n} · ${KINDS[s.kind] || s.kind} · ${s.minutes} min</span>${linkify(s.what)}` +
+  (s.exercises?.length ? `<ul class="exercises">${s.exercises.map(e => `<li>${linkify(e)}</li>`).join("")}</ul>` : "");
 
 const escapeHtml = t => t.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const linkify = t => escapeHtml(t).replace(/https?:\/\/[^\s<]*[^\s<.,;:!?)]/g, u => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`);
@@ -234,7 +218,7 @@ function renderWeek() {
       if (item) {
         const p = document.createElement("p");
         p.className = `todo a-${s.area}`;
-        p.innerHTML = linkify(item);
+        p.innerHTML = sessionHtml(item);
         li.append(p);
       }
       ul.append(li);
@@ -315,16 +299,29 @@ function renderTrail() {
 }
 
 const shortDate = d => `${DAY_NAMES[(d.getDay() + 6) % 7].slice(0, 3).toLowerCase()} ${pad(d.getDate())}/${pad(d.getMonth() + 1)}`;
+const list = (label, xs, fmt = linkify) => xs?.length ? `<div class="label">${label}</div><ul>${xs.map(x => `<li>${fmt(x)}</li>`).join("")}</ul>` : "";
+const resourceHtml = r => `<a href="${escapeHtml(r.url)}" target="_blank" rel="noopener">${escapeHtml(r.title)}</a>`;
+
 function renderRoadmap() {
   document.getElementById("roadmap-areas").innerHTML = Object.entries(AREAS).map(([area, a]) => {
+    const doc = roadmap[area];
     const when = occurrences(area);
-    const items = roadmap[area] || [];
-    const list = items.map((text, i) => {
-      const o = when.next().value;
-      return `<li class="road-item"><div class="when">#${i + 1} · ${shortDate(o.date)} · ${o.slot.when}</div><p>${linkify(text)}</p></li>`;
+    const units = (doc?.units || []).map((unit, u) => {
+      const sessions = (unit.sessions || []).map(s => {
+        const o = when.next().value;
+        return `<li><span class="kind">${shortDate(o.date)} · ${o.slot.when} · ${KINDS[s.kind] || s.kind} · ${s.minutes} min</span>${linkify(s.what)}${list("Exercícios", s.exercises)}</li>`;
+      }).join("");
+      return `<li class="road-item">
+        <div class="when">Semana ${u + 1}${unit.phase ? ` · ${escapeHtml(unit.phase)}` : ""}</div>
+        <div class="what">${escapeHtml(unit.title)}</div>
+        ${list("Objetivos", unit.objectives)}${list("Tópicos", unit.topics)}${list("Recursos", unit.resources, resourceHtml)}
+        ${unit.deliverable ? `<p><b>Entregável:</b> ${linkify(unit.deliverable)}</p>` : ""}
+        ${unit.doneWhen ? `<p><b>Pronto quando:</b> ${linkify(unit.doneWhen)}</p>` : ""}
+        <ol class="sessions">${sessions}</ol></li>`;
     }).join("");
-    return `<div class="track road a-${area}"><h3>${a.name}</h3>
-      ${items.length ? `<ol>${list}</ol>` : `<p class="pace">Sem itens em roadmap/${area}.json.</p>`}</div>`;
+    const head = `<h3>${a.name}</h3>` + (doc?.title ? `<p class="pace">${escapeHtml(doc.title)}${doc.source ? ` · fonte: ${doc.source.url ? resourceHtml(doc.source) : escapeHtml(doc.source.title)}` : ""}</p>` : "");
+    return `<div class="track road a-${area}">${head}
+      ${units ? `<ol>${units}</ol>` : `<p class="pace">Sem semanas em roadmap/${area}.json.</p>`}</div>`;
   }).join("");
 }
 

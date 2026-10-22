@@ -1,6 +1,6 @@
 // Troque a versão a cada deploy para o app instalado buscar os arquivos novos.
-const CACHE = "diario-v5";
-const ASSETS = ["./", "index.html", "app.css", "app.js", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png",
+const CACHE = "diario-v6";
+const ASSETS = ["./", "index.html", "app.css", "plan.js", "app.js", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png",
   "roadmap/cyber.json", "roadmap/elet.json", "roadmap/fac.json", "roadmap/des.json"];
 
 self.addEventListener("install", e => {

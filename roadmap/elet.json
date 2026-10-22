@@ -1,158 +1,1167 @@
-[
-  "Semana 1 · Estudo: Linux básico, IP, DHCP, DNS, portas, SSH",
-  "Semana 1 · Prática: Linux básico, IP, DHCP, DNS, portas, SSH",
-  "Semana 1 · Entregável: servidor Linux acessível na LAN",
-  "Semana 2 · Estudo: Instalar Home Assistant; entidades, áreas, serviços, logs",
-  "Semana 2 · Prática: Instalar Home Assistant; entidades, áreas, serviços, logs",
-  "Semana 2 · Entregável: instalação documentada no GitHub",
-  "Semana 3 · Estudo: Automações, helpers, templates e dashboards",
-  "Semana 3 · Prática: Automações, helpers, templates e dashboards",
-  "Semana 3 · Entregável: 5 automações com README",
-  "Semana 4 · Estudo: Wi-Fi, mDNS, sub-redes e diagnóstico",
-  "Semana 4 · Prática: Wi-Fi, mDNS, sub-redes e diagnóstico",
-  "Semana 4 · Entregável: diagrama de rede + checklist de troubleshooting",
-  "Semana 5 · Estudo: MQTT: broker, topics, QoS, retained, LWT",
-  "Semana 5 · Prática: MQTT: broker, topics, QoS, retained, LWT",
-  "Semana 5 · Entregável: Mosquitto + publisher/subscriber",
-  "Semana 6 · Estudo: Node-RED",
-  "Semana 6 · Prática: Node-RED",
-  "Semana 6 · Entregável: fluxo MQTT → regra → HA → notificação",
-  "Semana 7 · Estudo: Zigbee: coordinator, pairing, routers/end devices",
-  "Semana 7 · Prática: Zigbee: coordinator, pairing, routers/end devices",
-  "Semana 7 · Entregável: pequena rede Zigbee funcionando",
-  "Semana 8 · Estudo: Analisar RF e falhas; logs, backup e restore",
-  "Semana 8 · Prática: Analisar RF e falhas; logs, backup e restore",
-  "Semana 8 · Entregável: relatório de testes offline/falhas",
-  "Semana 9 · Estudo: ESP32/ESPHome: GPIO, sensor, atuador",
-  "Semana 9 · Prática: ESP32/ESPHome: GPIO, sensor, atuador",
-  "Semana 9 · Entregável: dispositivo próprio integrado ao HA",
-  "Semana 10 · Estudo: C/C++ básico no ESP32: I²C/UART/timers",
-  "Semana 10 · Prática: C/C++ básico no ESP32: I²C/UART/timers",
-  "Semana 10 · Entregável: firmware simples fora do ESPHome",
-  "Semana 11 · Estudo: Autenticação, TLS, secrets, OTA e segmentação",
-  "Semana 11 · Prática: Autenticação, TLS, secrets, OTA e segmentação",
-  "Semana 11 · Entregável: hardening do laboratório",
-  "Semana 12 · Estudo: Fechar projeto de portfólio, vídeo/demo e currículo",
-  "Semana 12 · Prática: Fechar projeto de portfólio, vídeo/demo e currículo",
-  "Semana 12 · Entregável: projeto público reproduzível",
-  "Semana 13 · Estudo: HTTP/REST, JSON e WebSockets; controlar HA por API",
-  "Semana 13 · Prática: HTTP/REST, JSON e WebSockets; controlar HA por API",
-  "Semana 13 · Entregável: registrar no GitHub o que saiu de “hTTP/REST, JSON e WebSockets; controlar HA por API”",
-  "Semana 14 · Estudo: Python: cliente MQTT e pequeno serviço de integração",
-  "Semana 14 · Prática: Python: cliente MQTT e pequeno serviço de integração",
-  "Semana 14 · Entregável: registrar no GitHub o que saiu de “python: cliente MQTT e pequeno serviço de integração”",
-  "Semana 15 · Estudo: Reestruturar código, configuração, logging e tratamento de erro",
-  "Semana 15 · Prática: Reestruturar código, configuração, logging e tratamento de erro",
-  "Semana 15 · Entregável: registrar no GitHub o que saiu de “reestruturar código, configuração, logging e tratamento de erro”",
-  "Semana 16 · Estudo: Projeto ESP32 intermediário com sensores múltiplos",
-  "Semana 16 · Prática: Projeto ESP32 intermediário com sensores múltiplos",
-  "Semana 16 · Entregável: registrar no GitHub o que saiu de “projeto ESP32 intermediário com sensores múltiplos”",
-  "Semana 17 · Estudo: OTA seguro e estratégia de recuperação",
-  "Semana 17 · Prática: OTA seguro e estratégia de recuperação",
-  "Semana 17 · Entregável: registrar no GitHub o que saiu de “oTA seguro e estratégia de recuperação”",
-  "Semana 18 · Estudo: BLE: advertising, GATT, scanning e commissioning conceitual",
-  "Semana 18 · Prática: BLE: advertising, GATT, scanning e commissioning conceitual",
-  "Semana 18 · Entregável: registrar no GitHub o que saiu de “bLE: advertising, GATT, scanning e commissioning conceitual”",
-  "Semana 19 · Estudo: Thread: roles, mesh, IPv6 e Border Router",
-  "Semana 19 · Prática: Thread: roles, mesh, IPv6 e Border Router",
-  "Semana 19 · Entregável: registrar no GitHub o que saiu de “thread: roles, mesh, IPv6 e Border Router”",
-  "Semana 20 · Estudo: Matter: commissioning, fabric, clusters e multi-admin conceitualmente",
-  "Semana 20 · Prática: Matter: commissioning, fabric, clusters e multi-admin conceitualmente",
-  "Semana 20 · Entregável: registrar no GitHub o que saiu de “matter: commissioning, fabric, clusters e multi-admin conceitualmente”",
-  "Semana 21 · Estudo: Colocar um dispositivo Matter real ou virtual no laboratório",
-  "Semana 21 · Prática: Colocar um dispositivo Matter real ou virtual no laboratório",
-  "Semana 21 · Entregável: registrar no GitHub o que saiu de “colocar um dispositivo Matter real ou virtual no laboratório”",
-  "Semana 22 · Estudo: Testar Apple/Google/Alexa/SmartThings conforme hardware disponível",
-  "Semana 22 · Prática: Testar Apple/Google/Alexa/SmartThings conforme hardware disponível",
-  "Semana 22 · Entregável: registrar no GitHub o que saiu de “testar Apple/Google/Alexa/SmartThings conforme hardware disponível”",
-  "Semana 23 · Estudo: Construir segundo projeto de portfólio completo",
-  "Semana 23 · Prática: Construir segundo projeto de portfólio completo",
-  "Semana 23 · Entregável: registrar no GitHub o que saiu de “construir segundo projeto de portfólio completo”",
-  "Semana 24 · Estudo: Revisão técnica, simulação de entrevista e candidaturas intensivas",
-  "Semana 24 · Prática: Revisão técnica, simulação de entrevista e candidaturas intensivas",
-  "Semana 24 · Entregável: registrar no GitHub o que saiu de “revisão técnica, simulação de entrevista e candidaturas intensivas”",
-  "Semana 25 · Estudo: Escolher nicho principal com base nas vagas encontradas",
-  "Semana 25 · Prática: Escolher nicho principal com base nas vagas encontradas",
-  "Semana 25 · Entregável: registrar no GitHub o que saiu de “escolher nicho principal com base nas vagas encontradas”",
-  "Semana 26 · Estudo: Levantar 20 anúncios de vagas e criar matriz de lacunas",
-  "Semana 26 · Prática: Levantar 20 anúncios de vagas e criar matriz de lacunas",
-  "Semana 26 · Entregável: registrar no GitHub o que saiu de “levantar 20 anúncios de vagas e criar matriz de lacunas”",
-  "Semana 27 · Estudo: Iniciar KNX eCampus se predial/condomínio interessar",
-  "Semana 27 · Prática: Iniciar KNX eCampus se predial/condomínio interessar",
-  "Semana 27 · Entregável: registrar no GitHub o que saiu de “iniciar KNX eCampus se predial/condomínio interessar”",
-  "Semana 28 · Estudo: Usar ETS/KNX Virtual e modelar um pequeno imóvel",
-  "Semana 28 · Prática: Usar ETS/KNX Virtual e modelar um pequeno imóvel",
-  "Semana 28 · Entregável: registrar no GitHub o que saiu de “usar ETS/KNX Virtual e modelar um pequeno imóvel”",
-  "Semana 29 · Estudo: Documentação elétrica e diagramas funcionais",
-  "Semana 29 · Prática: Documentação elétrica e diagramas funcionais",
-  "Semana 29 · Entregável: registrar no GitHub o que saiu de “documentação elétrica e diagramas funcionais”",
-  "Semana 30 · Estudo: Lógica de iluminação, cenas e ocupação",
-  "Semana 30 · Prática: Lógica de iluminação, cenas e ocupação",
-  "Semana 30 · Entregável: registrar no GitHub o que saiu de “lógica de iluminação, cenas e ocupação”",
-  "Semana 31 · Estudo: Consumo de energia, telemetria e históricos",
-  "Semana 31 · Prática: Consumo de energia, telemetria e históricos",
-  "Semana 31 · Entregável: registrar no GitHub o que saiu de “consumo de energia, telemetria e históricos”",
-  "Semana 32 · Estudo: Alertas e tratamento de falhas",
-  "Semana 32 · Prática: Alertas e tratamento de falhas",
-  "Semana 32 · Entregável: registrar no GitHub o que saiu de “alertas e tratamento de falhas”",
-  "Semana 33 · Estudo: Modbus RTU/TCP se mirando comercial/predial",
-  "Semana 33 · Prática: Modbus RTU/TCP se mirando comercial/predial",
-  "Semana 33 · Entregável: registrar no GitHub o que saiu de “modbus RTU/TCP se mirando comercial/predial”",
-  "Semana 34 · Estudo: Integrar dispositivo ou simulador Modbus",
-  "Semana 34 · Prática: Integrar dispositivo ou simulador Modbus",
-  "Semana 34 · Entregável: registrar no GitHub o que saiu de “integrar dispositivo ou simulador Modbus”",
-  "Semana 35 · Estudo: BACnet: objetos, propriedades e serviços conceitualmente",
-  "Semana 35 · Prática: BACnet: objetos, propriedades e serviços conceitualmente",
-  "Semana 35 · Entregável: registrar no GitHub o que saiu de “bACnet: objetos, propriedades e serviços conceitualmente”",
-  "Semana 36 · Estudo: Projetar integração predial pequena",
-  "Semana 36 · Prática: Projetar integração predial pequena",
-  "Semana 36 · Entregável: registrar no GitHub o que saiu de “projetar integração predial pequena”",
-  "Semana 37 · Estudo: Segurança de rede mais profunda",
-  "Semana 37 · Prática: Segurança de rede mais profunda",
-  "Semana 37 · Entregável: registrar no GitHub o que saiu de “segurança de rede mais profunda”",
-  "Semana 38 · Estudo: Autenticação, certificados e ACL MQTT",
-  "Semana 38 · Prática: Autenticação, certificados e ACL MQTT",
-  "Semana 38 · Entregável: registrar no GitHub o que saiu de “autenticação, certificados e ACL MQTT”",
-  "Semana 39 · Estudo: Modelagem de ameaças do projeto",
-  "Semana 39 · Prática: Modelagem de ameaças do projeto",
-  "Semana 39 · Entregável: registrar no GitHub o que saiu de “modelagem de ameaças do projeto”",
-  "Semana 40 · Estudo: Teste baseado em OWASP IoT",
-  "Semana 40 · Prática: Teste baseado em OWASP IoT",
-  "Semana 40 · Entregável: registrar no GitHub o que saiu de “teste baseado em OWASP IoT”",
-  "Semana 41 · Estudo: Observabilidade: logs, métricas e alarmes",
-  "Semana 41 · Prática: Observabilidade: logs, métricas e alarmes",
-  "Semana 41 · Entregável: registrar no GitHub o que saiu de “observabilidade: logs, métricas e alarmes”",
-  "Semana 42 · Estudo: Backup, restore e recuperação de desastre",
-  "Semana 42 · Prática: Backup, restore e recuperação de desastre",
-  "Semana 42 · Entregável: registrar no GitHub o que saiu de “backup, restore e recuperação de desastre”",
-  "Semana 43 · Estudo: Testes de queda de Internet",
-  "Semana 43 · Prática: Testes de queda de Internet",
-  "Semana 43 · Entregável: registrar no GitHub o que saiu de “testes de queda de Internet”",
-  "Semana 44 · Estudo: Testes de reboot de hub/AP/dispositivos",
-  "Semana 44 · Prática: Testes de reboot de hub/AP/dispositivos",
-  "Semana 44 · Entregável: registrar no GitHub o que saiu de “testes de reboot de hub/AP/dispositivos”",
-  "Semana 45 · Estudo: Projeto final voltado ao nicho escolhido",
-  "Semana 45 · Prática: Projeto final voltado ao nicho escolhido",
-  "Semana 45 · Entregável: registrar no GitHub o que saiu de “projeto final voltado ao nicho escolhido”",
-  "Semana 46 · Estudo: Diagrama de arquitetura e BOM",
-  "Semana 46 · Prática: Diagrama de arquitetura e BOM",
-  "Semana 46 · Entregável: registrar no GitHub o que saiu de “diagrama de arquitetura e BOM”",
-  "Semana 47 · Estudo: Plano de instalação e commissioning",
-  "Semana 47 · Prática: Plano de instalação e commissioning",
-  "Semana 47 · Entregável: registrar no GitHub o que saiu de “plano de instalação e commissioning”",
-  "Semana 48 · Estudo: Plano de testes/aceitação",
-  "Semana 48 · Prática: Plano de testes/aceitação",
-  "Semana 48 · Entregável: registrar no GitHub o que saiu de “plano de testes/aceitação”",
-  "Semana 49 · Estudo: Documentação de manutenção",
-  "Semana 49 · Prática: Documentação de manutenção",
-  "Semana 49 · Entregável: registrar no GitHub o que saiu de “documentação de manutenção”",
-  "Semana 50 · Estudo: Gravar demonstração técnica curta",
-  "Semana 50 · Prática: Gravar demonstração técnica curta",
-  "Semana 50 · Entregável: registrar no GitHub o que saiu de “gravar demonstração técnica curta”",
-  "Semana 51 · Estudo: Revisão de GitHub, currículo e LinkedIn",
-  "Semana 51 · Prática: Revisão de GitHub, currículo e LinkedIn",
-  "Semana 51 · Entregável: registrar no GitHub o que saiu de “revisão de GitHub, currículo e LinkedIn”",
-  "Semana 52 · Estudo: Entrevistas simuladas e fechamento das lacunas restantes",
-  "Semana 52 · Prática: Entrevistas simuladas e fechamento das lacunas restantes",
-  "Semana 52 · Entregável: registrar no GitHub o que saiu de “entrevistas simuladas e fechamento das lacunas restantes”"
-]
+{
+  "$schema": "./schema.json",
+  "area": "elet",
+  "title": "Automação residencial",
+  "source": {
+    "title": "Roadmap sincero e prático para entrar em automação residencial vindo de programação (Pesquisa aprofundada do ChatGPT)",
+    "url": "https://chatgpt.com/c/6ac61cca-bacc-83e9-b428-eba0f8c1b462"
+  },
+  "units": [
+    {
+      "id": "elet-01",
+      "phase": "Primeiras doze semanas",
+      "title": "Linux básico, IP, DHCP, DNS, portas, SSH",
+      "deliverable": "Servidor Linux acessível na LAN",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Linux básico, IP, DHCP, DNS, portas, SSH"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Linux básico, IP, DHCP, DNS, portas, SSH"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Servidor Linux acessível na LAN"
+        }
+      ]
+    },
+    {
+      "id": "elet-02",
+      "phase": "Primeiras doze semanas",
+      "title": "Instalar Home Assistant; entidades, áreas, serviços, logs",
+      "deliverable": "Instalação documentada no GitHub",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Instalar Home Assistant; entidades, áreas, serviços, logs"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Instalar Home Assistant; entidades, áreas, serviços, logs"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Instalação documentada no GitHub"
+        }
+      ]
+    },
+    {
+      "id": "elet-03",
+      "phase": "Primeiras doze semanas",
+      "title": "Automações, helpers, templates e dashboards",
+      "deliverable": "5 automações com README",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Automações, helpers, templates e dashboards"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Automações, helpers, templates e dashboards"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "5 automações com README"
+        }
+      ]
+    },
+    {
+      "id": "elet-04",
+      "phase": "Primeiras doze semanas",
+      "title": "Wi-Fi, mDNS, sub-redes e diagnóstico",
+      "deliverable": "Diagrama de rede + checklist de troubleshooting",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Wi-Fi, mDNS, sub-redes e diagnóstico"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Wi-Fi, mDNS, sub-redes e diagnóstico"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Diagrama de rede + checklist de troubleshooting"
+        }
+      ]
+    },
+    {
+      "id": "elet-05",
+      "phase": "Primeiras doze semanas",
+      "title": "MQTT: broker, topics, QoS, retained, LWT",
+      "deliverable": "Mosquitto + publisher/subscriber",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: MQTT: broker, topics, QoS, retained, LWT"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: MQTT: broker, topics, QoS, retained, LWT"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Mosquitto + publisher/subscriber"
+        }
+      ]
+    },
+    {
+      "id": "elet-06",
+      "phase": "Primeiras doze semanas",
+      "title": "Node-RED",
+      "deliverable": "Fluxo MQTT → regra → HA → notificação",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Node-RED"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Node-RED"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Fluxo MQTT → regra → HA → notificação"
+        }
+      ]
+    },
+    {
+      "id": "elet-07",
+      "phase": "Primeiras doze semanas",
+      "title": "Zigbee: coordinator, pairing, routers/end devices",
+      "deliverable": "Pequena rede Zigbee funcionando",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Zigbee: coordinator, pairing, routers/end devices"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Zigbee: coordinator, pairing, routers/end devices"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Pequena rede Zigbee funcionando"
+        }
+      ]
+    },
+    {
+      "id": "elet-08",
+      "phase": "Primeiras doze semanas",
+      "title": "Analisar RF e falhas; logs, backup e restore",
+      "deliverable": "Relatório de testes offline/falhas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Analisar RF e falhas; logs, backup e restore"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Analisar RF e falhas; logs, backup e restore"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Relatório de testes offline/falhas"
+        }
+      ]
+    },
+    {
+      "id": "elet-09",
+      "phase": "Primeiras doze semanas",
+      "title": "ESP32/ESPHome: GPIO, sensor, atuador",
+      "deliverable": "Dispositivo próprio integrado ao HA",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: ESP32/ESPHome: GPIO, sensor, atuador"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: ESP32/ESPHome: GPIO, sensor, atuador"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Dispositivo próprio integrado ao HA"
+        }
+      ]
+    },
+    {
+      "id": "elet-10",
+      "phase": "Primeiras doze semanas",
+      "title": "C/C++ básico no ESP32: I²C/UART/timers",
+      "deliverable": "Firmware simples fora do ESPHome",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: C/C++ básico no ESP32: I²C/UART/timers"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: C/C++ básico no ESP32: I²C/UART/timers"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Firmware simples fora do ESPHome"
+        }
+      ]
+    },
+    {
+      "id": "elet-11",
+      "phase": "Primeiras doze semanas",
+      "title": "Autenticação, TLS, secrets, OTA e segmentação",
+      "deliverable": "Hardening do laboratório",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Autenticação, TLS, secrets, OTA e segmentação"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Autenticação, TLS, secrets, OTA e segmentação"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Hardening do laboratório"
+        }
+      ]
+    },
+    {
+      "id": "elet-12",
+      "phase": "Primeiras doze semanas",
+      "title": "Fechar projeto de portfólio, vídeo/demo e currículo",
+      "deliverable": "Projeto público reproduzível",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Fechar projeto de portfólio, vídeo/demo e currículo"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Fechar projeto de portfólio, vídeo/demo e currículo"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Projeto público reproduzível"
+        }
+      ]
+    },
+    {
+      "id": "elet-13",
+      "phase": "Semanas 13 a 24",
+      "title": "HTTP/REST, JSON e WebSockets; controlar HA por API",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: HTTP/REST, JSON e WebSockets; controlar HA por API"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: HTTP/REST, JSON e WebSockets; controlar HA por API"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-14",
+      "phase": "Semanas 13 a 24",
+      "title": "Python: cliente MQTT e pequeno serviço de integração",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Python: cliente MQTT e pequeno serviço de integração"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Python: cliente MQTT e pequeno serviço de integração"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-15",
+      "phase": "Semanas 13 a 24",
+      "title": "Reestruturar código, configuração, logging e tratamento de erro",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Reestruturar código, configuração, logging e tratamento de erro"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Reestruturar código, configuração, logging e tratamento de erro"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-16",
+      "phase": "Semanas 13 a 24",
+      "title": "Projeto ESP32 intermediário com sensores múltiplos",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Projeto ESP32 intermediário com sensores múltiplos"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Projeto ESP32 intermediário com sensores múltiplos"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-17",
+      "phase": "Semanas 13 a 24",
+      "title": "OTA seguro e estratégia de recuperação",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: OTA seguro e estratégia de recuperação"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: OTA seguro e estratégia de recuperação"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-18",
+      "phase": "Semanas 13 a 24",
+      "title": "BLE: advertising, GATT, scanning e commissioning conceitual",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: BLE: advertising, GATT, scanning e commissioning conceitual"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: BLE: advertising, GATT, scanning e commissioning conceitual"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-19",
+      "phase": "Semanas 13 a 24",
+      "title": "Thread: roles, mesh, IPv6 e Border Router",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Thread: roles, mesh, IPv6 e Border Router"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Thread: roles, mesh, IPv6 e Border Router"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-20",
+      "phase": "Semanas 13 a 24",
+      "title": "Matter: commissioning, fabric, clusters e multi-admin conceitualmente",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Matter: commissioning, fabric, clusters e multi-admin conceitualmente"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Matter: commissioning, fabric, clusters e multi-admin conceitualmente"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-21",
+      "phase": "Semanas 13 a 24",
+      "title": "Colocar um dispositivo Matter real ou virtual no laboratório",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Colocar um dispositivo Matter real ou virtual no laboratório"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Colocar um dispositivo Matter real ou virtual no laboratório"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-22",
+      "phase": "Semanas 13 a 24",
+      "title": "Testar Apple/Google/Alexa/SmartThings conforme hardware disponível",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Testar Apple/Google/Alexa/SmartThings conforme hardware disponível"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Testar Apple/Google/Alexa/SmartThings conforme hardware disponível"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-23",
+      "phase": "Semanas 13 a 24",
+      "title": "Construir segundo projeto de portfólio completo",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Construir segundo projeto de portfólio completo"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Construir segundo projeto de portfólio completo"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-24",
+      "phase": "Semanas 13 a 24",
+      "title": "Revisão técnica, simulação de entrevista e candidaturas intensivas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Revisão técnica, simulação de entrevista e candidaturas intensivas"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Revisão técnica, simulação de entrevista e candidaturas intensivas"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-25",
+      "phase": "Segundo semestre",
+      "title": "Escolher nicho principal com base nas vagas encontradas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Escolher nicho principal com base nas vagas encontradas"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Escolher nicho principal com base nas vagas encontradas"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-26",
+      "phase": "Segundo semestre",
+      "title": "Levantar 20 anúncios de vagas e criar matriz de lacunas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Levantar 20 anúncios de vagas e criar matriz de lacunas"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Levantar 20 anúncios de vagas e criar matriz de lacunas"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-27",
+      "phase": "Segundo semestre",
+      "title": "Iniciar KNX eCampus se predial/condomínio interessar",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Iniciar KNX eCampus se predial/condomínio interessar"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Iniciar KNX eCampus se predial/condomínio interessar"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-28",
+      "phase": "Segundo semestre",
+      "title": "Usar ETS/KNX Virtual e modelar um pequeno imóvel",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Usar ETS/KNX Virtual e modelar um pequeno imóvel"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Usar ETS/KNX Virtual e modelar um pequeno imóvel"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-29",
+      "phase": "Segundo semestre",
+      "title": "Documentação elétrica e diagramas funcionais",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Documentação elétrica e diagramas funcionais"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Documentação elétrica e diagramas funcionais"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-30",
+      "phase": "Segundo semestre",
+      "title": "Lógica de iluminação, cenas e ocupação",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Lógica de iluminação, cenas e ocupação"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Lógica de iluminação, cenas e ocupação"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-31",
+      "phase": "Segundo semestre",
+      "title": "Consumo de energia, telemetria e históricos",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Consumo de energia, telemetria e históricos"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Consumo de energia, telemetria e históricos"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-32",
+      "phase": "Segundo semestre",
+      "title": "Alertas e tratamento de falhas",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Alertas e tratamento de falhas"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Alertas e tratamento de falhas"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-33",
+      "phase": "Segundo semestre",
+      "title": "Modbus RTU/TCP se mirando comercial/predial",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Modbus RTU/TCP se mirando comercial/predial"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Modbus RTU/TCP se mirando comercial/predial"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-34",
+      "phase": "Segundo semestre",
+      "title": "Integrar dispositivo ou simulador Modbus",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Integrar dispositivo ou simulador Modbus"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Integrar dispositivo ou simulador Modbus"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-35",
+      "phase": "Segundo semestre",
+      "title": "BACnet: objetos, propriedades e serviços conceitualmente",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: BACnet: objetos, propriedades e serviços conceitualmente"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: BACnet: objetos, propriedades e serviços conceitualmente"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-36",
+      "phase": "Segundo semestre",
+      "title": "Projetar integração predial pequena",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Projetar integração predial pequena"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Projetar integração predial pequena"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-37",
+      "phase": "Segundo semestre",
+      "title": "Segurança de rede mais profunda",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Segurança de rede mais profunda"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Segurança de rede mais profunda"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-38",
+      "phase": "Segundo semestre",
+      "title": "Autenticação, certificados e ACL MQTT",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Autenticação, certificados e ACL MQTT"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Autenticação, certificados e ACL MQTT"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-39",
+      "phase": "Segundo semestre",
+      "title": "Modelagem de ameaças do projeto",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Modelagem de ameaças do projeto"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Modelagem de ameaças do projeto"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-40",
+      "phase": "Segundo semestre",
+      "title": "Teste baseado em OWASP IoT",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Teste baseado em OWASP IoT"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Teste baseado em OWASP IoT"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-41",
+      "phase": "Segundo semestre",
+      "title": "Observabilidade: logs, métricas e alarmes",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Observabilidade: logs, métricas e alarmes"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Observabilidade: logs, métricas e alarmes"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-42",
+      "phase": "Segundo semestre",
+      "title": "Backup, restore e recuperação de desastre",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Backup, restore e recuperação de desastre"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Backup, restore e recuperação de desastre"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-43",
+      "phase": "Segundo semestre",
+      "title": "Testes de queda de Internet",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Testes de queda de Internet"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Testes de queda de Internet"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-44",
+      "phase": "Segundo semestre",
+      "title": "Testes de reboot de hub/AP/dispositivos",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Testes de reboot de hub/AP/dispositivos"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Testes de reboot de hub/AP/dispositivos"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-45",
+      "phase": "Segundo semestre",
+      "title": "Projeto final voltado ao nicho escolhido",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Projeto final voltado ao nicho escolhido"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Projeto final voltado ao nicho escolhido"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-46",
+      "phase": "Segundo semestre",
+      "title": "Diagrama de arquitetura e BOM",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Diagrama de arquitetura e BOM"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Diagrama de arquitetura e BOM"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-47",
+      "phase": "Segundo semestre",
+      "title": "Plano de instalação e commissioning",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Plano de instalação e commissioning"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Plano de instalação e commissioning"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-48",
+      "phase": "Segundo semestre",
+      "title": "Plano de testes/aceitação",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Plano de testes/aceitação"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Plano de testes/aceitação"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-49",
+      "phase": "Segundo semestre",
+      "title": "Documentação de manutenção",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Documentação de manutenção"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Documentação de manutenção"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-50",
+      "phase": "Segundo semestre",
+      "title": "Gravar demonstração técnica curta",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Gravar demonstração técnica curta"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Gravar demonstração técnica curta"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-51",
+      "phase": "Segundo semestre",
+      "title": "Revisão de GitHub, currículo e LinkedIn",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Revisão de GitHub, currículo e LinkedIn"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Revisão de GitHub, currículo e LinkedIn"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    },
+    {
+      "id": "elet-52",
+      "phase": "Segundo semestre",
+      "title": "Entrevistas simuladas e fechamento das lacunas restantes",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 60,
+          "what": "Estudar: Entrevistas simuladas e fechamento das lacunas restantes"
+        },
+        {
+          "kind": "practice",
+          "minutes": 60,
+          "what": "Praticar no laboratório: Entrevistas simuladas e fechamento das lacunas restantes"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Registrar no GitHub o que saiu da semana"
+        }
+      ]
+    }
+  ]
+}

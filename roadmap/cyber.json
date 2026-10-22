@@ -1,1 +1,6 @@
-[]
+{
+  "$schema": "./schema.json",
+  "area": "cyber",
+  "title": "Pentest e Red Team em 12 meses",
+  "units": []
+}

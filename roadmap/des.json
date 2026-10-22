@@ -1,1 +1,6 @@
-[]
+{
+  "$schema": "./schema.json",
+  "area": "des",
+  "title": "Desenho",
+  "units": []
+}

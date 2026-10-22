@@ -106,8 +106,15 @@ body.roadmap-view .roadmap{display:block}
 body.roadmap-view .wrap>section:not(.roadmap),body.roadmap-view .nav,body.roadmap-view .backup{display:none}
 .toggle-roadmap{background:var(--card);border:1.5px solid var(--ink);border-radius:999px;padding:4px 14px;cursor:pointer;font-weight:700}
 .toggle-roadmap:hover{background:var(--cyber-wash)}
-.road-item .when{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--c)}
-.road-item p{margin:2px 0 0;font-size:.9rem;white-space:pre-line;overflow-wrap:anywhere}
+.road-item .when,.road-item .label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--c)}
+.road-item .label{margin-top:6px;color:var(--ink-soft)}
+.road-item .what{font-weight:800;margin:2px 0}
+.road-item p{margin:4px 0 0;font-size:.9rem;overflow-wrap:anywhere}
+.road-item ul{margin:2px 0 0;padding-left:1.1em;font-size:.88rem}
+.road ol.sessions{margin-top:8px;gap:6px}
+.sessions>li{font-size:.88rem;white-space:pre-line;padding-left:8px;border-left:2px solid var(--c);overflow-wrap:anywhere}
+.kind{display:block;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--c)}
+.todo .exercises{margin:4px 0 0;padding-left:1.1em;font-size:.82rem;color:var(--ink-soft)}
 
 /* rastreador do mês */
 .tracker-scroll{overflow-x:auto;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:14px}
