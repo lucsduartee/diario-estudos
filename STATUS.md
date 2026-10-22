@@ -27,11 +27,13 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
   - Sono: 7 h por noite, anotado no dia em que você acorda.
 - Rastreador do mês, com estudo e hábitos.
 - Trilha por área, com a fase calculada a partir de 20/10/2026.
-- Botões de exportar e importar backup em JSON.
+- Roadmap por área (botão no cabeçalho): lista ordenada do que fazer em cada bloco. O item 1 cai no primeiro bloco da área a partir de 20/10/2026, o item 2 no seguinte, e a descrição aparece no card, com links clicáveis.
+- Botões de exportar e importar backup em JSON, no formato `{days, roadmap}`. O import ainda aceita o formato antigo, só com os dias.
 
 ## Decisões
 
 - **Dados só no aparelho**, no `localStorage` com a chave `diario-estudos-v1` e um documento por data ISO (`{done, mood, note, water, exercise, sleep}`). Campo ausente conta como zero, então backups antigos continuam valendo.
+- **Roadmap na chave `diario-estudos-roadmap-v1`**, como `{área: [descrição, ...]}`. O encaixe é pelo calendário, não pelo check: bloco perdido não empurra os próximos itens.
 - **Hospedagem no GitHub Pages**, a partir da branch `main` na raiz. O Pages grátis exige repo público.
 - **Nada migrado do artifact.** O banco dele só tinha um dia vazio.
 - **Metas de hábito com fonte:** OMS para exercício (150 min por semana), AASM para sono (7 h ou mais), EFSA para água (2,0 a 2,5 L por dia).
@@ -39,7 +41,7 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
 ## Como publicar
 
 1. Altere os arquivos.
-2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v2`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
+2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v3`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
 3. Faça commit e push na `main`. O Pages publica sozinho em cerca de 1 minuto.
 
 O app instalado só pega a versão nova na segunda vez que é aberto.
@@ -61,3 +63,4 @@ Para testar local: `python3 -m http.server 8765` nesta pasta e abrir http://127.
 
 - `83573b3`: PWA portado do artifact.
 - `8f33aac`: hábitos de água, exercício e sono, com metas.
+- Roadmap por área encaixado nos blocos da semana, com cache `diario-v3`.

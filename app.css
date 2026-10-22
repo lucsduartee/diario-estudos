@@ -98,6 +98,26 @@ section{position:relative;z-index:0}
   font-family:var(--hand);font-size:1.2rem;line-height:1.25;color:var(--ink);padding:8px 2px 0}
 .note::placeholder{color:var(--ink-soft);opacity:.8}
 
+.todo{margin:4px 0 0 42px;font-size:.88rem;line-height:1.35;white-space:pre-line;overflow-wrap:anywhere;border-left:2px solid var(--c);padding-left:8px}
+
+/* roadmap: view de edição, troca de lugar com o diário */
+.roadmap{display:none}
+body.editing .roadmap{display:block}
+body.editing .wrap>section:not(.roadmap),body.editing .nav,body.editing .backup{display:none}
+.toggle-roadmap{background:var(--card);border:1.5px solid var(--ink);border-radius:999px;padding:4px 14px;cursor:pointer;font-weight:700}
+.toggle-roadmap:hover{background:var(--cyber-wash)}
+.road ol{margin-bottom:12px}
+.road-item{display:grid;grid-template-columns:1fr auto;gap:4px 8px;align-items:start}
+.road-item .when{grid-column:1/-1;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--c)}
+.road-item textarea{width:100%;resize:vertical;font:inherit;font-size:.9rem;color:var(--ink);background:var(--w);border:1.5px solid transparent;border-radius:8px;padding:6px 8px}
+.road-item textarea:focus{border-color:var(--c);outline:none}
+.road-item .tools{display:flex;gap:4px}
+.road button{border:1.5px solid var(--c);background:var(--card);color:var(--c);border-radius:999px;cursor:pointer;font-weight:800}
+.road .tools button{width:28px;height:28px;padding:0;line-height:1}
+.road button:disabled{opacity:.35;cursor:default}
+.road button:not(:disabled):hover{background:var(--w)}
+.road .add{padding:4px 14px}
+
 /* rastreador do mês */
 .tracker-scroll{overflow-x:auto;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:14px}
 table.tracker{border-collapse:separate;border-spacing:3px;font-variant-numeric:tabular-nums}

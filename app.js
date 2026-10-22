@@ -66,24 +66,51 @@ const trailMonth = d => Math.max(1, Math.floor((d - START) / 86400000 / 30.44) +
 
 let weekStart = mondayOf(today);
 const pendingNotes = {};
+let editing = false;
 
 // ---------- persistência ----------
 const LOCAL_KEY = "diario-estudos-v1";
+// roadmap: { área: [descrição da 1ª ocorrência, da 2ª, ...] }
+const ROADMAP_KEY = "diario-estudos-roadmap-v1";
 const setStatus = t => { document.getElementById("status").textContent = t; };
 
-function loadDays() {
-  try { return JSON.parse(localStorage.getItem(LOCAL_KEY) || "{}"); } catch { return {}; }
+function load(key) {
+  try { return JSON.parse(localStorage.getItem(key) || "{}"); } catch { return {}; }
 }
-let days = loadDays();
+let days = load(LOCAL_KEY);
+let roadmap = load(ROADMAP_KEY);
 
-function saveDays() {
+function save(key, value) {
   try {
-    localStorage.setItem(LOCAL_KEY, JSON.stringify(days));
+    localStorage.setItem(key, JSON.stringify(value));
     setStatus("Salvo neste aparelho");
   } catch {
     setStatus("Não foi possível salvar neste aparelho");
   }
 }
+const saveDays = () => save(LOCAL_KEY, days);
+const saveRoadmap = () => save(ROADMAP_KEY, roadmap);
+
+// ---------- roadmap ----------
+// Cada bloco da área, em ordem de calendário a partir de START, recebe o próximo item do roadmap.
+function* occurrences(area) {
+  for (let d = START; ; d = addDays(d, 1))
+    for (const s of PLAN[(d.getDay() + 6) % 7])
+      if (s.area === area) yield { key: iso(d), date: d, slot: s };
+}
+
+function roadmapItem(key, slot) {
+  const items = roadmap[slot.area] || [];
+  let i = 0;
+  for (const o of occurrences(slot.area)) {
+    if (i >= items.length || o.key > key) return "";
+    if (o.key === key && o.slot.id === slot.id) return items[i];
+    i++;
+  }
+}
+
+const escapeHtml = t => t.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const linkify = t => escapeHtml(t).replace(/https?:\/\/[^\s<]*[^\s<.,;:!?)]/g, u => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`);
 
 function dayState(key) { return { done: {}, mood: 0, note: "", water: 0, exercise: 0, sleep: 0, ...days[key] }; }
 function patchDay(key, patch) {
@@ -94,7 +121,7 @@ function patchDay(key, patch) {
 
 // ---------- backup ----------
 function exportBackup() {
-  const blob = new Blob([JSON.stringify(days, null, 2)], { type: "application/json" });
+  const blob = new Blob([JSON.stringify({ days, roadmap }, null, 2)], { type: "application/json" });
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
   a.download = `diario-estudos-${iso(today)}.json`;
@@ -106,7 +133,9 @@ async function importBackup(file) {
   try {
     const imported = JSON.parse(await file.text());
     if (!imported || typeof imported !== "object" || Array.isArray(imported)) throw new Error("invalid backup");
-    days = imported;
+    // backup antigo é só o objeto de dias, sem roadmap
+    if (imported.days) { days = imported.days; roadmap = imported.roadmap || {}; saveRoadmap(); }
+    else days = imported;
     saveDays();
     render();
     setStatus("Backup importado");
@@ -191,7 +220,15 @@ function renderWeek() {
       b.innerHTML = `<span class="box">${CHECK}</span><span><span class="meta">${AREAS[s.area].name} · ${s.when} · ${s.h} h</span><span class="focus"></span></span>`;
       b.querySelector(".focus").textContent = s.focus;
       b.onclick = () => { patchDay(key, { done: { [s.id]: !st.done[s.id] } }); render(); };
-      li.append(b); ul.append(li);
+      li.append(b);
+      const item = roadmapItem(key, s);
+      if (item) {
+        const p = document.createElement("p");
+        p.className = `todo a-${s.area}`;
+        p.innerHTML = linkify(item);
+        li.append(p);
+      }
+      ul.append(li);
     });
     if (FREE[i]) {
       const li = document.createElement("li");
@@ -268,16 +305,64 @@ function renderTrail() {
           <div class="what">${p.what}</div><p>${p.html}</p></li>`).join("")}</ol></div>`).join("");
 }
 
+const shortDate = d => `${DAY_NAMES[(d.getDay() + 6) % 7].slice(0, 3).toLowerCase()} ${pad(d.getDate())}/${pad(d.getMonth() + 1)}`;
+let roadmapSaveTimer;
+
+function renderRoadmap() {
+  const root = document.getElementById("roadmap-areas");
+  root.replaceChildren();
+  for (const [area, a] of Object.entries(AREAS)) {
+    const items = roadmap[area] || [];
+    const setItems = next => { roadmap[area] = next; saveRoadmap(); renderRoadmap(); };
+    const box = document.createElement("div");
+    box.className = `track road a-${area}`;
+    box.innerHTML = `<h3>${a.name}</h3><ol></ol><button class="add">Adicionar item</button>`;
+    const ol = box.querySelector("ol");
+    const when = occurrences(area);
+    items.forEach((text, i) => {
+      const o = when.next().value;
+      const li = document.createElement("li");
+      li.className = "road-item";
+      li.innerHTML = `<div class="when">#${i + 1} · ${shortDate(o.date)} · ${o.slot.when}</div>
+        <textarea rows="2" aria-label="${a.name}, item ${i + 1}"></textarea>
+        <div class="tools"><button aria-label="Subir item">↑</button><button aria-label="Descer item">↓</button><button aria-label="Remover item">×</button></div>`;
+      const ta = li.querySelector("textarea");
+      ta.value = text;
+      ta.placeholder = "O que fazer nesse bloco…";
+      ta.oninput = () => { items[i] = ta.value; clearTimeout(roadmapSaveTimer); roadmapSaveTimer = setTimeout(saveRoadmap, 700); };
+      const [up, down, del] = li.querySelectorAll("button");
+      const swap = j => { const next = [...items]; [next[i], next[j]] = [next[j], next[i]]; setItems(next); };
+      up.disabled = i === 0; down.disabled = i === items.length - 1;
+      up.onclick = () => swap(i - 1);
+      down.onclick = () => swap(i + 1);
+      del.onclick = () => setItems(items.filter((_, j) => j !== i));
+      ol.append(li);
+    });
+    box.querySelector(".add").onclick = () => {
+      setItems([...items, ""]);
+      document.querySelector(`.road.a-${area} li:last-child textarea`).focus();
+    };
+    root.append(box);
+  }
+}
+
 function render() {
   const end = addDays(weekStart, 6);
   document.getElementById("range").textContent =
     `${pad(weekStart.getDate())}/${pad(weekStart.getMonth() + 1)} – ${pad(end.getDate())}/${pad(end.getMonth() + 1)}`;
+  document.body.classList.toggle("editing", editing);
+  document.getElementById("toggle-roadmap").textContent = editing ? "Voltar ao diário" : "Roadmap";
+  if (editing) { renderRoadmap(); return; }
   renderGoals(); renderWeek(); renderTracker(); renderTrail();
 }
 
 document.getElementById("prev").onclick = () => { weekStart = addDays(weekStart, -7); render(); };
 document.getElementById("next").onclick = () => { weekStart = addDays(weekStart, 7); render(); };
 document.getElementById("today").onclick = () => { weekStart = mondayOf(today); render(); };
+document.getElementById("toggle-roadmap").onclick = () => {
+  if (roadmapSaveTimer) { clearTimeout(roadmapSaveTimer); saveRoadmap(); }
+  editing = !editing; render(); scrollTo(0, 0);
+};
 document.getElementById("export").onclick = exportBackup;
 document.getElementById("import").onchange = e => { const f = e.target.files[0]; if (f) importBackup(f); e.target.value = ""; };
 
