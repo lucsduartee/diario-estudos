@@ -100,6 +100,10 @@ body.roadmap-view .wrap>section:not(.roadmap),body.roadmap-view .nav,body.roadma
 .road ol.sessions{margin-top:8px;gap:6px}
 .sessions>li{font-size:.9rem;white-space:pre-line;padding-left:10px;border-left:1px solid var(--line);overflow-wrap:anywhere}
 .kind{display:block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft)}
+.todo summary{cursor:pointer}
+.todo details .label{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);margin-top:6px}
+.todo details ul{margin:2px 0 0;padding-left:1.1em}
+.todo details p{margin:6px 0 0}
 .todo .exercises{margin:4px 0 0;padding-left:1.1em;font-size:.84rem;color:var(--ink-soft)}
 
 /* rastreador do mês */

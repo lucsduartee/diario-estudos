@@ -46,6 +46,7 @@ function saveDays() {
 // e suas sessões ocupam, em ordem, os próximos blocos da área (schedule em plan.js).
 let roadmap = {};
 let scheduled = {};
+const openSteps = new Set(); // roteiros abertos; sobrevivem ao render(), não ao recarregar
 const KINDS = { study: "Estudo", practice: "Prática", deliverable: "Entregável", review: "Revisão" };
 
 async function loadRoadmap() {
@@ -63,8 +64,19 @@ async function loadRoadmap() {
 const scheduleOf = area => scheduled[area] || (scheduled[area] = schedule(roadmap[area]?.units || [], area).items);
 const roadmapItem = (key, slot) => scheduleOf(slot.area).find(o => o.key === key && o.slot.id === slot.id);
 
-const sessionHtml = ({ n, session: s }) => `<span class="kind">Semana ${n} · ${KINDS[s.kind] || s.kind} · ${s.minutes} min</span>${linkify(s.what)}` +
-  (s.exercises?.length ? `<ul class="exercises">${s.exercises.map(e => `<li>${linkify(e)}</li>`).join("")}</ul>` : "");
+// O bloco mostra uma linha curta: o "what" quando diz algo além do título da unidade ("Estudar: <título>" é
+// redundante), ou só a primeira etapa de um roteiro "a; b; c". O resto do roteiro e o contexto da semana
+// ficam num dropdown que abre ao tocar nessa linha.
+const sessionHtml = ({ unit, session: s }) => {
+  const [head, ...steps] = s.what.endsWith(unit.title) ? [] : s.what.split("; ");
+  const context = steps.map(linkify).join("\n") +
+    list("Objetivos", unit.objectives) + list("Tópicos", unit.topics) + list("Recursos", s.resources || unit.resources, resourceHtml) +
+    (unit.deliverable && unit.deliverable !== s.what ? `<p><b>Entregável:</b> ${linkify(unit.deliverable)}</p>` : "") +
+    (unit.doneWhen ? `<p><b>Pronto quando:</b> ${linkify(unit.doneWhen)}</p>` : "");
+  const line = head ? linkify(head) : "";
+  return (context ? `<details><summary>${line || "Detalhes da semana"}</summary>${context}</details>` : line) +
+    (s.exercises?.length ? `<ul class="exercises">${s.exercises.map(e => `<li>${linkify(e)}</li>`).join("")}</ul>` : "");
+};
 
 const escapeHtml = t => t.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const linkify = t => escapeHtml(t).replace(/https?:\/\/[^\s<]*[^\s<.,;:!?)]/g, u => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`);
@@ -180,16 +192,24 @@ function renderWeek() {
       const b = document.createElement("button");
       b.className = `slot a-${s.area}` + (st.done[s.id] ? " done" : "");
       b.setAttribute("aria-pressed", st.done[s.id] ? "true" : "false");
-      b.innerHTML = `<span class="box">${CHECK}</span><span><span class="meta">${AREAS[s.area].name} · ${s.when} · ${s.h} h</span><span class="focus"></span></span>`;
       const item = roadmapItem(key, s);
-      b.querySelector(".focus").textContent = item ? item.unit.title : s.focus;
+      const kind = item ? ` · ${KINDS[item.session.kind] || item.session.kind}` : "";
+      b.innerHTML = `<span class="box">${CHECK}</span><span><span class="meta">${AREAS[s.area].name} · ${s.when}${kind} · ${s.h}&nbsp;h</span><span class="focus"></span></span>`;
+      b.querySelector(".focus").textContent = item ? item.session.title || item.unit.title : s.focus;
       b.onclick = () => { patchDay(key, { done: { [s.id]: !st.done[s.id] } }); render(); };
       li.append(b);
       const last = scheduleOf(s.area).slice(-1)[0];
-      if (item || (last && key > last.key)) {
+      const todo = item ? sessionHtml(item)
+        : last && key > last.key ? `<span class="kind">Roadmap terminou em ${shortDate(last.date)}</span>Atualize roadmap/${s.area}.json.` : "";
+      if (todo) {
         const p = document.createElement("p");
         p.className = `todo a-${s.area}`;
-        p.innerHTML = item ? sessionHtml(item) : `<span class="kind">Roadmap terminou em ${shortDate(last.date)}</span>Atualize roadmap/${s.area}.json.`;
+        p.innerHTML = todo;
+        const steps = p.querySelector("details"), stepsId = `${key}-${s.id}`;
+        if (steps) {
+          steps.open = openSteps.has(stepsId);
+          steps.ontoggle = () => steps.open ? openSteps.add(stepsId) : openSteps.delete(stepsId);
+        }
         li.append(p);
       }
       ul.append(li);
