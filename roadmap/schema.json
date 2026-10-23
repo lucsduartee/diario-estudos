@@ -48,8 +48,10 @@
       "properties": {
         "kind": { "enum": ["study", "practice", "deliverable", "review"] },
         "minutes": { "type": "integer", "minimum": 1, "description": "Tempo de dedicação planejado." },
+        "title": { "type": "string", "minLength": 1, "description": "Foco do bloco; quando ausente, vale o title da unidade." },
         "what": { "type": "string", "minLength": 1, "description": "O que fazer no bloco." },
-        "exercises": { "$ref": "#/$defs/texts" }
+        "exercises": { "$ref": "#/$defs/texts" },
+        "resources": { "type": "array", "items": { "$ref": "#/$defs/link" }, "description": "Recursos do bloco; quando ausente, valem os da unidade." }
       }
     }
   }

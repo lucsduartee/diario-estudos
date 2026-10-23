@@ -57,7 +57,8 @@ O app instalado só pega a versão nova na segunda vez que é aberto.
 1. Edite `roadmap/<área>.json` seguindo `roadmap/schema.json` (o editor dá autocomplete pelo campo `$schema`). Cada item de `units` é uma semana:
    - obrigatórios: `id` (como `cyber-01`, único), `title` e `sessions`;
    - opcionais: `startsOn` (data AAAA-MM-DD: a semana começa no primeiro bloco a partir dela, para conteúdo preso ao calendário), `phase`, `objectives`, `topics`, `resources` (`{title, url}`), `deliverable` e `doneWhen`;
-   - cada sessão tem `kind` (`study`, `practice`, `deliverable` ou `review`), `minutes`, `what` e, opcional, `exercises`.
+   - cada sessão tem `kind` (`study`, `practice`, `deliverable` ou `review`), `minutes`, `what` e, opcionais, `exercises`, `title` (substitui o da semana no bloco) e `resources` (substitui os da semana no dropdown do bloco).
+   No bloco, `what` igual ao título com um verbo na frente não aparece, e um roteiro `a; b; c` mostra só a primeira etapa; o resto e o contexto da semana ficam no dropdown.
    Link `http(s)` vira clicável e `\n` quebra a linha.
 2. Rode `node scripts/check-roadmap.mjs`. Erro bloqueia (sai com código 1). Aviso não bloqueia: aparece quando os minutos de uma sessão diferem do bloco em que ela cai.
 3. Suba o `CACHE` em `sw.js` e publique como acima. Sem isso, o app instalado continua com o roadmap antigo, porque o service worker é cache-first.

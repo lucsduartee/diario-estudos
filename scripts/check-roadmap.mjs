@@ -7,7 +7,7 @@ const root = new URL("..", import.meta.url);
 const { AREAS, schedule } = runInNewContext(readFileSync(new URL("plan.js", root), "utf8") + ";({ AREAS, schedule })");
 const KINDS = ["study", "practice", "deliverable", "review"];
 const UNIT_KEYS = ["id", "startsOn", "phase", "title", "objectives", "topics", "resources", "deliverable", "doneWhen", "sessions"];
-const SESSION_KEYS = ["kind", "minutes", "what", "exercises"];
+const SESSION_KEYS = ["kind", "minutes", "title", "what", "exercises", "resources"];
 
 const errors = [], warnings = [];
 const isText = v => typeof v === "string" && v.trim() !== "";
@@ -43,8 +43,10 @@ for (const file of readdirSync(new URL("roadmap/", root)).filter(f => f.endsWith
       Object.keys(s).filter(k => !SESSION_KEYS.includes(k)).forEach(k => at(`${q}.${k} não existe no schema`));
       if (!KINDS.includes(s.kind)) at(`${q}.kind deve ser ${KINDS.join(", ")}`);
       if (!Number.isInteger(s.minutes) || s.minutes < 1) at(`${q}.minutes deve ser inteiro positivo`);
+      if (s.title !== undefined && !isText(s.title)) at(`${q}.title deve ser texto`);
       if (!isText(s.what)) at(`${q}.what obrigatório`);
       if (!isTexts(s.exercises)) at(`${q}.exercises deve ser lista de textos`);
+      if (s.resources !== undefined && !(Array.isArray(s.resources) && s.resources.every(isLink))) at(`${q}.resources: cada item precisa de title e url http(s)`);
     });
   });
   if (errors.length) continue;

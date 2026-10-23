@@ -65,26 +65,90 @@
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Cálculo I · S1: Funções e Introdução aos Estudos de Limites. Videoaulas: 1. A Importância do Cálculo na Engenharia; 2. Introdução ao Estudo de Funções de uma Variável; 3. Limites de uma Função: Introdução"
+          "title": "Cálculo I: Funções e Introdução aos Estudos de Limites",
+          "what": "Videoaulas 1 a 3",
+          "resources": [
+            {
+              "title": "Cálculo I · videoaula 1: A Importância do Cálculo na Engenharia",
+              "url": "https://youtu.be/hSRvmJK07OY"
+            },
+            {
+              "title": "Cálculo I · videoaula 2: Introdução ao Estudo de Funções de uma Variável",
+              "url": "https://youtu.be/dMYzIaLAr7M"
+            },
+            {
+              "title": "Cálculo I · videoaula 3: Limites de uma Função: Introdução",
+              "url": "https://youtu.be/7bYoGkGunSU"
+            },
+            {
+              "title": "Cálculo I · atividade avaliativa S1",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=270395"
+            },
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Estatística e Probabilidade · S1: Introdução à estatística descritiva. Material da semana no AVA"
+          "title": "Estatística e Probabilidade: Introdução à estatística descritiva",
+          "what": "Material da semana no AVA",
+          "resources": [
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Fundamentos Matemáticos para Computação · S1: Conceitos básicos: lógica formal. Material da semana no AVA"
+          "title": "Fundamentos Matemáticos para Computação: Conceitos básicos: lógica formal",
+          "what": "Material da semana no AVA",
+          "resources": [
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "review",
           "minutes": 60,
-          "what": "Fundamentos de Internet e Web · S1: Conceitos de redes de computadores. Videoaulas: 1. Introdução às Redes de Computadores\nGestão da Inovação e Desenvolvimento de Produtos · S1: Inovação como fonte de vantagem competitiva. Videoaulas: 1. Transformação digital, inovação e motivações para inovar",
+          "title": "Fundamentos de Internet e Web · Gestão da Inovação e Desenvolvimento de Produtos",
+          "what": "Conceitos de redes de computadores · Inovação como fonte de vantagem competitiva",
           "exercises": [
             "Atividade avaliativa de Cálculo I",
             "Atividade avaliativa de Fundamentos de Internet e Web",
             "Atividade avaliativa de Gestão da Inovação e Desenvolvimento de Produtos"
+          ],
+          "resources": [
+            {
+              "title": "Fundamentos de Internet e Web · videoaula 1: Introdução às Redes de Computadores",
+              "url": "https://youtu.be/IUqRlJhwvV4"
+            },
+            {
+              "title": "Gestão da Inovação e Desenvolvimento de Produtos · videoaula 1: Transformação digital, inovação e motivações para inovar",
+              "url": "https://youtu.be/TMlpkdhHpKQ"
+            },
+            {
+              "title": "Cálculo I · atividade avaliativa S1",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=270395"
+            },
+            {
+              "title": "Fundamentos de Internet e Web · atividade avaliativa S1",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=265175"
+            },
+            {
+              "title": "Gestão da Inovação e Desenvolvimento de Produtos · atividade avaliativa S1",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=262911"
+            },
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
           ]
         }
       ]
@@ -141,26 +205,94 @@
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Cálculo I · S2: Derivadas e Taxa de Derivação. Videoaulas: 4. Limites; 5. Estudo das Derivadas de uma Função (Parte I); 6. Estudo das Derivadas de uma Função (Parte II); 7. Aula de Exercícios (Limite)"
+          "title": "Cálculo I: Derivadas e Taxa de Derivação",
+          "what": "Videoaulas 4 a 7",
+          "resources": [
+            {
+              "title": "Cálculo I · videoaula 4: Limites",
+              "url": "https://youtu.be/ododMHp4OsA"
+            },
+            {
+              "title": "Cálculo I · videoaula 5: Estudo das Derivadas de uma Função (Parte I)",
+              "url": "https://youtu.be/Q9av6qc_6d0"
+            },
+            {
+              "title": "Cálculo I · videoaula 6: Estudo das Derivadas de uma Função (Parte II)",
+              "url": "https://youtu.be/lYjR0I9y6bw"
+            },
+            {
+              "title": "Cálculo I · videoaula 7: Aula de Exercícios (Limite)",
+              "url": "https://youtu.be/uvwEX9OAvZM"
+            },
+            {
+              "title": "Cálculo I · atividade avaliativa S2",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=270407"
+            },
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Estatística e Probabilidade · S2: Organização e apresentação de dados. Material da semana no AVA"
+          "title": "Estatística e Probabilidade: Organização e apresentação de dados",
+          "what": "Material da semana no AVA",
+          "resources": [
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Fundamentos Matemáticos para Computação · S2: Lógica de Predicados. Material da semana no AVA"
+          "title": "Fundamentos Matemáticos para Computação: Lógica de Predicados",
+          "what": "Material da semana no AVA",
+          "resources": [
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "review",
           "minutes": 60,
-          "what": "Fundamentos de Internet e Web · S2: Protocolos fundamentais às aplicações Web. Videoaulas: 2. Protocolos de comunicação da internet\nGestão da Inovação e Desenvolvimento de Produtos · S2: A gestão da inovação dentro das empresas. Videoaulas: 2. Atributos de uma organização inovadora",
+          "title": "Fundamentos de Internet e Web · Gestão da Inovação e Desenvolvimento de Produtos",
+          "what": "Protocolos fundamentais às aplicações Web · A gestão da inovação dentro das empresas",
           "exercises": [
             "Atividade avaliativa de Cálculo I",
             "Atividade avaliativa de Fundamentos de Internet e Web",
             "Atividade avaliativa de Gestão da Inovação e Desenvolvimento de Produtos"
+          ],
+          "resources": [
+            {
+              "title": "Fundamentos de Internet e Web · videoaula 2: Protocolos de comunicação da internet",
+              "url": "https://youtu.be/X4XeT9pRHrs"
+            },
+            {
+              "title": "Gestão da Inovação e Desenvolvimento de Produtos · videoaula 2: Atributos de uma organização inovadora",
+              "url": "https://youtu.be/v1T7-kviQ3w"
+            },
+            {
+              "title": "Cálculo I · atividade avaliativa S2",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=270407"
+            },
+            {
+              "title": "Fundamentos de Internet e Web · atividade avaliativa S2",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=265183"
+            },
+            {
+              "title": "Gestão da Inovação e Desenvolvimento de Produtos · atividade avaliativa S2",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=262921"
+            },
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
           ]
         }
       ]
@@ -213,26 +345,90 @@
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Cálculo I · S3: Regras de Derivação. Videoaulas: 8. Regras de Derivação; 9. Regra da Cadeia; 10. Derivada de Função Inversa e Implícita"
+          "title": "Cálculo I: Regras de Derivação",
+          "what": "Videoaulas 8 a 10",
+          "resources": [
+            {
+              "title": "Cálculo I · videoaula 8: Regras de Derivação",
+              "url": "https://youtu.be/9zeUdF5HOsI"
+            },
+            {
+              "title": "Cálculo I · videoaula 9: Regra da Cadeia",
+              "url": "https://youtu.be/Ar7P4k9T9wI"
+            },
+            {
+              "title": "Cálculo I · videoaula 10: Derivada de Função Inversa e Implícita",
+              "url": "https://youtu.be/71F2OHt53og"
+            },
+            {
+              "title": "Cálculo I · atividade avaliativa S3",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=270415"
+            },
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Estatística e Probabilidade · S3: Probabilidades. Material da semana no AVA"
+          "title": "Estatística e Probabilidade: Probabilidades",
+          "what": "Material da semana no AVA",
+          "resources": [
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Fundamentos Matemáticos para Computação · S3: Demonstrações. Material da semana no AVA"
+          "title": "Fundamentos Matemáticos para Computação: Demonstrações",
+          "what": "Material da semana no AVA",
+          "resources": [
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "review",
           "minutes": 60,
-          "what": "Fundamentos de Internet e Web · S3: Fundamentos do WWW. Videoaulas: 3. A World Wide Web - WWW\nGestão da Inovação e Desenvolvimento de Produtos · S3: Desenvolvimento de novos produtos. Videoaulas: 3. Gestão do desenvolvimento de novos produtos",
+          "title": "Fundamentos de Internet e Web · Gestão da Inovação e Desenvolvimento de Produtos",
+          "what": "Fundamentos do WWW · Desenvolvimento de novos produtos",
           "exercises": [
             "Atividade avaliativa de Cálculo I",
             "Atividade avaliativa de Fundamentos de Internet e Web",
             "Atividade avaliativa de Gestão da Inovação e Desenvolvimento de Produtos"
+          ],
+          "resources": [
+            {
+              "title": "Fundamentos de Internet e Web · videoaula 3: A World Wide Web - WWW",
+              "url": "https://youtu.be/nWtYrjbLBlE"
+            },
+            {
+              "title": "Gestão da Inovação e Desenvolvimento de Produtos · videoaula 3: Gestão do desenvolvimento de novos produtos",
+              "url": "https://youtu.be/W6Ng4GWLYmw"
+            },
+            {
+              "title": "Cálculo I · atividade avaliativa S3",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=270415"
+            },
+            {
+              "title": "Fundamentos de Internet e Web · atividade avaliativa S3",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=265191"
+            },
+            {
+              "title": "Gestão da Inovação e Desenvolvimento de Produtos · atividade avaliativa S3",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=262930"
+            },
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
           ]
         }
       ]
@@ -289,26 +485,94 @@
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Cálculo I · S4: Aplicações de Derivadas: Máximo e Mínimo das Funções. Videoaulas: 11. Regras de L’Hospital e Introdução ao Estudo do Comportamento de Funções; 12. Máximos e Mínimos de uma Função; 13. O Teorema de Taylor; 14. Exercícios Resolvidos – Derivada"
+          "title": "Cálculo I: Aplicações de Derivadas: Máximo e Mínimo das Funções",
+          "what": "Videoaulas 11 a 14",
+          "resources": [
+            {
+              "title": "Cálculo I · videoaula 11: Regras de L’Hospital e Introdução ao Estudo do Comportamento de Funções",
+              "url": "https://youtu.be/BvZLgDbZMnM"
+            },
+            {
+              "title": "Cálculo I · videoaula 12: Máximos e Mínimos de uma Função",
+              "url": "https://youtu.be/UzI8sx5LSZQ"
+            },
+            {
+              "title": "Cálculo I · videoaula 13: O Teorema de Taylor",
+              "url": "https://youtu.be/50xyLY4GbGM"
+            },
+            {
+              "title": "Cálculo I · videoaula 14: Exercícios Resolvidos – Derivada",
+              "url": "https://youtu.be/IwSVkg11M_4"
+            },
+            {
+              "title": "Cálculo I · atividade avaliativa S4",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=270422"
+            },
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Estatística e Probabilidade · S4: Variáveis aleatórias discretas. Material da semana no AVA"
+          "title": "Estatística e Probabilidade: Variáveis aleatórias discretas",
+          "what": "Material da semana no AVA",
+          "resources": [
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Fundamentos Matemáticos para Computação · S4: Relações de Recorrência. Material da semana no AVA"
+          "title": "Fundamentos Matemáticos para Computação: Relações de Recorrência",
+          "what": "Material da semana no AVA",
+          "resources": [
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "review",
           "minutes": 60,
-          "what": "Fundamentos de Internet e Web · S4: Linguagem de marcação: HTML. Videoaulas: 4. Linguagens de marcação para a WWW\nGestão da Inovação e Desenvolvimento de Produtos · S4: Criatividade e inovação. Videoaulas: 4. Utilizando a criatividade para explorar fontes de oportunidades",
+          "title": "Fundamentos de Internet e Web · Gestão da Inovação e Desenvolvimento de Produtos",
+          "what": "Linguagem de marcação: HTML · Criatividade e inovação",
           "exercises": [
             "Atividade avaliativa de Cálculo I",
             "Atividade avaliativa de Fundamentos de Internet e Web",
             "Atividade avaliativa de Gestão da Inovação e Desenvolvimento de Produtos"
+          ],
+          "resources": [
+            {
+              "title": "Fundamentos de Internet e Web · videoaula 4: Linguagens de marcação para a WWW",
+              "url": "https://youtu.be/5zGu12S2rKI"
+            },
+            {
+              "title": "Gestão da Inovação e Desenvolvimento de Produtos · videoaula 4: Utilizando a criatividade para explorar fontes de oportunidades",
+              "url": "https://youtu.be/I5-dFMikN4o"
+            },
+            {
+              "title": "Cálculo I · atividade avaliativa S4",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=270422"
+            },
+            {
+              "title": "Fundamentos de Internet e Web · atividade avaliativa S4",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=265200"
+            },
+            {
+              "title": "Gestão da Inovação e Desenvolvimento de Produtos · atividade avaliativa S4",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=262939"
+            },
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
           ]
         }
       ]
@@ -357,26 +621,86 @@
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Cálculo I · S5: Integrais e o Teorema Fundamental do Cálculo. Videoaulas: 15. Integral de Riemann; 16. Integração de Funções Elementares; 17. O Teorema Fundamental do Cálculo"
+          "title": "Cálculo I: Integrais e o Teorema Fundamental do Cálculo",
+          "what": "Videoaulas 15 a 17",
+          "resources": [
+            {
+              "title": "Cálculo I · videoaula 15: Integral de Riemann",
+              "url": "https://youtu.be/EnbVxb-dUeA"
+            },
+            {
+              "title": "Cálculo I · videoaula 16: Integração de Funções Elementares",
+              "url": "https://youtu.be/tX6jGzBzYZk"
+            },
+            {
+              "title": "Cálculo I · videoaula 17: O Teorema Fundamental do Cálculo",
+              "url": "https://youtu.be/hixN8tYnMdI"
+            },
+            {
+              "title": "Cálculo I · atividade avaliativa S5",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=270433"
+            },
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Estatística e Probabilidade · S5: Variáveis aleatórias contínuas. Material da semana no AVA"
+          "title": "Estatística e Probabilidade: Variáveis aleatórias contínuas",
+          "what": "Material da semana no AVA",
+          "resources": [
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Fundamentos Matemáticos para Computação · S5: Relações, funções e matrizes. Material da semana no AVA"
+          "title": "Fundamentos Matemáticos para Computação: Relações, funções e matrizes",
+          "what": "Material da semana no AVA",
+          "resources": [
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "review",
           "minutes": 60,
-          "what": "Fundamentos de Internet e Web · S5: HTML5 e suas funcionalidades. Material da semana no AVA\nGestão da Inovação e Desenvolvimento de Produtos · S5: Prototipagem de ideias e projetos inovadores. Videoaulas: 5. Lean Startup e Design Thinking",
+          "title": "Fundamentos de Internet e Web · Gestão da Inovação e Desenvolvimento de Produtos",
+          "what": "HTML5 e suas funcionalidades · Prototipagem de ideias e projetos inovadores",
           "exercises": [
             "Atividade avaliativa de Cálculo I",
             "Atividade avaliativa de Fundamentos de Internet e Web",
             "Atividade avaliativa de Gestão da Inovação e Desenvolvimento de Produtos"
+          ],
+          "resources": [
+            {
+              "title": "Gestão da Inovação e Desenvolvimento de Produtos · videoaula 5: Lean Startup e Design Thinking",
+              "url": "https://youtu.be/t6zuDHdssRg"
+            },
+            {
+              "title": "Cálculo I · atividade avaliativa S5",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=270433"
+            },
+            {
+              "title": "Fundamentos de Internet e Web · atividade avaliativa S5",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=265210"
+            },
+            {
+              "title": "Gestão da Inovação e Desenvolvimento de Produtos · atividade avaliativa S5",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=262949"
+            },
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
           ]
         }
       ]
@@ -433,26 +757,94 @@
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Cálculo I · S6: Técnicas de Integração. Videoaulas: 18. Técnicas de integração (parte I); 19. Técnicas de integração (parte II); 20. Técnicas de integração (parte III)"
+          "title": "Cálculo I: Técnicas de Integração",
+          "what": "Videoaulas 18 a 20",
+          "resources": [
+            {
+              "title": "Cálculo I · videoaula 18: Técnicas de integração (parte I)",
+              "url": "https://youtu.be/Gou4v4v792o"
+            },
+            {
+              "title": "Cálculo I · videoaula 19: Técnicas de integração (parte II)",
+              "url": "https://youtu.be/nb6dxznMXtI"
+            },
+            {
+              "title": "Cálculo I · videoaula 20: Técnicas de integração (parte III)",
+              "url": "https://youtu.be/LLZdQRBWtww"
+            },
+            {
+              "title": "Cálculo I · atividade avaliativa S6",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=270440"
+            },
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Estatística e Probabilidade · S6: Teorema central do limite e leis dos grandes números. Material da semana no AVA"
+          "title": "Estatística e Probabilidade: Teorema central do limite e leis dos grandes números",
+          "what": "Material da semana no AVA",
+          "resources": [
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Fundamentos Matemáticos para Computação · S6: Grafos e Árvores. Material da semana no AVA"
+          "title": "Fundamentos Matemáticos para Computação: Grafos e Árvores",
+          "what": "Material da semana no AVA",
+          "resources": [
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "review",
           "minutes": 60,
-          "what": "Fundamentos de Internet e Web · S6: CSS: linguagem de folhas de estilos. Videoaulas: 6. CSS - Cascading Style Sheets; 7. Desenvolvimento de páginas Web com HTML5 e CSS - Parte 1\nGestão da Inovação e Desenvolvimento de Produtos · S6: O Plano de Negócios. Videoaulas: 6. Elaborando um plano de negócios",
+          "title": "Fundamentos de Internet e Web · Gestão da Inovação e Desenvolvimento de Produtos",
+          "what": "CSS: linguagem de folhas de estilos · O Plano de Negócios",
           "exercises": [
             "Atividade avaliativa de Cálculo I",
             "Atividade avaliativa de Fundamentos de Internet e Web",
             "Atividade avaliativa de Gestão da Inovação e Desenvolvimento de Produtos"
+          ],
+          "resources": [
+            {
+              "title": "Fundamentos de Internet e Web · videoaula 6: CSS - Cascading Style Sheets",
+              "url": "https://youtu.be/LwCys3y5-k8"
+            },
+            {
+              "title": "Fundamentos de Internet e Web · videoaula 7: Desenvolvimento de páginas Web com HTML5 e CSS - Parte 1",
+              "url": "https://youtu.be/jY-XFGpoIvQ"
+            },
+            {
+              "title": "Gestão da Inovação e Desenvolvimento de Produtos · videoaula 6: Elaborando um plano de negócios",
+              "url": "https://youtu.be/UhNj-Ij_PWk"
+            },
+            {
+              "title": "Cálculo I · atividade avaliativa S6",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=270440"
+            },
+            {
+              "title": "Fundamentos de Internet e Web · atividade avaliativa S6",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=265219"
+            },
+            {
+              "title": "Gestão da Inovação e Desenvolvimento de Produtos · atividade avaliativa S6",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=262958"
+            },
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
           ]
         }
       ]
@@ -509,26 +901,94 @@
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Cálculo I · S7: Aplicações da Integral: Cálculo de Áreas. Videoaulas: 21. Cálculo de Área (parte I); 22. Cálculo de Área (parte II); 23. Integrais Impróprias"
+          "title": "Cálculo I: Aplicações da Integral: Cálculo de Áreas",
+          "what": "Videoaulas 21 a 23",
+          "resources": [
+            {
+              "title": "Cálculo I · videoaula 21: Cálculo de Área (parte I)",
+              "url": "https://youtu.be/ioHVBQdWPzQ"
+            },
+            {
+              "title": "Cálculo I · videoaula 22: Cálculo de Área (parte II)",
+              "url": "https://youtu.be/VuHjTTgKpkw"
+            },
+            {
+              "title": "Cálculo I · videoaula 23: Integrais Impróprias",
+              "url": "https://youtu.be/XhWfvnsq1pA"
+            },
+            {
+              "title": "Cálculo I · atividade avaliativa S7",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=270450"
+            },
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Estatística e Probabilidade · S7: Introdução à inferência estatística. Material da semana no AVA"
+          "title": "Estatística e Probabilidade: Introdução à inferência estatística",
+          "what": "Material da semana no AVA",
+          "resources": [
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "study",
           "minutes": 60,
-          "what": "Fundamentos Matemáticos para Computação · S7: Algoritmos em Grafos. Material da semana no AVA"
+          "title": "Fundamentos Matemáticos para Computação: Algoritmos em Grafos",
+          "what": "Material da semana no AVA",
+          "resources": [
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
+          ]
         },
         {
           "kind": "review",
           "minutes": 60,
-          "what": "Fundamentos de Internet e Web · S7: Desenvolvimento de aplicação. Videoaulas: 8. Desenvolvimento de páginas Web com HTML5 e CSS - Parte 2; 9. Desenvolvimento de páginas Web com HTML5 e CSS - Parte 3\nGestão da Inovação e Desenvolvimento de Produtos · S7: Modelagem de negócios e fontes de financiamento para projetos inovadores. Videoaulas: 7. Fontes de financiamento para projetos inovadores",
+          "title": "Fundamentos de Internet e Web · Gestão da Inovação e Desenvolvimento de Produtos",
+          "what": "Desenvolvimento de aplicação · Modelagem de negócios e fontes de financiamento para projetos inovadores",
           "exercises": [
             "Atividade avaliativa de Cálculo I",
             "Atividade avaliativa de Fundamentos de Internet e Web",
             "Atividade avaliativa de Gestão da Inovação e Desenvolvimento de Produtos"
+          ],
+          "resources": [
+            {
+              "title": "Fundamentos de Internet e Web · videoaula 8: Desenvolvimento de páginas Web com HTML5 e CSS - Parte 2",
+              "url": "https://youtu.be/An83HyoYbwE"
+            },
+            {
+              "title": "Fundamentos de Internet e Web · videoaula 9: Desenvolvimento de páginas Web com HTML5 e CSS - Parte 3",
+              "url": "https://youtu.be/BcqJmJ2llPA"
+            },
+            {
+              "title": "Gestão da Inovação e Desenvolvimento de Produtos · videoaula 7: Fontes de financiamento para projetos inovadores",
+              "url": "https://youtu.be/7ikCeWq5Tjk"
+            },
+            {
+              "title": "Cálculo I · atividade avaliativa S7",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=270450"
+            },
+            {
+              "title": "Fundamentos de Internet e Web · atividade avaliativa S7",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=265227"
+            },
+            {
+              "title": "Gestão da Inovação e Desenvolvimento de Produtos · atividade avaliativa S7",
+              "url": "https://ava.univesp.br/mod/quiz/view.php?id=262968"
+            },
+            {
+              "title": "Painel do Bimestre",
+              "url": "https://claude.ai/artifact/AnURHthRTQn4FZNrxdN5VL"
+            }
           ]
         }
       ]

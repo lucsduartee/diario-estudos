@@ -27,12 +27,18 @@ const shared = byHours.slice(blocks.length - 1);
 const weekOf = (course, n) => course.weeks.find(w => w.number === n);
 const isUrl = u => /^https?:\/\//.test(u || "");
 
-const line = (course, n) => {
+// O bloco mostra só o essencial; títulos e links das videoaulas ficam em resources e no painel.
+const videoRange = videos => {
+  const ns = videos.map(v => Number(v.n));
+  if (ns.length === 1) return `Videoaula ${ns[0]}`;
+  const contiguous = ns.every((v, i) => i === 0 || v === ns[i - 1] + 1);
+  return `Videoaulas ${contiguous ? `${ns[0]} a ${ns[ns.length - 1]}` : ns.join(", ")}`;
+};
+const studySession = (course, n) => {
   const week = weekOf(course, n);
-  if (!week) return `${course.name}: sem semana ${n} no AVA`;
+  if (!week) return { title: course.name, what: `Sem semana ${n} no AVA` };
   const videos = week.videos || [];
-  return `${course.name} · S${n}: ${week.theme}. ` +
-    (videos.length ? `Videoaulas: ${videos.map(v => `${v.n}. ${v.title}`).join("; ")}` : "Material da semana no AVA");
+  return { title: `${course.name}: ${week.theme}`, what: videos.length ? videoRange(videos) : "Material da semana no AVA" };
 };
 const quizzes = n => data.courses.flatMap(c => (weekOf(c, n)?.links || []).filter(l => l.kind === "quiz" && isUrl(l.href)).map(l => ({ course: c, link: l })));
 
@@ -42,18 +48,21 @@ const numbers = [...new Set(data.courses.flatMap(c => c.weeks.map(w => w.number)
 const units = numbers.map(n => {
   const quiz = quizzes(n);
   const objectives = data.courses.flatMap(c => (weekOf(c, n)?.study?.objectives || []).map(o => `${c.name}: ${o}`));
-  const resources = [
-    ...data.courses.flatMap(c => (weekOf(c, n)?.videos || []).filter(v => isUrl(v.watch)).map(v => ({ title: `${c.name} · videoaula ${v.n}: ${v.title}`, url: v.watch }))),
-    ...quiz.map(({ course, link }) => ({ title: `${course.name} · atividade avaliativa S${n}`, url: link.href })),
+  // Cada bloco leva só os recursos das suas disciplinas; a semana guarda todos, para a tela de Roadmap.
+  const linksOf = (courses, quizList) => [
+    ...courses.flatMap(c => (weekOf(c, n)?.videos || []).filter(v => isUrl(v.watch)).map(v => ({ title: `${c.name} · videoaula ${v.n}: ${v.title}`, url: v.watch }))),
+    ...quizList.map(({ course, link }) => ({ title: `${course.name} · atividade avaliativa S${n}`, url: link.href })),
     PANEL,
   ];
   const sessions = blocks.map((slot, i) => i < own.length
-    ? { kind: "study", minutes: slot.h * 60, what: line(own[i], n) }
+    ? { kind: "study", minutes: slot.h * 60, ...studySession(own[i], n), resources: linksOf([own[i]], quiz.filter(q => q.course === own[i])) }
     : {
         kind: "review",
         minutes: slot.h * 60,
-        what: shared.map(c => line(c, n)).join("\n"),
+        title: shared.map(c => c.name).join(" · "),
+        what: shared.map(c => weekOf(c, n)?.theme || `${c.name}: sem semana ${n} no AVA`).join(" · "),
         ...(quiz.length ? { exercises: quiz.map(({ course }) => `Atividade avaliativa de ${course.name}`) } : {}),
+        resources: linksOf(shared, quiz),
       });
   return {
     id: `${AREA}-${String(n).padStart(2, "0")}`,
@@ -61,7 +70,7 @@ const units = numbers.map(n => {
     phase: data.term,
     title: `Semana ${n}: ${data.courses.map(c => weekOf(c, n)?.theme).filter(Boolean).join(" · ")}`,
     ...(objectives.length ? { objectives } : {}),
-    resources,
+    resources: linksOf(data.courses, quiz),
     deliverable: `Atividades avaliativas da semana ${n} no AVA`,
     sessions,
   };
