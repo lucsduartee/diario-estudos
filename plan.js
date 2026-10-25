@@ -1,5 +1,5 @@
 // Plano semanal: compartilhado por app.js e scripts/check-roadmap.mjs.
-const START = new Date(2026, 9, 20);
+const START = new Date(2026, 9, 25);
 const AREAS = {
   cyber: { name: "Cybersecurity", goal: 4 },
   elet:  { name: "Eletrônica", goal: 4 },
