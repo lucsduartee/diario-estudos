@@ -62,7 +62,7 @@ async function loadRoadmap() {
 }
 
 const scheduleOf = area => scheduled[area] || (scheduled[area] = schedule(roadmap[area]?.units || [], area).items);
-const roadmapItem = (key, slot) => scheduleOf(slot.area).find(o => o.key === key && o.slot.id === slot.id);
+const roadmapItems = (key, slot) => scheduleOf(slot.area).filter(o => o.key === key && o.slot.id === slot.id);
 
 // O bloco mostra uma linha curta: o "what" quando diz algo além do título da unidade ("Estudar: <título>" é
 // redundante), ou só a primeira etapa de um roteiro "a; b; c". O resto do roteiro e o contexto da semana
@@ -192,24 +192,25 @@ function renderWeek() {
       const b = document.createElement("button");
       b.className = `slot a-${s.area}` + (st.done[s.id] ? " done" : "");
       b.setAttribute("aria-pressed", st.done[s.id] ? "true" : "false");
-      const item = roadmapItem(key, s);
-      const kind = item ? ` · ${KINDS[item.session.kind] || item.session.kind}` : "";
+      const items = roadmapItems(key, s);
+      const unique = xs => [...new Set(xs)].join(" + ");
+      const kind = items.length ? ` · ${unique(items.map(o => KINDS[o.session.kind] || o.session.kind))}` : "";
       b.innerHTML = `<span class="box">${CHECK}</span><span><span class="meta">${AREAS[s.area].name} · ${s.when}${kind} · ${s.h}&nbsp;h</span><span class="focus"></span></span>`;
-      b.querySelector(".focus").textContent = item ? item.session.title || item.unit.title : s.focus;
+      b.querySelector(".focus").textContent = items.length ? unique(items.map(o => o.session.title || o.unit.title)) : s.focus;
       b.onclick = () => { patchDay(key, { done: { [s.id]: !st.done[s.id] } }); render(); };
       li.append(b);
       const last = scheduleOf(s.area).slice(-1)[0];
-      const todo = item ? sessionHtml(item)
+      const todo = items.length ? items.map(sessionHtml).join("")
         : last && key > last.key ? `<span class="kind">Roadmap terminou em ${shortDate(last.date)}</span>Atualize roadmap/${s.area}.json.` : "";
       if (todo) {
         const p = document.createElement("p");
         p.className = `todo a-${s.area}`;
         p.innerHTML = todo;
-        const steps = p.querySelector("details"), stepsId = `${key}-${s.id}`;
-        if (steps) {
+        p.querySelectorAll("details").forEach((steps, j) => {
+          const stepsId = `${key}-${s.id}-${j}`;
           steps.open = openSteps.has(stepsId);
           steps.ontoggle = () => steps.open ? openSteps.add(stepsId) : openSteps.delete(stepsId);
-        }
+        });
         li.append(p);
       }
       ul.append(li);
@@ -293,7 +294,7 @@ function phasesOf(area) {
 
 function renderTrail() {
   const ref = iso(addDays(weekStart, 3));
-  document.getElementById("trail-month").textContent = `Mês ${trailMonth(addDays(weekStart, 3))} da trilha · 15 horas por semana`;
+  document.getElementById("trail-month").textContent = `Mês ${trailMonth(addDays(weekStart, 3))} da trilha · ${Object.values(AREAS).reduce((a, b) => a + b.goal, 0)} horas por semana`;
   document.getElementById("trail").innerHTML = Object.entries(AREAS).map(([area, a]) => {
     const doc = roadmap[area], phases = phasesOf(area);
     const blocks = PLAN.flatMap((day, i) => day.filter(s => s.area === area).map(s => `${DAY_SHORT[i]} ${s.when}`));

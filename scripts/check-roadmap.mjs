@@ -52,9 +52,15 @@ for (const file of readdirSync(new URL("roadmap/", root)).filter(f => f.endsWith
   if (errors.length) continue;
   const { items, overlaps } = schedule(doc.units, area);
   overlaps.forEach(id => at(`${id} começa em startsOn, mas a semana anterior ainda ocupa blocos nessa data`));
-  items.forEach(({ key, slot, unit, session }) => {
-    if (session.minutes !== slot.h * 60)
-      warnings.push(`${file}: ${unit.id} (${session.kind}) tem ${session.minutes} min e cai em ${key} (${slot.when}), bloco de ${slot.h * 60} min`);
+  const blocks = new Map();
+  items.forEach(o => {
+    const b = blocks.get(`${o.key} ${o.slot.id}`) || { ...o, minutes: 0, units: new Set() };
+    b.minutes += o.session.minutes; b.units.add(o.unit.id);
+    blocks.set(`${o.key} ${o.slot.id}`, b);
+  });
+  blocks.forEach(({ key, slot, minutes, units }) => {
+    if (minutes !== slot.h * 60)
+      warnings.push(`${file}: ${[...units].join(", ")} somam ${minutes} min em ${key} (${slot.when}), bloco de ${slot.h * 60} min`);
   });
   console.log(`${file}: ${doc.units.length} semanas, ${doc.units.reduce((n, u) => n + (u.sessions?.length || 0), 0)} sessões`);
 }

@@ -24,7 +24,7 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
 ### Funções
 
 - Semana com navegação ‹ › e botão Hoje. Cada bloco de estudo tem check, o dia tem energia de 1 a 5 e uma nota salva automaticamente.
-- Metas de estudo da semana: cyber 4 h, eletrônica 4 h, faculdade 4 h, desenho 3 h, total 15 h.
+- Metas de estudo da semana: cyber 8 h, eletrônica 8 h, faculdade 4 h, desenho 3 h, total 23 h. Cyber e eletrônica têm blocos de 2 h na terça e na quinta e de 4 h no sábado.
 - Hábitos por dia, com metas:
   - Água: 8 copos de 250 ml por dia.
   - Exercício: 150 min por semana.
@@ -32,7 +32,7 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
   - Leitura: só registro dos minutos lidos, de 10 em 10, sem meta.
 - Rastreador do mês, com estudo e hábitos.
 - Trilha por área gerada dos roadmaps: uma fase por trecho seguido de semanas com o mesmo `phase`, com datas, a fase da semana em tela destacada e, quando o roadmap traz `sourcePace`, o aviso de que a fonte supõe mais horas do que a área tem.
-- Roadmap por área, lido de `roadmap/<área>.json`: semanas com sessões em ordem. A primeira sessão cai no primeiro bloco da área a partir de 25/10/2026, a segunda no seguinte, e o card mostra a sessão (tipo, minutos, o que fazer e exercícios), com links clicáveis. O botão Roadmap do cabeçalho mostra cada semana completa, com as datas das sessões, só para leitura.
+- Roadmap por área, lido de `roadmap/<área>.json`: semanas com sessões em ordem. As sessões enchem os blocos da área a partir de 25/10/2026 até completar as horas de cada um (a que não cabe vai para o bloco seguinte), e o card mostra a sessão (tipo, minutos, o que fazer e exercícios), com links clicáveis. O botão Roadmap do cabeçalho mostra cada semana completa, com as datas das sessões, só para leitura.
 - Botões de exportar e importar backup em JSON, só com os dias. O import também aceita o formato `{days, roadmap}` de `c645ae3`, e usa só os `days`.
 
 ## Decisões
@@ -47,7 +47,7 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
 ## Como publicar
 
 1. Altere os arquivos.
-2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v19`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
+2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v20`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
 3. Faça commit e push na `main`. O Pages publica sozinho em cerca de 1 minuto.
 
 O app instalado só pega a versão nova na segunda vez que é aberto.
@@ -95,3 +95,4 @@ Para testar local: `python3 -m http.server 8765` nesta pasta e abrir http://127.
 - Service worker instala com `cache: "reload"`, sem herdar arquivos velhos do cache HTTP; eletrônica ganha 34 semanas do roteiro do caderno (nivelamento, corrente contínua, estratégias de análise, corrente alternada e semicondutores, com fontes do *Lessons in Electric Circuits*) antes das 52 de automação, com cache `diario-v18`.
 - Sem traço diferente por área: todos os blocos com o mesmo estilo, cache `diario-v12`.
 - Calendário começa em 25/10/2026 (`START` em `plan.js`), com cache `diario-v19`.
+- Cyber e eletrônica com 8 h por semana (2 h ter/qui, 4 h sáb): cada bloco recebe sessões até completar suas horas, e o card mostra todas; cache `diario-v20`.
