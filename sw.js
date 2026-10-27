@@ -1,7 +1,7 @@
 // Troque a versão a cada deploy para o app instalado buscar os arquivos novos.
-const CACHE = "diario-v20";
+const CACHE = "diario-v21";
 const ASSETS = ["./", "index.html", "app.css", "plan.js", "app.js", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png",
-  "roadmap/cyber.json", "roadmap/elet.json", "roadmap/fac.json", "roadmap/des.json"];
+  "roadmap/cyber.json", "roadmap/electronics-basics.json", "roadmap/fac.json", "roadmap/des.json"];
 
 // cache: "reload" busca na rede, sem passar pelo cache HTTP do navegador: senão a versão nova pode
 // guardar arquivos antigos (o GitHub Pages manda os arquivos com tempo de cache).

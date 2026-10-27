@@ -38,7 +38,7 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
 ## Decisões
 
 - **Dados só no aparelho**, no `localStorage` com a chave `diario-estudos-v1` e um documento por data ISO (`{done, mood, note, water, exercise, sleep, reading}`). Campo ausente conta como zero, então backups antigos continuam valendo.
-- **Roadmap no repo, não no aparelho.** Um arquivo por área (`cyber`, `elet`, `fac`, `des`, as chaves de `AREAS`), no formato de `roadmap/schema.json`. Fica igual em todos os aparelhos e não entra no backup. O editor local de `c645ae3` saiu, junto com a chave `diario-estudos-roadmap-v1`.
+- **Roadmap no repo, não no aparelho.** Um arquivo por área (`cyber`, `electronics-basics`, `fac`, `des`, as chaves de `AREAS`), no formato de `roadmap/schema.json`. Fica igual em todos os aparelhos e não entra no backup. O editor local de `c645ae3` saiu, junto com a chave `diario-estudos-roadmap-v1`.
 - **Encaixe pelo calendário, não pelo check:** bloco perdido não empurra os próximos itens.
 - **Hospedagem no GitHub Pages**, a partir da branch `main` na raiz. O Pages grátis exige repo público.
 - **Nada migrado do artifact.** O banco dele só tinha um dia vazio.
@@ -47,7 +47,7 @@ PWA em HTML, CSS e JS puros, sem build. Funciona offline e é instalável.
 ## Como publicar
 
 1. Altere os arquivos.
-2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v20`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
+2. **Suba a versão do `CACHE` em `sw.js`** (hoje é `diario-v21`). Sem isso, quem tem o app instalado continua vendo a versão antiga.
 3. Faça commit e push na `main`. O Pages publica sozinho em cerca de 1 minuto.
 
 O app instalado só pega a versão nova na segunda vez que é aberto.
@@ -55,7 +55,7 @@ O app instalado só pega a versão nova na segunda vez que é aberto.
 ### Como atualizar o roadmap
 
 1. Edite `roadmap/<área>.json` seguindo `roadmap/schema.json` (o editor dá autocomplete pelo campo `$schema`). Cada item de `units` é uma semana:
-   - obrigatórios: `id` (como `cyber-01`, único), `title` e `sessions`;
+   - obrigatórios: `id` (como `cyber-01` ou `electronics-basics-01`, único), `title` e `sessions`;
    - opcionais: `startsOn` (data AAAA-MM-DD: a semana começa no primeiro bloco a partir dela, para conteúdo preso ao calendário), `phase`, `objectives`, `topics`, `resources` (`{title, url}`), `deliverable` e `doneWhen`;
    - cada sessão tem `kind` (`study`, `practice`, `deliverable` ou `review`), `minutes`, `what` e, opcionais, `exercises`, `title` (substitui o da semana no bloco) e `resources` (substitui os da semana no dropdown do bloco).
    No bloco, `what` igual ao título com um verbo na frente não aparece, e um roteiro `a; b; c` mostra só a primeira etapa; o resto e o contexto da semana ficam no dropdown.
@@ -96,3 +96,4 @@ Para testar local: `python3 -m http.server 8765` nesta pasta e abrir http://127.
 - Sem traço diferente por área: todos os blocos com o mesmo estilo, cache `diario-v12`.
 - Calendário começa em 25/10/2026 (`START` em `plan.js`), com cache `diario-v19`.
 - Cyber e eletrônica com 8 h por semana (2 h ter/qui, 4 h sáb): cada bloco recebe sessões até completar suas horas, e o card mostra todas; cache `diario-v20`.
+- Eletrônica passa a ser a área `electronics-basics`, só com as 32 semanas do roadmap *Camada Digital na Automação* (eletrônica e sinais, arquitetura de MCU, interfaces, firmware e FreeRTOS, projeto de PCB no KiCad, Modbus, MQTT e OPC UA, PLC e SCADA, IIoT, ISA-95 e IEC 62443, capstone). Saem as 34 semanas de fundamentos e as 52 de automação residencial do `elet.json`; cache `diario-v21`.

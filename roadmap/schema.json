@@ -7,7 +7,7 @@
   "additionalProperties": false,
   "properties": {
     "$schema": { "type": "string" },
-    "area": { "enum": ["cyber", "elet", "fac", "des"], "description": "Chave da área em AREAS (plan.js); igual ao nome do arquivo." },
+    "area": { "enum": ["cyber", "electronics-basics", "fac", "des"], "description": "Chave da área em AREAS (plan.js); igual ao nome do arquivo." },
     "title": { "type": "string", "minLength": 1 },
     "source": { "$ref": "#/$defs/link", "description": "De onde veio o roadmap." },
     "sourcePace": { "type": "string", "minLength": 1, "description": "Ritmo que a fonte do roadmap supõe, por exemplo \"10 a 14 h por semana\". A Trilha compara com as horas da área." },
@@ -29,7 +29,7 @@
       "required": ["id", "title", "sessions"],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "pattern": "^[a-z]+-[0-9]{2,}$", "description": "Único no arquivo, por exemplo cyber-01." },
+        "id": { "type": "string", "pattern": "^[a-z]+(-[a-z]+)*-[0-9]{2,}$", "description": "Único no arquivo, por exemplo cyber-01 ou electronics-basics-01." },
         "startsOn": { "type": "string", "format": "date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "Para semanas presas ao calendário (como as do AVA): as sessões começam no primeiro bloco da área a partir desta data." },
         "phase": { "type": "string", "minLength": 1 },
         "title": { "type": "string", "minLength": 1, "description": "O que estudar na semana." },

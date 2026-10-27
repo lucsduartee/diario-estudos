@@ -135,7 +135,7 @@ function goalCard(cls, name, val, goal, unit, extra = "") {
 }
 
 function renderGoals() {
-  const done = { cyber: 0, elet: 0, fac: 0, des: 0 };
+  const done = Object.fromEntries(Object.keys(AREAS).map(k => [k, 0]));
   const week = [...Array(7)].map((_, i) => dayState(iso(addDays(weekStart, i))));
   week.forEach((st, i) => PLAN[i].forEach(s => { if (st.done[s.id]) done[s.area] += s.h; }));
   const total = Object.values(done).reduce((a, b) => a + b, 0);

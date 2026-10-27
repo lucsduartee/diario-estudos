@@ -1,0 +1,1848 @@
+{
+  "$schema": "./schema.json",
+  "area": "electronics-basics",
+  "title": "Camada digital na automação, com projeto de PCB",
+  "source": {
+    "title": "Roadmap de estudo: Camada Digital na Automação, versão ampliada com PCB (outubro de 2026)"
+  },
+  "sourcePace": "8 a 10 h por semana",
+  "units": [
+    {
+      "id": "electronics-basics-01",
+      "phase": "Eletrônica e sinais",
+      "title": "Tensão, corrente, potência e o multímetro",
+      "objectives": [
+        "Aplicar a lei de Ohm e a de potência a um circuito de LED",
+        "Medir tensão, corrente e resistência com o multímetro sem queimar o fusível",
+        "Montar a bancada de baixa tensão com limite de corrente"
+      ],
+      "topics": [
+        "Lei de Ohm",
+        "Potência",
+        "Resistores",
+        "Multímetro",
+        "Fonte DC com limitador"
+      ],
+      "resources": [
+        {
+          "title": "SparkFun: Voltage, Current, Resistance, and Ohm's Law",
+          "url": "https://learn.sparkfun.com/tutorials/voltage-current-resistance-and-ohms-law/all"
+        },
+        {
+          "title": "Lessons in Electric Circuits, Vol. I (CC): Ohm's Law",
+          "url": "https://www.ibiblio.org/kuphaldt/electricCircuits/DC/DC_2.html"
+        },
+        {
+          "title": "SparkFun: How to Use a Multimeter",
+          "url": "https://learn.sparkfun.com/tutorials/how-to-use-a-multimeter/all"
+        },
+        {
+          "title": "SparkFun: Voltage Dividers",
+          "url": "https://learn.sparkfun.com/tutorials/voltage-dividers/all"
+        }
+      ],
+      "deliverable": "Tabela calculado × medido de um LED com resistor e de um divisor de tensão, com a potência em cada resistor",
+      "doneWhen": "Medidas a até 5% do cálculo; potência de cada resistor abaixo da nominal; Só baixa tensão DC (fonte de bancada com limite de corrente ou fonte externa certificada de 5 ou 12 V); nada ligado à rede elétrica.",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "40 min: ler SparkFun Ohm's Law e o cap. 2 do Lessons; 30 min: resolver 10 problemas de V = R·I e P = V·I; 30 min: ler How to Use a Multimeter (tensão em paralelo, corrente em série); 20 min: listar e encomendar o kit de bancada do roadmap (ESP32-S3 DevKitC, Nucleo-F446RE, Pico 2 W, analisador lógico, fonte com limitador)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "20 min: ajustar a fonte para 5 V com limite de 50 mA; 40 min: montar LED + resistor e medir tensão no LED, no resistor e a corrente; 40 min: montar um divisor 10 k/10 k e um 10 k/4,7 k e medir a saída; 20 min: anotar calculado × medido"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "60 min: calcular o resistor de 3 LEDs de cores diferentes a 10 mA e conferir na bancada; 60 min: medir o divisor com carga (10 k na saída) e explicar a queda; 60 min: calcular a potência de cada resistor e escolher a potência nominal; 60 min: escrever a tabela calculado × medido com as diferenças explicadas"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-02",
+      "phase": "Eletrônica e sinais",
+      "title": "Capacitores, diodos e lógica digital",
+      "objectives": [
+        "Prever a carga de um RC com a constante de tempo",
+        "Usar o diodo para proteger contra inversão de polaridade",
+        "Converter entre binário e hexadecimal e montar portas lógicas"
+      ],
+      "topics": [
+        "Capacitor e constante RC",
+        "Diodo e LED",
+        "Binário e hexadecimal",
+        "Operações de bits",
+        "Portas lógicas"
+      ],
+      "resources": [
+        {
+          "title": "SparkFun: Capacitors",
+          "url": "https://learn.sparkfun.com/tutorials/capacitors/all"
+        },
+        {
+          "title": "SparkFun: Diodes",
+          "url": "https://learn.sparkfun.com/tutorials/diodes/all"
+        },
+        {
+          "title": "SparkFun: Binary",
+          "url": "https://learn.sparkfun.com/tutorials/binary/all"
+        },
+        {
+          "title": "SparkFun: Hexadecimal",
+          "url": "https://learn.sparkfun.com/tutorials/hexadecimal/all"
+        },
+        {
+          "title": "SparkFun: Digital Logic",
+          "url": "https://learn.sparkfun.com/tutorials/digital-logic/all"
+        },
+        {
+          "title": "SparkFun: Logic Levels",
+          "url": "https://learn.sparkfun.com/tutorials/logic-levels/all"
+        }
+      ],
+      "deliverable": "Curva de carga RC medida, circuito de proteção com diodo e folha de 20 conversões binário/hex com máscaras de bits",
+      "doneWhen": "Tensão em 1 τ perto de 63% da fonte; diodo bloqueia a inversão sem aquecer; máscaras AND/OR/XOR conferidas em código",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "40 min: ler SparkFun Capacitors e Diodes; 40 min: ler Binary, Hexadecimal e Digital Logic; 40 min: resolver 20 conversões e 10 operações de bits (set, clear, toggle, test) em C ou Python"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "30 min: montar RC de 10 k e 100 µF e medir a tensão a cada 0,5 s; 30 min: comparar com V(t) = V·(1 − e^(−t/RC)); 30 min: montar diodo em série com a alimentação e testar a polaridade invertida; 30 min: medir a queda direta do diodo e do LED"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "60 min: plotar a curva RC medida × calculada; 60 min: ler Logic Levels e comparar os níveis de 3,3 V e 5 V; 60 min: escrever um programa que imprime registradores em hex e aplica máscaras; 60 min: revisar as semanas 1 e 2 e escrever o resumo de grandezas, componentes e lógica"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-03",
+      "phase": "Arquitetura de sistemas microprocessados",
+      "title": "Dentro do MCU: CPU, memória, clock e GPIO",
+      "objectives": [
+        "Identificar CPU, barramentos, Flash, SRAM e periféricos no diagrama de blocos",
+        "Explicar memória mapeada e o papel dos registradores de GPIO",
+        "Fazer o blink pela API e depois escrevendo no registrador"
+      ],
+      "topics": [
+        "MCU × MPU",
+        "Xtensa, Cortex-M e RISC-V",
+        "Memory map",
+        "Flash e SRAM",
+        "Clock tree e reset",
+        "GPIO"
+      ],
+      "resources": [
+        {
+          "title": "ESP32-S3 Datasheet",
+          "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf"
+        },
+        {
+          "title": "ESP32-S3 Technical Reference Manual",
+          "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3_technical_reference_manual_en.pdf"
+        },
+        {
+          "title": "ST: STM32F446RE",
+          "url": "https://www.st.com/en/microcontrollers-microprocessors/stm32f446re.html"
+        },
+        {
+          "title": "ST: RM0390, reference manual do STM32F446",
+          "url": "https://www.st.com/resource/en/reference_manual/rm0390-stm32f446xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf"
+        },
+        {
+          "title": "Raspberry Pi: RP2350 Datasheet",
+          "url": "https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf"
+        },
+        {
+          "title": "ESP-IDF: Get Started (ESP32-S3)",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/get-started/index.html"
+        },
+        {
+          "title": "ESP-IDF: GPIO",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/gpio.html"
+        },
+        {
+          "title": "ST: STM32 MOOCs",
+          "url": "https://www.st.com/content/st_com/en/support/learning/stm32-education/stm32-moocs.html"
+        }
+      ],
+      "deliverable": "Blink no ESP32-S3 pela API e no STM32 escrevendo direto nos registradores do GPIO, com o endereço de cada registrador anotado",
+      "doneWhen": "Consegue apontar no reference manual o endereço do registrador que acende o LED e explicar o que cada bit faz",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "40 min: ler o diagrama de blocos do ESP32-S3 Datasheet e do STM32F446RE; 40 min: ler no RM0390 o memory map e o capítulo de GPIO; 40 min: desenhar CPU, barramentos, memórias e periféricos dos dois MCUs lado a lado"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "40 min: instalar o ESP-IDF e gravar o exemplo blink no ESP32-S3; 40 min: instalar o STM32CubeIDE e gravar o blink da Nucleo pelo HAL; 40 min: localizar no código gerado o clock habilitado e o registrador escrito"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: reescrever o blink do STM32 sem HAL, ligando o clock do GPIOA e escrevendo em MODER e ODR; 60 min: conferir os endereços com o RM0390 e medir a frequência do pino no osciloscópio ou analisador"
+        },
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: começar o MOOC STM32 'Moving from 8 to 32 bits'; 60 min: ler no RP2350 Datasheet a visão geral e comparar Cortex-M33 e Hazard3"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-04",
+      "phase": "Arquitetura de sistemas microprocessados",
+      "title": "Interrupções, timers, ADC e DMA",
+      "objectives": [
+        "Disparar uma ISR por botão e por timer",
+        "Ler o ADC e mover amostras com DMA",
+        "Explicar onde cada dado vive no .map do linker"
+      ],
+      "topics": [
+        "Interrupções e prioridades",
+        "Timers",
+        "Watchdog",
+        "ADC",
+        "DMA",
+        ".text, .data, .bss, stack e heap"
+      ],
+      "resources": [
+        {
+          "title": "ST: RM0390, reference manual do STM32F446",
+          "url": "https://www.st.com/resource/en/reference_manual/rm0390-stm32f446xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf"
+        },
+        {
+          "title": "ESP-IDF: General Purpose Timer",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/gptimer.html"
+        },
+        {
+          "title": "ESP-IDF: ADC oneshot",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/adc_oneshot.html"
+        },
+        {
+          "title": "ESP-IDF: Memory Types",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-guides/memory-types.html"
+        },
+        {
+          "title": "Interrupt (Memfault): How to write linker scripts for firmware",
+          "url": "https://interrupt.memfault.com/blog/how-to-write-linker-scripts-for-firmware"
+        },
+        {
+          "title": "ST: STM32 MOOCs",
+          "url": "https://www.st.com/content/st_com/en/support/learning/stm32-education/stm32-moocs.html"
+        }
+      ],
+      "deliverable": "Relatório de arquitetura ESP32-S3 × STM32F446RE e firmware com timer + interrupção + ADC com DMA",
+      "doneWhen": "Explica onde cada dado vive, o que dispara a interrupção e por que a ISR não deve fazer trabalho pesado",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "40 min: ler no RM0390 NVIC e EXTI; 40 min: ler timers (TIM2) e ADC; 40 min: ler DMA e anotar qual stream atende o ADC1"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "40 min: botão com interrupção EXTI alternando o LED; 40 min: timer periódico de 1 kHz gerando um pino quadrado; 40 min: medir o período e o jitter no analisador"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: ADC lendo um potenciômetro disparado pelo timer, com DMA em buffer circular; 60 min: gerar o .map e localizar Flash, RAM, .text, .data, .bss, stack e heap"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Relatório de arquitetura ESP32-S3 × STM32F446RE e firmware com timer + interrupção + ADC com DMA"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-05",
+      "phase": "Interfaces para sistemas embarcados",
+      "title": "Entrada digital, PWM e ADC medidos",
+      "objectives": [
+        "Ler botão com pull-up e debounce",
+        "Gerar PWM e medir o duty cycle",
+        "Medir resolução e ruído do ADC"
+      ],
+      "topics": [
+        "Pull-up e pull-down",
+        "Debounce",
+        "PWM",
+        "ADC: resolução, referência e ruído",
+        "Divisor de tensão"
+      ],
+      "resources": [
+        {
+          "title": "SparkFun: Pull-up Resistors",
+          "url": "https://learn.sparkfun.com/tutorials/pull-up-resistors/all"
+        },
+        {
+          "title": "SparkFun: Pulse Width Modulation",
+          "url": "https://learn.sparkfun.com/tutorials/pulse-width-modulation/all"
+        },
+        {
+          "title": "SparkFun: Analog to Digital Conversion",
+          "url": "https://learn.sparkfun.com/tutorials/analog-to-digital-conversion/all"
+        },
+        {
+          "title": "ESP-IDF: GPIO",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/gpio.html"
+        },
+        {
+          "title": "ESP-IDF: LEDC (PWM)",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/ledc.html"
+        },
+        {
+          "title": "ESP-IDF: ADC oneshot",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/adc_oneshot.html"
+        },
+        {
+          "title": "SparkFun: How to Use an Oscilloscope",
+          "url": "https://learn.sparkfun.com/tutorials/how-to-use-an-oscilloscope/all"
+        }
+      ],
+      "deliverable": "Três experimentos medidos no ESP32-S3: botão com debounce, PWM no LED e potenciômetro no ADC com histograma de ruído",
+      "doneWhen": "Captura do bounce do botão; duty medido a até 2% do configurado; ruído do ADC em LSB anotado",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "40 min: ler SparkFun Pull-up Resistors e PWM; 40 min: ler SparkFun ADC e a página ADC oneshot do ESP-IDF; 40 min: calcular a resolução em mV do ADC de 12 bits com a atenuação usada"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "40 min: botão com pull-up interno e captura do bounce no analisador ou osciloscópio; 40 min: debounce por software não bloqueante; 40 min: PWM no LED com LEDC a 1 kHz e 5 kHz, medindo o duty"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: potenciômetro no ADC, 1000 leituras, média e desvio; 60 min: repetir com capacitor de 100 nF na entrada e comparar o ruído"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Três experimentos medidos no ESP32-S3: botão com debounce, PWM no LED e potenciômetro no ADC com histograma de ruído"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-06",
+      "phase": "Interfaces para sistemas embarcados",
+      "title": "I²C, SPI e UART no nível elétrico",
+      "objectives": [
+        "Ler o BME280 por I²C conferindo endereço, clock e pull-ups",
+        "Comparar I²C e SPI na captura",
+        "Decodificar um frame UART no analisador"
+      ],
+      "topics": [
+        "I²C: open-drain, endereço e ACK",
+        "SPI: CS, CPOL e CPHA",
+        "UART: baud rate e framing",
+        "Analisador lógico"
+      ],
+      "resources": [
+        {
+          "title": "SparkFun: I2C",
+          "url": "https://learn.sparkfun.com/tutorials/i2c/all"
+        },
+        {
+          "title": "SparkFun: Serial Peripheral Interface (SPI)",
+          "url": "https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/all"
+        },
+        {
+          "title": "SparkFun: Serial Communication",
+          "url": "https://learn.sparkfun.com/tutorials/serial-communication/all"
+        },
+        {
+          "title": "SparkFun: Using the USB Logic Analyzer with sigrok PulseView",
+          "url": "https://learn.sparkfun.com/tutorials/using-the-logic-analyzer-with-sigrok-pulseview/all"
+        },
+        {
+          "title": "ESP-IDF: I2C",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/i2c.html"
+        },
+        {
+          "title": "ESP-IDF: SPI Master",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/spi_master.html"
+        },
+        {
+          "title": "ESP-IDF: UART",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/uart.html"
+        },
+        {
+          "title": "Bosch Sensortec: BME280",
+          "url": "https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/"
+        }
+      ],
+      "deliverable": "Capturas comentadas de I²C (BME280), SPI e UART, com o datasheet do BME280 lido sem biblioteca pronta",
+      "doneWhen": "Lê o chip ID do BME280 escrevendo o driver mínimo; cada captura marca start, endereço, dados e stop",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "40 min: ler SparkFun I2C e SPI; 40 min: ler no datasheet do BME280 o mapa de registradores e a sequência de leitura; 40 min: ler SparkFun Serial Communication e o guia do PulseView"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: ler o chip ID (0xD0) do BME280 por I²C sem biblioteca; 60 min: capturar a transação no analisador e conferir endereço, ACK e clock"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: ler temperatura e pressão com a compensação do datasheet; 60 min: ligar o BME280 (ou outro sensor) em SPI e comparar a captura com a de I²C"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "30 min: UART a 115200 entre ESP32 e PC, capturando o frame; 90 min: escrever as capturas comentadas de I²C, SPI e UART"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-07",
+      "phase": "Interfaces para sistemas embarcados",
+      "title": "Acionamento de cargas: transistor, MOSFET e relé",
+      "objectives": [
+        "Dimensionar MOSFET de nível lógico para uma ventoinha de 12 V",
+        "Proteger a carga indutiva com diodo flyback",
+        "Converter níveis entre 5 V e 3,3 V"
+      ],
+      "topics": [
+        "Transistor bipolar e MOSFET",
+        "Relé",
+        "Diodo flyback",
+        "Reguladores",
+        "Conversão 5 V / 3,3 V"
+      ],
+      "resources": [
+        {
+          "title": "SparkFun: Transistors",
+          "url": "https://learn.sparkfun.com/tutorials/transistors/all"
+        },
+        {
+          "title": "Wikipedia: Flyback diode",
+          "url": "https://en.wikipedia.org/wiki/Flyback_diode"
+        },
+        {
+          "title": "SparkFun: Logic Levels",
+          "url": "https://learn.sparkfun.com/tutorials/logic-levels/all"
+        },
+        {
+          "title": "SparkFun: How to Use an Oscilloscope",
+          "url": "https://learn.sparkfun.com/tutorials/how-to-use-an-oscilloscope/all"
+        }
+      ],
+      "deliverable": "Ventoinha de 12 V acionada por MOSFET com PWM do ESP32, com captura do pico sem e com flyback",
+      "doneWhen": "Captura mostra o pico de tensão sumindo com o flyback; MOSFET frio na corrente nominal; Só baixa tensão DC (fonte de bancada com limite de corrente ou fonte externa certificada de 5 ou 12 V); nada ligado à rede elétrica.",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "40 min: ler SparkFun Transistors; 40 min: ler a página de flyback e o datasheet de um MOSFET de nível lógico (Vgs(th), Rds(on) a 3,3 V); 40 min: calcular a dissipação do MOSFET na corrente da ventoinha"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: montar MOSFET low-side com resistor de gate e pull-down acionando a ventoinha; 60 min: controlar a velocidade por PWM e medir corrente"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: capturar no osciloscópio o pico no dreno sem diodo e com diodo flyback; 60 min: acionar um módulo de relé e comparar com o MOSFET"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Ventoinha de 12 V acionada por MOSFET com PWM do ESP32, com captura do pico sem e com flyback"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-08",
+      "phase": "Interfaces para sistemas embarcados",
+      "title": "Interfaces industriais: 4–20 mA, 0–10 V e RS-485",
+      "objectives": [
+        "Converter um laço 4–20 mA em tensão para o ADC",
+        "Montar um barramento RS-485 com terminação",
+        "Decidir quando usar isolamento galvânico"
+      ],
+      "topics": [
+        "4–20 mA e 0–10 V",
+        "RS-232 × RS-485",
+        "Sinal diferencial e terminação",
+        "Isolamento galvânico",
+        "Aterramento, ruído e TVS"
+      ],
+      "resources": [
+        {
+          "title": "Wikipedia: Current loop (4–20 mA)",
+          "url": "https://en.wikipedia.org/wiki/Current_loop"
+        },
+        {
+          "title": "Wikipedia: RS-485",
+          "url": "https://en.wikipedia.org/wiki/RS-485"
+        },
+        {
+          "title": "TI: The RS-485 Design Guide (SLLA272)",
+          "url": "https://www.ti.com/lit/an/slla272d/slla272d.pdf"
+        },
+        {
+          "title": "TI: RS-485 e RS-422, visão geral e notas de aplicação",
+          "url": "https://www.ti.com/interface/rs-485-rs-422/overview.html"
+        },
+        {
+          "title": "ESP-IDF: UART",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/uart.html"
+        }
+      ],
+      "deliverable": "Módulo com sensor, ADC, MOSFET e RS-485: esquemático, BOM, firmware e medições (nó industrial RS-485)",
+      "doneWhen": "Tensão esperada × medida do laço 4–20 mA; captura diferencial do RS-485; justificativa escrita de terminação e isolamento",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "40 min: ler sobre laço de corrente e calcular o resistor shunt para 4–20 mA virar 0,4–2 V no ADC; 80 min: ler as seções 1 a 3 do RS-485 Design Guide da TI (padrão, topologia, terminação)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: simulador 4–20 mA no shunt ligado ao ADC, mapeando 4 mA = 0% e 20 mA = 100%; 60 min: detectar laço aberto (< 3,8 mA) e sinalizar falha"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: dois ESP32 com módulos RS-485 isolados trocando mensagens; 60 min: medir A e B no osciloscópio com e sem resistor de 120 Ω"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Módulo com sensor, ADC, MOSFET e RS-485: esquemático, BOM, firmware e medições (nó industrial RS-485)"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-09",
+      "phase": "Programação de sistemas embarcados",
+      "title": "C embarcado, linker e startup",
+      "objectives": [
+        "Usar volatile, máscaras e structs mapeadas em registradores",
+        "Ler o linker script e o .map",
+        "Explicar o caminho do reset até o main"
+      ],
+      "topics": [
+        "Ponteiros e struct",
+        "volatile",
+        "Alinhamento",
+        "Compilação cruzada",
+        "Linker script",
+        "Startup e vetor de interrupções"
+      ],
+      "resources": [
+        {
+          "title": "Interrupt (Memfault): How to write linker scripts for firmware",
+          "url": "https://interrupt.memfault.com/blog/how-to-write-linker-scripts-for-firmware"
+        },
+        {
+          "title": "GNU ld: documentação",
+          "url": "https://sourceware.org/binutils/docs/ld/"
+        },
+        {
+          "title": "ST: RM0390, reference manual do STM32F446",
+          "url": "https://www.st.com/resource/en/reference_manual/rm0390-stm32f446xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf"
+        },
+        {
+          "title": "ESP-IDF: Memory Types",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-guides/memory-types.html"
+        }
+      ],
+      "deliverable": "Driver de GPIO próprio com struct de registradores e um documento que segue o reset até o main no STM32",
+      "doneWhen": "Driver funciona sem HAL; documento cita o vetor de reset, a cópia de .data, o zero de .bss e a chamada ao main",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: ler Interrupt 'How to write linker scripts for firmware'; 60 min: ler o startup .s e o .ld gerados pelo STM32CubeIDE e anotar cada seção"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: escrever struct de registradores do GPIO e um driver mínimo (init, write, read); 60 min: provar com o depurador que sem volatile o compilador remove a leitura em loop (-O2)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: colocar uma variável em .data, outra em .bss e uma const em Flash e localizar no .map; 60 min: medir o uso de stack com padrão de preenchimento"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Driver de GPIO próprio com struct de registradores e um documento que segue o reset até o main no STM32"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-10",
+      "phase": "Programação de sistemas embarcados",
+      "title": "ISR, máquinas de estados e firmware não bloqueante",
+      "objectives": [
+        "Mover trabalho da ISR para o laço principal com flag ou fila",
+        "Escrever uma máquina de estados com timeouts",
+        "Eliminar delay longo do firmware"
+      ],
+      "topics": [
+        "ISR curta",
+        "Superloop",
+        "Máquina de estados finitos",
+        "Programação não bloqueante",
+        "Timeouts e tratamento de erro"
+      ],
+      "resources": [
+        {
+          "title": "ESP-IDF: General Purpose Timer",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/gptimer.html"
+        },
+        {
+          "title": "ESP-IDF: GPIO",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/gpio.html"
+        },
+        {
+          "title": "Unity: framework de testes para C",
+          "url": "https://www.throwtheswitch.org/unity"
+        }
+      ],
+      "deliverable": "Firmware sem bloqueio: máquina de estados que lê o sensor, aciona a ventoinha e trata timeout, com testes da FSM no PC",
+      "doneWhen": "Nenhum delay acima de 1 ms; FSM testada com Unity fora do hardware; loop principal medido abaixo de 1 ms por volta",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "40 min: revisar por que a ISR deve ser curta e o que é seguro chamar nela; 40 min: desenhar a FSM do controle (IDLE, READING, ACTING, FAULT); 40 min: ler a introdução do Unity"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: ISR do timer só marca flag; o laço principal lê o sensor; 60 min: implementar a FSM com timeout de leitura do sensor"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: separar a FSM em módulo puro e testar as transições com Unity no PC; 60 min: medir o tempo de volta do laço com um pino e o analisador"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Firmware sem bloqueio: máquina de estados que lê o sensor, aciona a ventoinha e trata timeout, com testes da FSM no PC"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-11",
+      "phase": "Programação de sistemas embarcados",
+      "title": "FreeRTOS: tasks, filas e prioridades",
+      "objectives": [
+        "Criar tasks com prioridade e stack dimensionados",
+        "Trocar dados entre tasks por fila limitada",
+        "Medir o uso de stack de cada task"
+      ],
+      "topics": [
+        "Scheduler",
+        "Tasks e prioridades",
+        "Queues",
+        "Timers de software",
+        "Stack high water mark"
+      ],
+      "resources": [
+        {
+          "title": "Mastering the FreeRTOS Real Time Kernel (livro oficial)",
+          "url": "https://github.com/FreeRTOS/FreeRTOS-Kernel-Book"
+        },
+        {
+          "title": "FreeRTOS: documentação",
+          "url": "https://www.freertos.org/Documentation/00-Overview"
+        },
+        {
+          "title": "ESP-IDF: FreeRTOS",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/system/freertos.html"
+        },
+        {
+          "title": "ST: STM32 MOOCs",
+          "url": "https://www.st.com/content/st_com/en/support/learning/stm32-education/stm32-moocs.html"
+        }
+      ],
+      "deliverable": "Firmware com Task Acquisition → Queue → Task Control, com o high water mark de cada task registrado",
+      "doneWhen": "Fila limitada sem perda silenciosa (overflow contado); stack de cada task com margem medida",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: ler os capítulos de tasks e queues do Mastering the FreeRTOS Kernel; 60 min: ler a página FreeRTOS do ESP-IDF (dual core e afinidade)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: task de aquisição a 10 Hz publicando numa fila de 8 itens; 60 min: task de controle consumindo a fila e acionando o PWM"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: medir uxTaskGetStackHighWaterMark e ajustar as stacks; 60 min: forçar fila cheia e contar o overflow"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Firmware com Task Acquisition → Queue → Task Control, com o high water mark de cada task registrado"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-12",
+      "phase": "Programação de sistemas embarcados",
+      "title": "Concorrência: mutex, semáforos e depuração",
+      "objectives": [
+        "Reproduzir e corrigir uma race condition",
+        "Evitar inversão de prioridade com mutex",
+        "Depurar por SWD/JTAG com breakpoint e watchpoint"
+      ],
+      "topics": [
+        "Mutex e semáforos",
+        "Event groups",
+        "Race condition e deadlock",
+        "Inversão de prioridade",
+        "SWD/JTAG/GDB"
+      ],
+      "resources": [
+        {
+          "title": "Mastering the FreeRTOS Real Time Kernel (livro oficial)",
+          "url": "https://github.com/FreeRTOS/FreeRTOS-Kernel-Book"
+        },
+        {
+          "title": "ESP-IDF: JTAG Debugging",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-guides/jtag-debugging/index.html"
+        },
+        {
+          "title": "OpenOCD: User's Guide",
+          "url": "https://openocd.org/doc/html/index.html"
+        },
+        {
+          "title": "ST: STM32 MOOCs",
+          "url": "https://www.st.com/content/st_com/en/support/learning/stm32-education/stm32-moocs.html"
+        }
+      ],
+      "deliverable": "Demonstração de race condition reproduzida, corrigida com mutex e verificada com watchpoint no depurador",
+      "doneWhen": "Contador compartilhado chega no valor esperado em 10 execuções; watchpoint mostra quem escreve a variável",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: ler os capítulos de mutex, semáforos e event groups do Mastering the FreeRTOS Kernel; 60 min: ler o guia de JTAG do ESP-IDF ou o de debug do STM32CubeIDE"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: duas tasks incrementando um contador sem proteção até errar; 60 min: corrigir com mutex e provar em 10 execuções"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: depurar com breakpoint e watchpoint (ST-LINK ou USB-JTAG do ESP32-S3); 60 min: montar um deadlock com dois mutexes e documentar a ordem que o evita"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Demonstração de race condition reproduzida, corrigida com mutex e verificada com watchpoint no depurador"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-13",
+      "phase": "Programação de sistemas embarcados",
+      "title": "Projeto integrador inicial: watchdog, recuperação e teste de 8 h",
+      "objectives": [
+        "Juntar aquisição, controle e comunicação em três tasks",
+        "Recuperar de falha de rede e de sensor sem intervenção",
+        "Rodar 8 h contínuas sem reset inesperado"
+      ],
+      "topics": [
+        "Watchdog",
+        "Recovery",
+        "Logging",
+        "Core dump",
+        "Testes de falha"
+      ],
+      "resources": [
+        {
+          "title": "ESP-IDF: Watchdogs",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/system/wdts.html"
+        },
+        {
+          "title": "ESP-IDF: Core Dump",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-guides/core_dump.html"
+        },
+        {
+          "title": "ESP-IDF: FreeRTOS",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/system/freertos.html"
+        },
+        {
+          "title": "Espressif Workshops",
+          "url": "https://developer.espressif.com/workshops/"
+        }
+      ],
+      "deliverable": "Firmware com Acquisition, Control e Communication, watchdog, reconexão, métricas de stack e fila limitada, com relatório do teste de 8 h",
+      "doneWhen": "8 h sem reset inesperado nem vazamento visível de heap; reconecta após desligar o Wi-Fi e detecta o sensor ausente",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: ler Watchdogs e Core Dump do ESP-IDF; 60 min: escrever o plano de teste de falhas (Wi-Fi, sensor, fila cheia)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: integrar as três tasks com Task Watchdog; 60 min: reconexão de Wi-Fi com backoff e detecção de sensor ausente"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: logar heap livre e high water mark a cada minuto; 60 min: iniciar o teste de 8 h e provocar as falhas do plano"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Firmware com Acquisition, Control e Communication, watchdog, reconexão, métricas de stack e fila limitada, com relatório do teste de 8 h"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-14",
+      "phase": "Projeto eletrônico e PCB",
+      "title": "KiCad, datasheets e arquitetura de alimentação",
+      "objectives": [
+        "Distinguir limites absolutos de condições de operação no datasheet",
+        "Desenhar o esquemático no KiCad",
+        "Dimensionar a alimentação de 3,3 V para o pico do Wi-Fi"
+      ],
+      "topics": [
+        "Leitura de datasheet",
+        "Símbolos, footprints e BOM",
+        "LDO × buck",
+        "Desacoplamento e bulk",
+        "Proteção contra inversão e ESD"
+      ],
+      "resources": [
+        {
+          "title": "KiCad: documentação e Getting Started",
+          "url": "https://docs.kicad.org/"
+        },
+        {
+          "title": "KiCad: site e download",
+          "url": "https://www.kicad.org/"
+        },
+        {
+          "title": "Espressif: ESP32-S3 Hardware Design Guidelines",
+          "url": "https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/"
+        },
+        {
+          "title": "ESP32-S3-WROOM-1 Datasheet",
+          "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf"
+        },
+        {
+          "title": "Bosch Sensortec: BME280",
+          "url": "https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/"
+        },
+        {
+          "title": "TI: The RS-485 Design Guide (SLLA272)",
+          "url": "https://www.ti.com/lit/an/slla272d/slla272d.pdf"
+        }
+      ],
+      "deliverable": "Esquemático da placa no KiCad, BOM e cálculo de consumo com a corrente de pico do Wi-Fi",
+      "doneWhen": "Esquemático com ERC rodado; regulador com margem sobre o pico do datasheet do WROOM; Só baixa tensão DC (fonte de bancada com limite de corrente ou fonte externa certificada de 5 ou 12 V); nada ligado à rede elétrica.",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "40 min: Getting Started do KiCad até o esquemático; 40 min: ler no Hardware Design Guidelines do ESP32-S3 alimentação, strapping pins e reset; 40 min: ler no datasheet do WROOM a corrente de pico e as tensões"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: decidir 5 ou 12 V de entrada e LDO ou buck, com cálculo de dissipação; 60 min: desenhar no KiCad entrada, proteção contra inversão, regulador e desacoplamento"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: desenhar ESP32-S3-WROOM, USB ou header de programação, botões EN e BOOT; 60 min: desenhar BME280 com pull-ups e o transceptor RS-485"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Esquemático da placa no KiCad, BOM e cálculo de consumo com a corrente de pico do Wi-Fi"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-15",
+      "phase": "Projeto eletrônico e PCB",
+      "title": "Footprints, posicionamento e caminho de retorno",
+      "objectives": [
+        "Associar footprints corretos a cada símbolo",
+        "Posicionar componentes pensando em alimentação, antena e conectores",
+        "Rotear duas camadas com plano de terra contínuo"
+      ],
+      "topics": [
+        "Footprints",
+        "Stackup de 2 camadas",
+        "Largura de trilha × corrente",
+        "Vias",
+        "Plano de terra e caminho de retorno",
+        "Keep-out da antena"
+      ],
+      "resources": [
+        {
+          "title": "KiCad: documentação e Getting Started",
+          "url": "https://docs.kicad.org/"
+        },
+        {
+          "title": "Espressif: ESP32-S3 Hardware Design Guidelines",
+          "url": "https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/"
+        },
+        {
+          "title": "SparkFun: PCB Basics",
+          "url": "https://learn.sparkfun.com/tutorials/pcb-basics/all"
+        },
+        {
+          "title": "JLCPCB: capacidades de fabricação de PCB",
+          "url": "https://jlcpcb.com/capabilities/pcb-capabilities"
+        }
+      ],
+      "deliverable": "Primeira versão do layout em 2 camadas com ERC e DRC sem erros críticos",
+      "doneWhen": "DRC com as regras do fabricante sem erro; antena do WROOM fora do cobre conforme o guia; capacitores de desacoplamento junto aos pinos",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "40 min: ler SparkFun PCB Basics; 40 min: ler no Hardware Design Guidelines o layout de PCB e a área da antena; 40 min: ler as capacidades do fabricante (trilha mínima, clearance, furo)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: associar footprints e conferir cada um com o datasheet; 60 min: configurar as regras do fabricante no KiCad e posicionar conectores, regulador e WROOM"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: posicionar o resto e rotear a alimentação com largura calculada; 60 min: rotear sinais e fazer o plano de terra na camada inferior"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Primeira versão do layout em 2 camadas com ERC e DRC sem erros críticos"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-16",
+      "phase": "Projeto eletrônico e PCB",
+      "title": "RS-485, proteção, test points e DFM",
+      "objectives": [
+        "Posicionar o transceptor RS-485 com terminação e biasing quando a topologia pedir",
+        "Adicionar TVS e test points",
+        "Gerar Gerber e drill revisados contra um checklist DFM"
+      ],
+      "topics": [
+        "Terminação e biasing",
+        "TVS e ESD",
+        "Isolamento × alimentação isolada",
+        "Test points",
+        "Gerber, drill e DFM"
+      ],
+      "resources": [
+        {
+          "title": "TI: The RS-485 Design Guide (SLLA272)",
+          "url": "https://www.ti.com/lit/an/slla272d/slla272d.pdf"
+        },
+        {
+          "title": "TI: RS-485 e RS-422, visão geral e notas de aplicação",
+          "url": "https://www.ti.com/interface/rs-485-rs-422/overview.html"
+        },
+        {
+          "title": "KiCad: documentação e Getting Started",
+          "url": "https://docs.kicad.org/"
+        },
+        {
+          "title": "JLCPCB: capacidades de fabricação de PCB",
+          "url": "https://jlcpcb.com/capabilities/pcb-capabilities"
+        }
+      ],
+      "deliverable": "Revisão de projeto e pacote Gerber/drill com checklist DFM preenchido",
+      "doneWhen": "Checklist DFM sem pendência; Gerbers abertos no visualizador do KiCad conferidos camada por camada",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: ler no RS-485 Design Guide terminação, failsafe/biasing e proteção; 60 min: escolher o TVS para as linhas A/B e para a entrada DC"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: ajustar esquemático e layout do RS-485 com jumper de terminação e TVS; 60 min: adicionar test points de 3,3 V, GND, TX, RX, SDA e SCL"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: revisão de projeto: percorrer o esquemático item por item contra os datasheets; 60 min: gerar Gerber e drill e conferir no visualizador"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Revisão de projeto e pacote Gerber/drill com checklist DFM preenchido"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-17",
+      "phase": "Projeto eletrônico e PCB",
+      "title": "Pedido da placa e firmware na protoboard",
+      "objectives": [
+        "Encomendar a PCB e os componentes da BOM",
+        "Adiantar o firmware da placa numa DevKit com o mesmo circuito na protoboard"
+      ],
+      "topics": [
+        "Pedido de fabricação",
+        "Compra da BOM",
+        "Firmware de bring-up",
+        "Plano de teste da placa"
+      ],
+      "resources": [
+        {
+          "title": "JLCPCB: capacidades de fabricação de PCB",
+          "url": "https://jlcpcb.com/capabilities/pcb-capabilities"
+        },
+        {
+          "title": "ESP32-S3-WROOM-1 Datasheet",
+          "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf"
+        },
+        {
+          "title": "ESP-IDF: UART",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/uart.html"
+        },
+        {
+          "title": "ESP-IDF: I2C",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/i2c.html"
+        }
+      ],
+      "deliverable": "Pedido feito, arquivos de fabricação versionados e firmware de bring-up testado na protoboard",
+      "doneWhen": "Número do pedido registrado; firmware lê o sensor e responde pela RS-485 na protoboard",
+      "sessions": [
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "40 min: fazer o pedido da PCB de 2 camadas e conferir a prévia do fabricante; 40 min: comprar a BOM com 20% de sobra nos passivos; 40 min: versionar o projeto KiCad, Gerbers e BOM no repo"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: montar na protoboard o mesmo circuito (DevKit, BME280, transceptor RS-485); 60 min: escrever o firmware de bring-up (rails, GPIO, I²C, UART, RS-485)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Escrever o checklist de bring-up: continuidade, curto entre rails, energização com limite de corrente, medição de 3,3 V e ripple, boot e gravação"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Pedido feito, arquivos de fabricação versionados e firmware de bring-up testado na protoboard"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-18",
+      "phase": "Projeto eletrônico e PCB",
+      "title": "Montagem, soldagem e primeiro energizamento",
+      "objectives": [
+        "Soldar a placa e inspecionar antes de energizar",
+        "Energizar com limite de corrente e medir os rails"
+      ],
+      "topics": [
+        "Soldagem SMD e through-hole",
+        "Inspeção visual",
+        "Continuidade e curto",
+        "Energização com limitador",
+        "Ripple"
+      ],
+      "resources": [
+        {
+          "title": "SparkFun: How to Solder (through-hole)",
+          "url": "https://learn.sparkfun.com/tutorials/how-to-solder-through-hole-soldering/all"
+        },
+        {
+          "title": "SparkFun: How to Use a Multimeter",
+          "url": "https://learn.sparkfun.com/tutorials/how-to-use-a-multimeter/all"
+        },
+        {
+          "title": "SparkFun: How to Use an Oscilloscope",
+          "url": "https://learn.sparkfun.com/tutorials/how-to-use-an-oscilloscope/all"
+        }
+      ],
+      "deliverable": "Placa montada com o checklist de bring-up preenchido e as medições reais dos rails",
+      "doneWhen": "Sem curto antes de energizar; 3,3 V dentro da tolerância; ripple medido; Só baixa tensão DC (fonte de bancada com limite de corrente ou fonte externa certificada de 5 ou 12 V); nada ligado à rede elétrica.",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "40 min: ler SparkFun How to Solder e um guia de solda SMD; 40 min: inspecionar a placa nua e conferir furos e máscara; 40 min: separar componentes por etapa (alimentação primeiro)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: soldar só a alimentação; 60 min: medir continuidade e curto e energizar com limite de 100 mA, medindo 3,3 V"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: soldar WROOM, sensor e transceptor; 60 min: medir de novo os rails e o ripple no osciloscópio"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 120,
+          "what": "Placa montada com o checklist de bring-up preenchido e as medições reais dos rails"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-19",
+      "phase": "Projeto eletrônico e PCB",
+      "title": "Depuração, testes e revisão v1.1",
+      "objectives": [
+        "Validar boot, gravação, sensor e RS-485 na placa própria",
+        "Registrar erratas e a revisão seguinte"
+      ],
+      "topics": [
+        "Bring-up de firmware",
+        "Teste térmico básico",
+        "Errata",
+        "Revisão de placa"
+      ],
+      "resources": [
+        {
+          "title": "Espressif: ESP32-S3 Hardware Design Guidelines",
+          "url": "https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/"
+        },
+        {
+          "title": "TI: The RS-485 Design Guide (SLLA272)",
+          "url": "https://www.ti.com/lit/an/slla272d/slla272d.pdf"
+        },
+        {
+          "title": "KiCad: documentação e Getting Started",
+          "url": "https://docs.kicad.org/"
+        }
+      ],
+      "deliverable": "Demonstração sensor → MCU → RS-485 na Placa de aquisição IIoT: ESP32-S3-WROOM, alimentação DC regulada, conector de programação, sensor I²C e RS-485, com errata e issues da v1.1",
+      "doneWhen": "Boot e gravação funcionais; sensor legível; Modbus RTU ou RS-485 operando na bancada; README com as decisões de engenharia",
+      "sessions": [
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: gravar o firmware de bring-up e validar boot, GPIO e UART; 60 min: validar I²C do sensor e a troca pela RS-485 com outro nó"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: teste térmico básico do regulador com Wi-Fi transmitindo; 60 min: listar os defeitos encontrados como issues"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "120 min: escrever o README com as decisões (módulo ESP32, corrente de pico, capacitores, transceptor, terminação, ESD, test points, limites de EMC não validados); 60 min: registrar a errata; 60 min: aplicar as correções no KiCad como v1.1"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-20",
+      "phase": "Protocolos e interfaces de comunicação",
+      "title": "Ethernet, TCP/UDP e Wireshark",
+      "objectives": [
+        "Separar meio físico, transporte, protocolo de aplicação e modelo de informação",
+        "Ler handshake TCP e tráfego UDP no Wireshark"
+      ],
+      "topics": [
+        "Ethernet e MAC",
+        "IP, TCP e UDP",
+        "Sockets",
+        "DHCP e DNS",
+        "Wireshark"
+      ],
+      "resources": [
+        {
+          "title": "Wireshark User's Guide",
+          "url": "https://www.wireshark.org/docs/wsug_html_chunked/"
+        },
+        {
+          "title": "ESP-IDF Programming Guide (ESP32-S3)",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/index.html"
+        }
+      ],
+      "deliverable": "PCAP comentado de um cliente TCP e de um envio UDP do ESP32 para o PC",
+      "doneWhen": "PCAP marca handshake, dados, retransmissão provocada e fechamento",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: ler os capítulos de captura e filtros do Wireshark User's Guide; 60 min: desenhar as quatro camadas (físico, transporte, aplicação, informação) com exemplos"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: servidor TCP no PC e cliente no ESP32 enviando leituras; 60 min: capturar e comentar handshake e dados"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "60 min: repetir com UDP e comparar; 60 min: provocar perda (desligar o Wi-Fi) e ver retransmissão; 120 min: escrever o PCAP comentado"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-21",
+      "phase": "Protocolos e interfaces de comunicação",
+      "title": "Modbus RTU e TCP",
+      "objectives": [
+        "Documentar um mapa de registradores",
+        "Servir o mesmo mapa por RTU e por TCP",
+        "Ler CRC, timeouts e exceções na captura"
+      ],
+      "topics": [
+        "Cliente/servidor",
+        "Coils e registers",
+        "Function codes",
+        "CRC",
+        "Endianness",
+        "Timeouts e retry"
+      ],
+      "resources": [
+        {
+          "title": "Modbus Organization: especificações (aceite os termos para baixar)",
+          "url": "https://www.modbus.org/specifications"
+        },
+        {
+          "title": "ESP-Modbus Programming Guide",
+          "url": "https://docs.espressif.com/projects/esp-modbus/en/latest/esp32/"
+        },
+        {
+          "title": "PyModbus: documentação",
+          "url": "https://pymodbus.readthedocs.io/"
+        },
+        {
+          "title": "Wireshark User's Guide",
+          "url": "https://www.wireshark.org/docs/wsug_html_chunked/"
+        }
+      ],
+      "deliverable": "Servidor Modbus no ESP32 com mapa documentado, lido por RTU e TCP, com PCAP comentado",
+      "doneWhen": "Mapa com endereço, tipo, unidade e escala de cada registrador; 10.000 polls com taxa de erro registrada",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: ler na especificação Modbus o modelo de dados e os function codes 1 a 6 e 16; 60 min: ler o guia de serial line (framing RTU e CRC)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: servidor Modbus RTU no ESP32 sobre a RS-485 com temperatura, umidade, status e uptime; 60 min: ler com PyModbus pelo adaptador USB-RS-485"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "60 min: expor o mesmo mapa por Modbus TCP; 60 min: capturar no Wireshark e comentar; 60 min: rodar 10.000 polls e contar erros; 60 min: escrever o mapa Modbus"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-22",
+      "phase": "Protocolos e interfaces de comunicação",
+      "title": "MQTT e a bridge Modbus → MQTT",
+      "objectives": [
+        "Projetar tópicos, QoS, retained e Last Will",
+        "Fazer o gateway que lê Modbus e publica MQTT"
+      ],
+      "topics": [
+        "MQTT 5",
+        "QoS 0, 1 e 2",
+        "Retained e Last Will",
+        "Sessões",
+        "Naming de tópicos"
+      ],
+      "resources": [
+        {
+          "title": "OASIS: MQTT Version 5.0",
+          "url": "https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html"
+        },
+        {
+          "title": "Eclipse Mosquitto: documentação",
+          "url": "https://mosquitto.org/documentation/"
+        },
+        {
+          "title": "Mosquitto: mosquitto.conf(5)",
+          "url": "https://mosquitto.org/man/mosquitto-conf-5.html"
+        },
+        {
+          "title": "Node-RED: documentação",
+          "url": "https://nodered.org/docs/"
+        },
+        {
+          "title": "PyModbus: documentação",
+          "url": "https://pymodbus.readthedocs.io/"
+        }
+      ],
+      "deliverable": "Bridge Modbus → MQTT com esquema de tópicos documentado e benchmark de latência",
+      "doneWhen": "Last Will sinaliza queda do gateway; latência p95 medida; documento de por que MQTT não substitui Modbus/OPC UA em todos os casos",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: ler na especificação MQTT 5 QoS, retained, Last Will e session expiry; 60 min: desenhar a árvore de tópicos e o payload"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: subir o Mosquitto e testar QoS e Last Will com mosquitto_pub e mosquitto_sub; 60 min: gateway em Python ou Node-RED lendo Modbus e publicando"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "60 min: medir a latência e a taxa de erro da bridge; 60 min: derrubar o broker e o gateway e observar Last Will e reconexão; 120 min: escrever o esquema de tópicos e o documento MQTT × Modbus × OPC UA"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-23",
+      "phase": "Protocolos e interfaces de comunicação",
+      "title": "OPC UA e visão de EtherNet/IP",
+      "objectives": [
+        "Navegar AddressSpace, Nodes e subscriptions",
+        "Explicar a diferença entre transporte de bytes e modelo de informação"
+      ],
+      "topics": [
+        "AddressSpace e Nodes",
+        "Browse, Read e Write",
+        "Subscriptions",
+        "Segurança e certificados",
+        "PubSub",
+        "EtherNet/IP e CIP"
+      ],
+      "resources": [
+        {
+          "title": "OPC Foundation: OPC UA",
+          "url": "https://opcfoundation.org/about/opc-technologies/opc-ua/"
+        },
+        {
+          "title": "OPC UA Online Reference",
+          "url": "https://reference.opcfoundation.org/"
+        },
+        {
+          "title": "opcua-asyncio (cliente e servidor OPC UA em Python)",
+          "url": "https://github.com/FreeOpcUa/opcua-asyncio"
+        },
+        {
+          "title": "ODVA: EtherNet/IP",
+          "url": "https://www.odva.org/technology-standards/key-technologies/ethernet-ip/"
+        }
+      ],
+      "deliverable": "Servidor e cliente OPC UA com o modelo do nó de telemetria, inspecionados manualmente",
+      "doneWhen": "Cliente navega o namespace, lê, escreve e assina mudanças; texto curto sobre onde EtherNet/IP entra",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: ler a visão geral do OPC UA da OPC Foundation (Client/Server, PubSub, segurança, modelagem); 60 min: ler na Online Reference os conceitos de AddressSpace e Nodes"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: servidor OPC UA com opcua-asyncio expondo temperatura, umidade e status; 60 min: navegar com um cliente gráfico e assinar mudanças"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "60 min: cliente em Python que lê e assina; 60 min: ligar a segurança com certificado e comparar a captura; 60 min: ler a visão de EtherNet/IP da ODVA; 60 min: escrever o resumo RS-485 × Modbus × MQTT × OPC UA"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-24",
+      "phase": "PLC e SCADA",
+      "title": "PLC: scan cycle e Ladder",
+      "objectives": [
+        "Explicar o scan cycle e a imagem de I/O",
+        "Escrever permissivos e interlocks em Ladder"
+      ],
+      "topics": [
+        "Scan cycle",
+        "Imagem de I/O",
+        "IEC 61131-3",
+        "Ladder",
+        "Interlocks e permissivos"
+      ],
+      "resources": [
+        {
+          "title": "OpenPLC (Autonomy)",
+          "url": "https://autonomylogic.com/"
+        },
+        {
+          "title": "OpenPLC Runtime v4 (GitHub)",
+          "url": "https://github.com/Autonomy-Logic/openplc-runtime"
+        },
+        {
+          "title": "Siemens SCE: material para estudo de automação",
+          "url": "https://www.siemens.com/sce"
+        }
+      ],
+      "deliverable": "Programa Ladder no OpenPLC com partida, parada, intertravamento e permissivo, testado no simulador",
+      "doneWhen": "Tabela de causa e efeito testada linha por linha no simulador",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: estudar o scan cycle e a imagem de I/O no material da Siemens SCE; 60 min: instalar o OpenPLC Editor e abrir um exemplo em Ladder"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: partida e parada com selo em Ladder; 60 min: intertravamento entre dois motores e permissivo de nível"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "60 min: escrever a tabela de causa e efeito; 120 min: testar cada linha no simulador; 60 min: documentar a tabela de I/O"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-25",
+      "phase": "PLC e SCADA",
+      "title": "Structured Text, SFC e estados do processo",
+      "objectives": [
+        "Escrever a lógica algorítmica em Structured Text",
+        "Modelar a sequência com estados e falhas"
+      ],
+      "topics": [
+        "Structured Text",
+        "Function Block Diagram",
+        "SFC",
+        "Estados STOPPED, FILLING, HEATING, READY e FAULT"
+      ],
+      "resources": [
+        {
+          "title": "OpenPLC (Autonomy)",
+          "url": "https://autonomylogic.com/"
+        },
+        {
+          "title": "OpenPLC Runtime v4 (GitHub)",
+          "url": "https://github.com/Autonomy-Logic/openplc-runtime"
+        },
+        {
+          "title": "Siemens SCE: material para estudo de automação",
+          "url": "https://www.siemens.com/sce"
+        }
+      ],
+      "deliverable": "Mini célula simulada no OpenPLC: estados em ST, interlocks em Ladder e falhas tratadas",
+      "doneWhen": "Cada transição de estado testada; nenhuma entrada em FAULT sem reconhecimento explícito para sair",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: estudar Structured Text e SFC no material SCE; 60 min: desenhar a máquina de estados da mini célula (tanque com aquecimento)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: implementar os estados em ST; 60 min: integrar com os interlocks em Ladder da semana anterior"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "120 min: simular sensores e testar cada transição e falha; 120 min: documentar estados, alarmes e causa e efeito"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-26",
+      "phase": "PLC e SCADA",
+      "title": "HMI, SCADA e historian: projeto integrador intermediário",
+      "objectives": [
+        "Separar supervisão de controle local",
+        "Expor os dados do PLC por Modbus TCP ou OPC UA para HMI e historian"
+      ],
+      "topics": [
+        "HMI",
+        "SCADA",
+        "Historian",
+        "Alarmes com timestamp",
+        "Controle local sem rede"
+      ],
+      "resources": [
+        {
+          "title": "OpenPLC Runtime v4 (GitHub)",
+          "url": "https://github.com/Autonomy-Logic/openplc-runtime"
+        },
+        {
+          "title": "Node-RED: documentação",
+          "url": "https://nodered.org/docs/"
+        },
+        {
+          "title": "InfluxDB v2: documentação",
+          "url": "https://docs.influxdata.com/influxdb/v2/"
+        },
+        {
+          "title": "Grafana: documentação",
+          "url": "https://grafana.com/docs/grafana/latest/"
+        }
+      ],
+      "deliverable": "Mini célula com PLC, HMI, historian e dashboard, com teste de desligar SCADA, gateway e internet",
+      "doneWhen": "Processo continua seguro com SCADA, gateway e internet desligados; nenhum comando remoto viola interlock; restart do SCADA não interfere no PLC",
+      "sessions": [
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: expor variáveis do OpenPLC por Modbus TCP; 60 min: HMI simples no Node-RED Dashboard com estado e alarmes"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: gravar histórico no InfluxDB; 60 min: dashboard no Grafana com estados e alarmes"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "60 min: tentar violar interlocks por comando remoto; 60 min: desligar SCADA, gateway e internet e observar o processo; 120 min: escrever o relatório com tabela de I/O, estados, alarmes e causa e efeito"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-27",
+      "phase": "IoT e IIoT",
+      "title": "Edge local: Mosquitto, Node-RED, séries temporais e Grafana",
+      "objectives": [
+        "Subir o gateway edge em Docker Compose",
+        "Manter controle local e buffer quando rede, broker ou sensor caem"
+      ],
+      "topics": [
+        "Device, edge e cloud",
+        "Store-and-forward",
+        "Séries temporais",
+        "Observabilidade",
+        "Docker Compose"
+      ],
+      "resources": [
+        {
+          "title": "Docker Compose: documentação",
+          "url": "https://docs.docker.com/compose/"
+        },
+        {
+          "title": "Eclipse Mosquitto: documentação",
+          "url": "https://mosquitto.org/documentation/"
+        },
+        {
+          "title": "Node-RED: documentação",
+          "url": "https://nodered.org/docs/"
+        },
+        {
+          "title": "InfluxDB v2: documentação",
+          "url": "https://docs.influxdata.com/influxdb/v2/"
+        },
+        {
+          "title": "Grafana: documentação",
+          "url": "https://grafana.com/docs/grafana/latest/"
+        }
+      ],
+      "deliverable": "Gateway local em Docker Compose (Mosquitto, Node-RED, InfluxDB, Grafana) com buffer local e alarmes",
+      "doneWhen": "Desligar rede, broker e sensor não perde dados além da política definida; recuperação conhecida e documentada",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: ler Docker Compose e a configuração do Mosquitto; 60 min: desenhar o fluxo ESP32 → Mosquitto → Node-RED → InfluxDB → Grafana"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: subir a stack em Docker Compose num Raspberry Pi ou mini-PC; 60 min: ligar o nó de telemetria e ver os dados no Grafana"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "60 min: buffer local no ESP32 quando o broker cai; 60 min: alarmes no Grafana; 60 min: desligar rede, broker e sensor e medir a perda; 60 min: documentar o esquema das mensagens"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-28",
+      "phase": "IoT e IIoT",
+      "title": "TLS, certificados, provisionamento e OTA",
+      "objectives": [
+        "Autenticar o dispositivo com mTLS no broker",
+        "Atualizar o firmware por OTA com rollback"
+      ],
+      "topics": [
+        "TLS e mTLS",
+        "Certificados X.509",
+        "Identidade do dispositivo",
+        "Provisionamento",
+        "OTA e rollback"
+      ],
+      "resources": [
+        {
+          "title": "Mosquitto: mosquitto-tls(7)",
+          "url": "https://mosquitto.org/man/mosquitto-tls-7.html"
+        },
+        {
+          "title": "Mosquitto: mosquitto.conf(5)",
+          "url": "https://mosquitto.org/man/mosquitto-conf-5.html"
+        },
+        {
+          "title": "ESP-IDF: ESP-MQTT",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/protocols/mqtt.html"
+        },
+        {
+          "title": "ESP-IDF: Over The Air Updates (OTA)",
+          "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/system/ota.html"
+        },
+        {
+          "title": "AWS IoT Core: Developer Guide",
+          "url": "https://docs.aws.amazon.com/iot/latest/developerguide/what-is-aws-iot.html"
+        }
+      ],
+      "deliverable": "Nó com MQTT sobre mTLS, ACL por dispositivo e OTA com rollback testado",
+      "doneWhen": "Broker recusa cliente sem certificado; ACL impede publicar fora do próprio tópico; OTA com imagem ruim volta para a anterior",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: ler mosquitto-tls(7) e gerar uma CA de laboratório; 60 min: ler OTA do ESP-IDF (partições e rollback)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: broker com TLS e certificado de cliente; 60 min: ESP32 conectando por mTLS e ACL por dispositivo"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "60 min: OTA por HTTPS; 60 min: gravar imagem que falha e conferir o rollback; 60 min: ler a visão geral do AWS IoT Core para comparar; 60 min: documentar a estratégia de certificados"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-29",
+      "phase": "Integração TI/TA e segurança OT",
+      "title": "ISA-95, MES/ERP e arquitetura de dados",
+      "objectives": [
+        "Encaixar PLC, SCADA, MES e ERP nos níveis da ISA-95",
+        "Decidir onde termina OPC UA e começa Kafka"
+      ],
+      "topics": [
+        "ISA-95",
+        "MES/MOM",
+        "ERP",
+        "Edge × TI",
+        "Kafka acima da camada de controle"
+      ],
+      "resources": [
+        {
+          "title": "ISA-95",
+          "url": "https://www.isa.org/standards-and-publications/isa-standards/isa-95-standard"
+        },
+        {
+          "title": "Apache Kafka: documentação",
+          "url": "https://kafka.apache.org/documentation/"
+        },
+        {
+          "title": "Azure IoT Operations (pt-BR)",
+          "url": "https://learn.microsoft.com/pt-br/azure/iot-operations/overview-iot-operations"
+        },
+        {
+          "title": "AWS IoT Greengrass V2",
+          "url": "https://docs.aws.amazon.com/greengrass/v2/developerguide/what-is-iot-greengrass.html"
+        }
+      ],
+      "deliverable": "Modelo OT/IT da mini célula nos níveis da ISA-95, com fluxos de dados e a fronteira OPC UA → Kafka justificada",
+      "doneWhen": "Cada componente num nível; nenhum caminho em que a cloud precise estar no ar para o processo ficar estável",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: ler a visão geral da ISA-95; 60 min: ler a visão geral do Azure IoT Operations (OPC UA e MQTT no edge)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: desenhar os níveis 0 a 4 com os componentes do laboratório; 60 min: bridge do broker local para um tópico Kafka"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "60 min: matriz de fluxos de dados; 60 min: escrever onde termina OPC UA e começa Kafka; 120 min: documento do modelo OT/IT"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-30",
+      "phase": "Integração TI/TA e segurança OT",
+      "title": "ISA/IEC 62443, NIST SP 800-82 e rede segmentada",
+      "objectives": [
+        "Desenhar zonas e conduítes",
+        "Separar OT, DMZ e TI em VLANs com firewall"
+      ],
+      "topics": [
+        "Zonas e conduítes",
+        "DMZ industrial",
+        "VLAN e firewall",
+        "Inventário de ativos",
+        "Backup e recovery"
+      ],
+      "resources": [
+        {
+          "title": "ISA/IEC 62443",
+          "url": "https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards"
+        },
+        {
+          "title": "NIST SP 800-82 Rev. 3: Guide to OT Security",
+          "url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final"
+        },
+        {
+          "title": "OPNsense: documentação",
+          "url": "https://docs.opnsense.org/"
+        }
+      ],
+      "deliverable": "Arquitetura segmentada com VLAN OT, DMZ e TI, matriz de fluxos testada e inventário de ativos",
+      "doneWhen": "TI → PLC e Internet → PLC bloqueados na prática; edge → DMZ só por MQTT/mTLS; backup restaurado com sucesso",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: ler o resumo de zonas e conduítes da ISA/IEC 62443; 60 min: ler no NIST SP 800-82 Rev. 3 a arquitetura de segurança OT"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "60 min: criar VLANs OT, DMZ e TI no switch; 60 min: regras no firewall (OPNsense) conforme a matriz"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "60 min: testar cada linha da matriz de fluxos; 60 min: inventário de ativos; 60 min: backup e restore do PLC e do gateway; 60 min: threat model curto"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-31",
+      "phase": "Projeto integrador",
+      "title": "Capstone: integração e testes de falha",
+      "objectives": [
+        "Juntar placa própria, PLC, edge, DMZ e TI numa só arquitetura",
+        "Provar o comportamento sob falha de sensor, rede e cloud"
+      ],
+      "topics": [
+        "Integração ponta a ponta",
+        "Perda de WAN",
+        "Store-and-forward",
+        "Métricas finais"
+      ],
+      "resources": [
+        {
+          "title": "NIST SP 800-82 Rev. 3: Guide to OT Security",
+          "url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final"
+        },
+        {
+          "title": "ISA-95",
+          "url": "https://www.isa.org/standards-and-publications/isa-standards/isa-95-standard"
+        },
+        {
+          "title": "Eclipse Mosquitto: documentação",
+          "url": "https://mosquitto.org/documentation/"
+        },
+        {
+          "title": "Grafana: documentação",
+          "url": "https://grafana.com/docs/grafana/latest/"
+        }
+      ],
+      "deliverable": "Plataforma OT/IT segmentada rodando com a placa própria, com a matriz de testes de falha executada",
+      "doneWhen": "Controle local 100% durante perda de WAN; dados de 10 min offline recuperados; latência p95 da telemetria medida",
+      "sessions": [
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Integrar a placa própria ao PLC/edge pela RS-485 e conferir os dados na DMZ e na TI"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Escrever a matriz de testes de falha (sensor, RS-485, broker, WAN, cloud) com o resultado esperado de cada um"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "120 min: executar a matriz de testes; 60 min: medir latência p95 e dados recuperados após 10 min offline; 60 min: registrar os resultados"
+        }
+      ]
+    },
+    {
+      "id": "electronics-basics-32",
+      "phase": "Projeto integrador",
+      "title": "Capstone: documentação e defesa da arquitetura",
+      "objectives": [
+        "Fechar os três repositórios do portfólio",
+        "Defender as decisões elétricas, de firmware, comunicação, segurança e arquitetura"
+      ],
+      "topics": [
+        "Portfólio",
+        "ADR",
+        "Diagramas",
+        "Revisão do roadmap"
+      ],
+      "resources": [
+        {
+          "title": "KiCad: documentação e Getting Started",
+          "url": "https://docs.kicad.org/"
+        },
+        {
+          "title": "ISA/IEC 62443",
+          "url": "https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards"
+        }
+      ],
+      "deliverable": "Repositórios industrial-sensor-node, plc-process-control e ot-it-integration-lab documentados, com ADR das decisões",
+      "doneWhen": "Cada repo com esquemático ou diagrama, código, protocolo documentado, testes e ADR; explicação oral de 10 min gravada",
+      "sessions": [
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Organizar o industrial-sensor-node: KiCad, Gerbers, BOM, firmware, mapa Modbus e medições"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Organizar o plc-process-control e o ot-it-integration-lab: programas, diagramas, matriz de fluxos e PCAPs"
+        },
+        {
+          "kind": "deliverable",
+          "minutes": 240,
+          "what": "60 min: escrever o ADR das decisões principais; 60 min: gravar a defesa de 10 min da arquitetura; 120 min: revisar o roadmap e anotar o que aprofundar (impedância, EMC, fontes chaveadas, 4 camadas)"
+        }
+      ]
+    }
+  ]
+}

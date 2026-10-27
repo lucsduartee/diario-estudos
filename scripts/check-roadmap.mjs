@@ -29,7 +29,7 @@ for (const file of readdirSync(new URL("roadmap/", root)).filter(f => f.endsWith
   doc.units.forEach((u, i) => {
     const p = `units[${i}]${u?.id ? ` (${u.id})` : ""}`;
     Object.keys(u).filter(k => !UNIT_KEYS.includes(k)).forEach(k => at(`${p}.${k} não existe no schema`));
-    if (!/^[a-z]+-[0-9]{2,}$/.test(u.id ?? "")) at(`${p}.id deve ser como "${area}-01"`);
+    if (!/^[a-z]+(-[a-z]+)*-[0-9]{2,}$/.test(u.id ?? "")) at(`${p}.id deve ser como "${area}-01"`);
     else if (ids.has(u.id)) at(`${p}.id repetido`);
     ids.add(u.id);
     if (!isText(u.title)) at(`${p}.title obrigatório`);
