@@ -1,23 +1,28 @@
 // Plano semanal: compartilhado por app.js e scripts/check-roadmap.mjs.
 const START = new Date(2026, 9, 25);
 const AREAS = {
-  cyber: { name: "Cybersecurity", goal: 8 },
+  physics: { name: "Física", goal: 8 },
   "electronics-basics": { name: "Eletrônica", goal: 8 },
   fac:   { name: "Faculdade", goal: 4 },
   des:   { name: "Desenho", goal: 3 },
+};
+// Áreas pausadas: o roadmap fica no repo e é validado, mas a área não tem blocos e não aparece no diário.
+// Para reativar, mova a área para AREAS e devolva os blocos dela em PLAN.
+const PAUSED = {
+  cyber: { name: "Cybersecurity", goal: 8 },
 };
 // índice 0 = segunda
 const PLAN = [
   [{ id: "am", area: "des", h: 1, when: "manhã", focus: "Linhas e elipses (aquecimento + exercício)" },
    { id: "pm", area: "fac", h: 1, when: "noite", focus: "Videoaulas e leitura" }],
-  [{ id: "am", area: "cyber", h: 2, when: "manhã", focus: "Teoria do tema da fase" },
+  [{ id: "phys", area: "physics", h: 2, when: "manhã", focus: "Leitura e derivações" },
    { id: "pm", area: "electronics-basics", h: 2, when: "noite", focus: "Teoria e datasheets" }],
   [{ id: "am", area: "des", h: 1, when: "manhã", focus: "Lição da semana" },
    { id: "pm", area: "fac", h: 1, when: "noite", focus: "Atividades e exercícios" }],
-  [{ id: "am", area: "cyber", h: 2, when: "manhã", focus: "Labs curtos" },
+  [{ id: "phys", area: "physics", h: 2, when: "manhã", focus: "Problemas" },
    { id: "pm", area: "electronics-basics", h: 2, when: "noite", focus: "Laboratório na bancada" }],
   [{ id: "pm", area: "fac", h: 1, when: "noite", focus: "Revisão e entregas" }],
-  [{ id: "a", area: "cyber", h: 4, when: "manhã", focus: "Lab longo + write-up" },
+  [{ id: "phys", area: "physics", h: 4, when: "manhã", focus: "Pset e revisão" },
    { id: "b", area: "electronics-basics", h: 4, when: "tarde", focus: "Projeto da fase" }],
   [{ id: "a", area: "fac", h: 1, when: "manhã", focus: "Planejar a semana da faculdade" },
    { id: "b", area: "des", h: 1, when: "tarde", focus: "Desenho livre de observação" }],

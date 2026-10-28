@@ -1,0 +1,1031 @@
+{
+  "$schema": "./schema.json",
+  "area": "physics",
+  "title": "Física II: eletricidade e magnetismo (MIT 8.022)",
+  "source": {
+    "title": "Roteiro de aprendizagem para dominar Física e Matemática no MIT 8.022, Electricity and Magnetism (Pesquisa aprofundada do ChatGPT)",
+    "url": "https://chatgpt.com/c/6ae145c7-64a4-83e9-996d-8070763fe581"
+  },
+  "sourcePace": "cerca de 10 h por semana",
+  "units": [
+    {
+      "id": "physics-01",
+      "phase": "Eletrostática e potenciais",
+      "title": "Coulomb, superposição, campo elétrico e lei de Gauss",
+      "objectives": [
+        "Passar de cargas pontuais a distribuições contínuas",
+        "Escolher superfícies gaussianas e saber quando Gauss ajuda",
+        "Montar a folha de tradução cgs ↔ SI"
+      ],
+      "topics": [
+        "Lei de Coulomb",
+        "Superposição",
+        "Densidades de carga",
+        "Energia eletrostática",
+        "Fluxo e lei de Gauss",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 1"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L1 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/f59496323e413301a73107db95e40a7e_lecture1.pdf"
+        },
+        {
+          "title": "8.022, notas da aula L2 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/63f25e1a6788d1f29da7870ec50d7b91_lecture2.pdf"
+        },
+        {
+          "title": "8.022, Pset 0",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset0/"
+        },
+        {
+          "title": "8.022, Pset 1",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset1/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "8.022, folha de fórmulas matemáticas",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/formulas/"
+        },
+        {
+          "title": "MIT 18.02SC, Multivariable Calculus (remediação de cálculo vetorial)",
+          "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/"
+        },
+        {
+          "title": "Univesp, Eletromagnetismo (módulos em português)",
+          "url": "https://integra.univesp.br/courses/667/modules"
+        },
+        {
+          "title": "MIT 8.02 Spring 2019, vídeos de intuição física",
+          "url": "https://ocw.mit.edu/courses/8-02-physics-ii-electricity-and-magnetism-spring-2019/"
+        }
+      ],
+      "deliverable": "Pset 0 e Pset 1 resolvidos, mais a folha cgs ↔ SI com Coulomb, Gauss e densidade de energia lado a lado",
+      "doneWhen": "Pset 0 sem travar em vetores, integrais múltiplas e coordenadas; campo de esfera, fio e plano obtidos por Gauss sem consulta",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "30 min: primeira passagem física de L1 (sistema, fontes, simetria); 45 min: refazer as derivações de L1 no papel; 45 min: Pset 0 (revisão de matemática); se travar em grad, div ou integrais múltiplas, anotar para o 18.02SC"
+        },
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "30 min: primeira passagem de L2; 60 min: refazer no papel o campo e a lei de Gauss para esfera, fio e plano; 30 min: montar a folha cgs ↔ SI"
+        },
+        {
+          "kind": "practice",
+          "minutes": 240,
+          "what": "150 min: Pset 1; 30 min: ler Purcell cap. 1 nos pontos em que errou; 60 min: recall sem consulta (reconstruir três equações e uma derivação numa folha em branco)"
+        }
+      ]
+    },
+    {
+      "id": "physics-02",
+      "phase": "Eletrostática e potenciais",
+      "title": "Energia do campo, potencial, gradiente e divergente",
+      "objectives": [
+        "Traduzir entre forma integral, diferencial e potencial",
+        "Calcular V a partir de E e E a partir de V",
+        "Interpretar o divergente fisicamente"
+      ],
+      "topics": [
+        "Densidade de energia do campo",
+        "Potencial elétrico",
+        "E = −∇V",
+        "Divergente",
+        "Teorema da divergência",
+        "Gauss diferencial",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 2"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L3 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/9b5b6faf40963626e33a59428df627ad_lecture3.pdf"
+        },
+        {
+          "title": "8.022, Pset 2",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset2/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "MIT 18.02SC, Multivariable Calculus (remediação de cálculo vetorial)",
+          "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/"
+        },
+        {
+          "title": "Univesp, Cálculo III (plano de ensino)",
+          "url": "https://assets.univesp.br/planos-de-ensino/disciplinas/MCA003.html"
+        },
+        {
+          "title": "MIT 8.02 Spring 2019, vídeos de intuição física",
+          "url": "https://ocw.mit.edu/courses/8-02-physics-ii-electricity-and-magnetism-spring-2019/"
+        }
+      ],
+      "deliverable": "Pset 2 (parte de potencial) resolvido e quadro integral ↔ diferencial ↔ potencial da eletrostática",
+      "doneWhen": "Deriva a forma diferencial de Gauss pelo teorema da divergência sem consulta",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "30 min: primeira passagem de L3; 60 min: refazer energia do campo, potencial e Gauss diferencial; 30 min: Purcell cap. 2 até potencial"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Problemas de potencial: V de anel, disco e esfera e o E correspondente por gradiente"
+        },
+        {
+          "kind": "practice",
+          "minutes": 240,
+          "what": "120 min: Pset 2 nas questões de potencial e divergente; 60 min: quadro integral ↔ diferencial ↔ potencial; 60 min: recall sem consulta (reconstruir três equações e uma derivação numa folha em branco)"
+        }
+      ]
+    },
+    {
+      "id": "physics-03",
+      "phase": "Eletrostática e potenciais",
+      "title": "Poisson, Laplace, rotacional e unicidade",
+      "objectives": [
+        "Ver a eletrostática como problema de valor de contorno",
+        "Explicar ∇×E = 0 e o teorema de Stokes",
+        "Enunciar e provar a unicidade"
+      ],
+      "topics": [
+        "Laplaciano",
+        "Equações de Poisson e Laplace",
+        "Rotacional",
+        "Teorema de Stokes",
+        "Unicidade",
+        "Introdução a condutores",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 2"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L4 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/94fbcd2167568164328feac8e82c6019_lecture4.pdf"
+        },
+        {
+          "title": "8.022, Pset 2",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset2/"
+        },
+        {
+          "title": "8.022, Pset 3",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset3/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "MIT 18.02SC, Multivariable Calculus (remediação de cálculo vetorial)",
+          "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/"
+        },
+        {
+          "title": "MIT 8.02 Spring 2019, vídeos de intuição física",
+          "url": "https://ocw.mit.edu/courses/8-02-physics-ii-electricity-and-magnetism-spring-2019/"
+        }
+      ],
+      "deliverable": "Pset 2 completo e a prova da unicidade escrita em palavras e matematicamente",
+      "doneWhen": "Escreve Poisson e Laplace a partir de Gauss e E = −∇V; explica por que a unicidade justifica o método das imagens",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "30 min: primeira passagem de L4; 60 min: refazer Poisson, Laplace, curl e unicidade; 30 min: Purcell cap. 2 e início do 3"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Problemas de Laplaciano e rotacional em cartesiano, cilíndrico e esférico, com o 18.02SC se precisar"
+        },
+        {
+          "kind": "practice",
+          "minutes": 240,
+          "what": "120 min: terminar o Pset 2 e começar o Pset 3; 60 min: escrever a prova da unicidade; 60 min: recall sem consulta (reconstruir três equações e uma derivação numa folha em branco)"
+        }
+      ]
+    },
+    {
+      "id": "physics-04",
+      "phase": "Eletrostática e potenciais",
+      "title": "Condutores, capacitância e o checkpoint do Quiz 1",
+      "objectives": [
+        "Justificar E = 0 dentro do condutor em equilíbrio",
+        "Usar o método das imagens",
+        "Calcular C e a energia de capacitores plano, esférico e cilíndrico"
+      ],
+      "topics": [
+        "Condutores e blindagem",
+        "Método das imagens",
+        "Capacitância",
+        "Capacitores em série e paralelo",
+        "Energia do capacitor",
+        "Dielétricos (qualitativo)",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 3"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L5 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/bbd323d11bd97ec8e514027495551a09_lecture5.pdf"
+        },
+        {
+          "title": "8.022, notas da aula L6 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/07002b8b4ec36c93c70bfc4697be3789_lecture6.pdf"
+        },
+        {
+          "title": "8.022, Pset 3",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset3/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "8.022, Quiz 1 de Fall 2004",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/f04_q1/"
+        },
+        {
+          "title": "8.022, Quiz 1 de Fall 2003",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/q1_f03/"
+        },
+        {
+          "title": "8.022, provas e quizzes antigos",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/exams/"
+        }
+      ],
+      "deliverable": "Pset 3 resolvido e Quiz 1 de Fall 2004 feito cronometrado, sem consulta",
+      "doneWhen": "Quiz 1 corrigido com cada erro classificado (física, matemática ou atenção) e refeito",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: L5 (condutores e capacitância), refazendo o método das imagens; 60 min: L6 (mais capacitores e revisão da eletrostática)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "90 min: Pset 3; 30 min: refazer o método das imagens sem olhar"
+        },
+        {
+          "kind": "review",
+          "minutes": 240,
+          "what": "90 min: Quiz 1 de Fall 2004 cronometrado e sem consulta; 60 min: corrigir e classificar os erros; 60 min: Quiz 1 de Fall 2003 nas questões dos pontos fracos; 30 min: checklist do milestone da eletrostática"
+        }
+      ]
+    },
+    {
+      "id": "physics-05",
+      "phase": "Corrente e circuitos",
+      "title": "Corrente, continuidade e lei de Ohm",
+      "objectives": [
+        "Relacionar o movimento microscópico de carga à corrente",
+        "Derivar a equação de continuidade",
+        "Ligar a forma microscópica e a macroscópica de Ohm"
+      ],
+      "topics": [
+        "Corrente I e densidade J",
+        "Equação de continuidade",
+        "Condutividade e resistividade",
+        "Lei de Ohm microscópica e macroscópica",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 4"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L7 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/fa6d8a67e9e53df0e2cbaed7b755b07a_lecture7.pdf"
+        },
+        {
+          "title": "8.022, Pset 4",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset4/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "Univesp, Eletromagnetismo (módulos em português)",
+          "url": "https://integra.univesp.br/courses/667/modules"
+        },
+        {
+          "title": "MIT 8.02 Spring 2019, vídeos de intuição física",
+          "url": "https://ocw.mit.edu/courses/8-02-physics-ii-electricity-and-magnetism-spring-2019/"
+        }
+      ],
+      "deliverable": "Primeira metade do Pset 4 e a derivação da continuidade a partir da conservação de carga",
+      "doneWhen": "Deriva ∇·J + ∂ρ/∂t = 0 e R = ρL/A sem consulta",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "30 min: primeira passagem de L7; 60 min: refazer J, continuidade e Ohm microscópico; 30 min: Purcell cap. 4 até resistência"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Problemas de resistência em geometrias não triviais (casca cilíndrica, cone) por integração"
+        },
+        {
+          "kind": "practice",
+          "minutes": 240,
+          "what": "120 min: primeira metade do Pset 4; 60 min: revisar a eletrostática com 3 problemas do Purcell caps. 1 a 3; 60 min: recall sem consulta (reconstruir três equações e uma derivação numa folha em branco)"
+        }
+      ]
+    },
+    {
+      "id": "physics-06",
+      "phase": "Corrente e circuitos",
+      "title": "FEM, Kirchhoff, circuitos RC e Thévenin",
+      "objectives": [
+        "Montar equações de nós e malhas a partir da física",
+        "Derivar Q(t), I(t) e V(t) no RC",
+        "Reduzir redes por Thévenin"
+      ],
+      "topics": [
+        "Força eletromotriz",
+        "Regras de Kirchhoff",
+        "Potência",
+        "Carga e descarga RC",
+        "EDO de 1ª ordem",
+        "Equivalente de Thévenin",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 4"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L8 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/7abaea2ba93dcbc20f6ec38bb95fbdfe_lecture8.pdf"
+        },
+        {
+          "title": "8.022, notas da aula L9 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/46de97e4978fc003565f683871741451_lecture9.pdf"
+        },
+        {
+          "title": "8.022, Pset 4",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset4/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "MIT 18.03SC, Differential Equations (EDOs, complexos, ressonância)",
+          "url": "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/"
+        },
+        {
+          "title": "Univesp, Eletromagnetismo (módulos em português)",
+          "url": "https://integra.univesp.br/courses/667/modules"
+        }
+      ],
+      "deliverable": "Pset 4 completo e 3 problemas RC extras resolvidos pela EDO",
+      "doneWhen": "Resolve circuito com duas malhas e um RC com chave sem consulta, conferindo os limites t → 0 e t → ∞",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: L8 (FEM e Kirchhoff); 60 min: L9 (RC e Thévenin), resolvendo a EDO de 1ª ordem no papel"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Circuitos com duas ou mais malhas e redução por Thévenin"
+        },
+        {
+          "kind": "practice",
+          "minutes": 240,
+          "what": "120 min: terminar o Pset 4; 60 min: 3 problemas RC extras; 60 min: recall sem consulta (reconstruir três equações e uma derivação numa folha em branco)"
+        }
+      ]
+    },
+    {
+      "id": "physics-07",
+      "phase": "Magnetostática e relatividade",
+      "title": "Força magnética, campo B e lei de Ampère",
+      "objectives": [
+        "Calcular a força de Lorentz sobre cargas e correntes",
+        "Obter B por Ampère em geometrias simétricas"
+      ],
+      "topics": [
+        "Campo magnético B",
+        "Força de Lorentz",
+        "Força sobre correntes",
+        "Lei de Ampère",
+        "Simetria",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 6"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L10 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/f8443a251633d63eeb0e19a7b213d4ce_lecture10.pdf"
+        },
+        {
+          "title": "8.022, Pset 5",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset5/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "MIT 8.02 Spring 2019, vídeos de intuição física",
+          "url": "https://ocw.mit.edu/courses/8-02-physics-ii-electricity-and-magnetism-spring-2019/"
+        },
+        {
+          "title": "Univesp, Eletromagnetismo (módulos em português)",
+          "url": "https://integra.univesp.br/courses/667/modules"
+        }
+      ],
+      "deliverable": "Parte de magnetismo do Pset 5 e B de fio, solenoide e toroide obtidos por Ampère",
+      "doneWhen": "Explica fisicamente q v × B e obtém B do solenoide sem consulta",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "30 min: primeira passagem de L10; 60 min: refazer a força de Lorentz e Ampère para fio, solenoide e toroide; 30 min: Purcell cap. 6 até Ampère"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Problemas de força sobre correntes e de Ampère com a analogia com Gauss"
+        },
+        {
+          "kind": "practice",
+          "minutes": 240,
+          "what": "120 min: Pset 5 nas questões de magnetismo; 60 min: comparar Gauss e Ampère num quadro; 60 min: recall sem consulta (reconstruir três equações e uma derivação numa folha em branco)"
+        }
+      ]
+    },
+    {
+      "id": "physics-08",
+      "phase": "Magnetostática e relatividade",
+      "title": "Relatividade especial e a equivalência entre E e B",
+      "objectives": [
+        "Obter dilatação do tempo, contração e as transformações de Lorentz",
+        "Transformar campos entre referenciais",
+        "Ver o magnetismo como efeito relativístico do campo elétrico"
+      ],
+      "topics": [
+        "Postulados da relatividade",
+        "Transformações de Lorentz",
+        "Transformação de velocidades",
+        "Energia e momento relativísticos",
+        "Transformação de E e B",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 5"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L11 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/d876dcd7dec74b158ff59b54f9e706d0_lecture11.pdf"
+        },
+        {
+          "title": "8.022, notas da aula L12 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/8e5a529371d7ebc503049d075cfae958_lecture12.pdf"
+        },
+        {
+          "title": "8.022, Pset 5",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset5/"
+        },
+        {
+          "title": "8.022, Pset 6",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset6/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "8.022, handout de relatividade, parte 1",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/relativity-1/"
+        },
+        {
+          "title": "8.022, handout de relatividade, parte 2",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/relativity2-1/"
+        },
+        {
+          "title": "8.022, Review of Classical Mechanics",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/classmech-1/"
+        }
+      ],
+      "deliverable": "Pset 5 completo e o exemplo fio + cargas refeito em dois referenciais",
+      "doneWhen": "Explica por que observadores diferentes decompõem o mesmo campo em E e B de jeitos diferentes",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: L11 com o handout de relatividade, parte 1; 60 min: L12 com o handout, parte 2"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Problemas de Lorentz, simultaneidade e transformação de velocidades"
+        },
+        {
+          "kind": "practice",
+          "minutes": 240,
+          "what": "90 min: terminar o Pset 5; 90 min: refazer o exemplo fio + cargas em dois referenciais; 60 min: recall sem consulta (reconstruir três equações e uma derivação numa folha em branco)"
+        }
+      ]
+    },
+    {
+      "id": "physics-09",
+      "phase": "Magnetostática e relatividade",
+      "title": "Potencial vetor, Biot–Savart e ∇·B = 0",
+      "objectives": [
+        "Passar das leis integrais da magnetostática à forma diferencial",
+        "Usar B = ∇ × A",
+        "Aplicar Biot–Savart"
+      ],
+      "topics": [
+        "∇·B = 0",
+        "Ampère na forma diferencial",
+        "Potencial vetor A",
+        "Lei de Biot–Savart",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 6"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L13 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/c60353232b6ab6cb77de48f0f6572b50_lecture13.pdf"
+        },
+        {
+          "title": "8.022, Pset 6",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset6/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "MIT 18.02SC, Multivariable Calculus (remediação de cálculo vetorial)",
+          "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/"
+        },
+        {
+          "title": "MIT 8.02 Spring 2019, vídeos de intuição física",
+          "url": "https://ocw.mit.edu/courses/8-02-physics-ii-electricity-and-magnetism-spring-2019/"
+        }
+      ],
+      "deliverable": "Pset 6 resolvido e o checklist do milestone de magnetismo e relatividade",
+      "doneWhen": "Obtém B de uma espira por Biot–Savart e explica ∇·B = 0 sem consulta",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "30 min: primeira passagem de L13; 60 min: refazer ∇·B, potencial vetor e Biot–Savart; 30 min: Purcell cap. 6 até Biot–Savart"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Problemas de Biot–Savart (espira, segmento, bobina de Helmholtz)"
+        },
+        {
+          "kind": "review",
+          "minutes": 240,
+          "what": "120 min: Pset 6; 60 min: checklist do milestone (Lorentz, Ampère, Biot–Savart, A, transformação E/B); 60 min: recall sem consulta (reconstruir três equações e uma derivação numa folha em branco)"
+        }
+      ]
+    },
+    {
+      "id": "physics-10",
+      "phase": "Indução e circuitos AC",
+      "title": "Faraday, Lenz e indutância",
+      "objectives": [
+        "Distinguir FEM por movimento e por campo variável",
+        "Calcular L, M e seus sinais",
+        "Calcular a energia magnética armazenada"
+      ],
+      "topics": [
+        "Fluxo magnético",
+        "Lei de Faraday",
+        "Lei de Lenz",
+        "FEM de movimento",
+        "Indutância mútua e própria",
+        "Energia do campo magnético",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 7"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L14 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/dc89e80ee651b20cf525d2c89e026fd8_lecture14.pdf"
+        },
+        {
+          "title": "8.022, notas da aula L15 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/e89de838a0391197f9cb4f44c2e30c10_lecture15.pdf"
+        },
+        {
+          "title": "8.022, Pset 7",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset7/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "Univesp, Eletromagnetismo (módulos em português)",
+          "url": "https://integra.univesp.br/courses/667/modules"
+        },
+        {
+          "title": "MIT 8.02 Spring 2019, vídeos de intuição física",
+          "url": "https://ocw.mit.edu/courses/8-02-physics-ii-electricity-and-magnetism-spring-2019/"
+        }
+      ],
+      "deliverable": "Pset 7 resolvido e o L de um solenoide obtido por fluxo e por energia",
+      "doneWhen": "Unifica as três formas de criar FEM pela lei de Faraday; L do solenoide igual pelos dois caminhos",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: L14 (Faraday e Lenz, forma integral e diferencial); 60 min: L15 (indutância e energia)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Problemas de FEM de movimento, espira girando e indutância mútua"
+        },
+        {
+          "kind": "practice",
+          "minutes": 240,
+          "what": "150 min: Pset 7; 30 min: L do solenoide por fluxo e por energia; 60 min: recall sem consulta (reconstruir três equações e uma derivação numa folha em branco)"
+        }
+      ]
+    },
+    {
+      "id": "physics-11",
+      "phase": "Indução e circuitos AC",
+      "title": "Indutores em circuitos: RL, LC e RLC",
+      "objectives": [
+        "Tratar o circuito como sistema dinâmico",
+        "Reconhecer o LC como oscilador harmônico",
+        "Classificar os regimes do RLC"
+      ],
+      "topics": [
+        "Circuito RL",
+        "Circuito LC",
+        "Circuito RLC",
+        "EDO de 2ª ordem",
+        "Oscilador harmônico",
+        "Transformadores",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 7"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L16 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/7b7348480e71d4b842dbc339543bd513_lecture16.pdf"
+        },
+        {
+          "title": "8.022, Pset 8",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset8/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "MIT 18.03SC, Differential Equations (EDOs, complexos, ressonância)",
+          "url": "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/"
+        },
+        {
+          "title": "Univesp, Eletromagnetismo (módulos em português)",
+          "url": "https://integra.univesp.br/courses/667/modules"
+        }
+      ],
+      "deliverable": "Primeira metade do Pset 8 e os três regimes do RLC (sub, crítico e superamortecido) derivados",
+      "doneWhen": "Resolve RL e LC pela EDO e classifica um RLC pelo discriminante sem consulta",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "30 min: primeira passagem de L16; 60 min: refazer RL, LC e RLC; 30 min: revisar EDO de 2ª ordem no 18.03SC se precisar"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Problemas de RL com chave e energia no LC"
+        },
+        {
+          "kind": "practice",
+          "minutes": 240,
+          "what": "120 min: primeira metade do Pset 8; 60 min: derivar os três regimes do RLC; 60 min: recall sem consulta (reconstruir três equações e uma derivação numa folha em branco)"
+        }
+      ]
+    },
+    {
+      "id": "physics-12",
+      "phase": "Indução e circuitos AC",
+      "title": "RLC livre e forçado e o início dos fasores",
+      "objectives": [
+        "Relacionar o RLC ao oscilador amortecido e forçado",
+        "Separar transiente e regime permanente",
+        "Representar tensões e correntes por fasores"
+      ],
+      "topics": [
+        "RLC não forçado",
+        "RLC forçado",
+        "Transiente e regime permanente",
+        "Números complexos e e^(iωt)",
+        "Fase",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 8"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L17 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/06e667759af969c3ede560f1fc0bc93b_lecture17.pdf"
+        },
+        {
+          "title": "8.022, Pset 8",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset8/"
+        },
+        {
+          "title": "8.022, Pset 9",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset9/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "MIT 18.03SC, Differential Equations (EDOs, complexos, ressonância)",
+          "url": "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/"
+        }
+      ],
+      "deliverable": "Pset 8 completo e a resposta forçada do RLC resolvida no tempo e por fasor",
+      "doneWhen": "A solução no tempo e a fasorial do mesmo RLC dão a mesma amplitude e fase",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "30 min: primeira passagem de L17; 60 min: refazer RLC livre e forçado; 30 min: revisar Euler e aritmética complexa no 18.03SC"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Problemas de complexos: a + ib ↔ re^(iφ), módulo e fase"
+        },
+        {
+          "kind": "practice",
+          "minutes": 240,
+          "what": "120 min: terminar o Pset 8 e começar o 9; 60 min: resolver o mesmo RLC forçado no tempo e por fasor; 60 min: recall sem consulta (reconstruir três equações e uma derivação numa folha em branco)"
+        }
+      ]
+    },
+    {
+      "id": "physics-13",
+      "phase": "Indução e circuitos AC",
+      "title": "Impedância, filtros, ressonância e o checkpoint do Quiz 2",
+      "objectives": [
+        "Resolver circuitos AC sem voltar para a EDO",
+        "Calcular potência e fator Q",
+        "Desenhar respostas passa-baixa, passa-alta e passa-banda"
+      ],
+      "topics": [
+        "Impedância complexa",
+        "Potência em AC",
+        "Filtros",
+        "Ressonância",
+        "Fator de qualidade Q",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 9"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L18 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/19b92b261f2a29004c97cdbf189e103b_lecture18.pdf"
+        },
+        {
+          "title": "8.022, Pset 9",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset9/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "8.022, Quiz 2 de Fall 2004",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/f04_q2/"
+        },
+        {
+          "title": "8.022, Quiz 2 de Fall 2003",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/q2_f03/"
+        },
+        {
+          "title": "8.022, provas e quizzes antigos",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/exams/"
+        }
+      ],
+      "deliverable": "Pset 9 resolvido e Quiz 2 de Fall 2004 feito cronometrado, sem consulta",
+      "doneWhen": "Quiz 2 corrigido com os erros classificados; curvas dos três filtros desenhadas com a frequência de corte",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "30 min: primeira passagem de L18; 60 min: refazer impedância, filtros e Q; 30 min: desenhar as respostas dos três filtros"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Pset 9"
+        },
+        {
+          "kind": "review",
+          "minutes": 240,
+          "what": "90 min: Quiz 2 de Fall 2004 cronometrado e sem consulta; 60 min: corrigir e classificar os erros; 60 min: Quiz 2 de Fall 2003 nos pontos fracos; 30 min: checklist do milestone de dinâmica eletromagnética"
+        }
+      ]
+    },
+    {
+      "id": "physics-14",
+      "phase": "Maxwell e radiação",
+      "title": "Corrente de deslocamento e as equações de Maxwell",
+      "objectives": [
+        "Mostrar por que Ampère precisa da corrente de deslocamento",
+        "Escrever as quatro equações de Maxwell e explicar cada termo",
+        "Derivar a equação de onda para E e B no vácuo"
+      ],
+      "topics": [
+        "Corrente de deslocamento",
+        "Equações de Maxwell",
+        "Identidades vetoriais",
+        "Equação de onda",
+        "EDP hiperbólica",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 9"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L19 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/ece8a047519660f7128c2dea6fcec74d_lecture19.pdf"
+        },
+        {
+          "title": "8.022, Pset 10",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset10/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "Univesp, Física III (módulos em português)",
+          "url": "https://integra.univesp.br/courses/2654/modules"
+        },
+        {
+          "title": "MIT 8.02 Spring 2019, vídeos de intuição física",
+          "url": "https://ocw.mit.edu/courses/8-02-physics-ii-electricity-and-magnetism-spring-2019/"
+        }
+      ],
+      "deliverable": "Primeira metade do Pset 10 e a equação de onda derivada para E e B sem notas",
+      "doneWhen": "Numa folha em branco: as quatro equações, a inconsistência de Ampère com a continuidade e a derivação da onda com c = 1/√(μ₀ε₀)",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "30 min: primeira passagem de L19; 90 min: refazer a corrente de deslocamento e a derivação da equação de onda"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Problemas de corrente de deslocamento num capacitor carregando"
+        },
+        {
+          "kind": "practice",
+          "minutes": 240,
+          "what": "120 min: primeira metade do Pset 10; 60 min: derivar a onda para E e B sem notas; 60 min: recall sem consulta (reconstruir três equações e uma derivação numa folha em branco)"
+        }
+      ]
+    },
+    {
+      "id": "physics-15",
+      "phase": "Maxwell e radiação",
+      "title": "Ondas planas, polarização e vetor de Poynting",
+      "objectives": [
+        "Mostrar que E, B e k são mutuamente perpendiculares",
+        "Construir polarização linear e circular",
+        "Interpretar S como fluxo de energia e calcular potência e momento"
+      ],
+      "topics": [
+        "Ondas planas",
+        "Polarização linear e circular",
+        "Série de Fourier (introdução)",
+        "Vetor de Poynting",
+        "Momento da radiação",
+        "Linhas de transmissão",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 9"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L20 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/d5c891405a068cfb6f4e493cae793000_lecture20.pdf"
+        },
+        {
+          "title": "8.022, notas da aula L21 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/2f5efba0b9926c9ce8e9ab0d04bfc7b3_lecture21.pdf"
+        },
+        {
+          "title": "8.022, Pset 10",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset10/"
+        },
+        {
+          "title": "8.022, Pset 11",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset11/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "Univesp, Física III (módulos em português)",
+          "url": "https://integra.univesp.br/courses/2654/modules"
+        },
+        {
+          "title": "MIT 18.03SC, Differential Equations (EDOs, complexos, ressonância)",
+          "url": "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/"
+        }
+      ],
+      "deliverable": "Pset 10 completo, primeira metade do Pset 11 e o checklist do milestone de Maxwell",
+      "doneWhen": "Deduz o vetor de Poynting e a pressão de radiação sem consulta",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: L20 (ondas planas e polarização); 60 min: L21 (Poynting e linhas de transmissão)"
+        },
+        {
+          "kind": "practice",
+          "minutes": 120,
+          "what": "Construir polarizações com componentes defasadas e calcular a média temporal de S"
+        },
+        {
+          "kind": "review",
+          "minutes": 240,
+          "what": "90 min: terminar o Pset 10; 60 min: primeira metade do Pset 11; 60 min: checklist do milestone de Maxwell; 30 min: recall sem consulta das quatro equações"
+        }
+      ]
+    },
+    {
+      "id": "physics-16",
+      "phase": "Materiais magnéticos e prova final",
+      "title": "Propriedades magnéticas dos materiais, síntese e prova final",
+      "objectives": [
+        "Construir a intuição microscópica de dia, para e ferromagnetismo",
+        "Fazer uma prova final antiga sem livros nem notas"
+      ],
+      "topics": [
+        "Dipolo magnético do elétron",
+        "Diamagnetismo",
+        "Paramagnetismo",
+        "Ferromagnetismo",
+        "Síntese de Maxwell",
+        "Leitura: Purcell, Electricity and Magnetism, cap. 11"
+      ],
+      "resources": [
+        {
+          "title": "8.022, notas da aula L22 (PDF)",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/e88d6b3e6784f1446e110b0319703a28_lecture22.pdf"
+        },
+        {
+          "title": "8.022, Pset 11",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/pset11/"
+        },
+        {
+          "title": "8.022, leituras do Purcell por sessão",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/readings/"
+        },
+        {
+          "title": "8.022, prova final de Fall 2003",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/finalf2003/"
+        },
+        {
+          "title": "8.022, folha de fórmulas da prova final",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/resources/finalformulae/"
+        },
+        {
+          "title": "8.022, provas e quizzes antigos",
+          "url": "https://ocw.mit.edu/courses/8-022-physics-ii-electricity-and-magnetism-fall-2004/pages/exams/"
+        },
+        {
+          "title": "e-Aulas USP, Eletromagnetismo (vídeos em português)",
+          "url": "https://eaulas.usp.br/portal/home.action/course?course=1224"
+        }
+      ],
+      "deliverable": "Pset 11 completo e a prova final de Fall 2003 feita sem consulta, corrigida",
+      "doneWhen": "Sem consultar: deriva Maxwell até a onda, resolve um problema de eletrostática por campo e por potencial, passa um RLC do tempo para fasor e calcula a energia transportada por uma onda",
+      "sessions": [
+        {
+          "kind": "study",
+          "minutes": 120,
+          "what": "60 min: L22 (materiais magnéticos, qualitativo); 60 min: terminar o Pset 11"
+        },
+        {
+          "kind": "review",
+          "minutes": 120,
+          "what": "Síntese: uma página com as cadeias carga → campo → potencial e indução → Maxwell → ondas"
+        },
+        {
+          "kind": "review",
+          "minutes": 240,
+          "what": "180 min: prova final de Fall 2003 sem livros nem notas, cronometrada; 60 min: corrigir, classificar os erros e listar o que aprofundar (multipolos, separação de variáveis, guias de onda)"
+        }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { runInNewContext } from "node:vm";
 
 const root = new URL("..", import.meta.url);
-const { AREAS, schedule } = runInNewContext(readFileSync(new URL("plan.js", root), "utf8") + ";({ AREAS, schedule })");
+const { AREAS, PAUSED, schedule } = runInNewContext(readFileSync(new URL("plan.js", root), "utf8") + ";({ AREAS, PAUSED, schedule })");
 const KINDS = ["study", "practice", "deliverable", "review"];
 const UNIT_KEYS = ["id", "startsOn", "phase", "title", "objectives", "topics", "resources", "deliverable", "doneWhen", "sessions"];
 const SESSION_KEYS = ["kind", "minutes", "title", "what", "exercises", "resources"];
@@ -19,7 +19,7 @@ for (const file of readdirSync(new URL("roadmap/", root)).filter(f => f.endsWith
   const at = path => errors.push(`${file}: ${path}`);
   let doc;
   try { doc = JSON.parse(readFileSync(new URL(`roadmap/${file}`, root), "utf8")); } catch (e) { at(`JSON inválido (${e.message})`); continue; }
-  if (!AREAS[area]) at(`"${area}" não é uma área de plan.js`);
+  if (!AREAS[area] && !PAUSED[area]) at(`"${area}" não é uma área de plan.js`);
   if (doc.area !== area) at(`area deve ser "${area}"`);
   if (!isText(doc.title)) at("title obrigatório");
   if (doc.source !== undefined && !isLink(doc.source)) at("source precisa de title e url http(s)");
@@ -50,6 +50,8 @@ for (const file of readdirSync(new URL("roadmap/", root)).filter(f => f.endsWith
     });
   });
   if (errors.length) continue;
+  // área pausada não tem blocos, então não há o que encaixar
+  if (PAUSED[area]) { console.log(`${file}: ${doc.units.length} semanas, pausada`); continue; }
   const { items, overlaps } = schedule(doc.units, area);
   overlaps.forEach(id => at(`${id} começa em startsOn, mas a semana anterior ainda ocupa blocos nessa data`));
   const blocks = new Map();

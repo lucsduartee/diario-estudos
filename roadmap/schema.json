@@ -7,7 +7,7 @@
   "additionalProperties": false,
   "properties": {
     "$schema": { "type": "string" },
-    "area": { "enum": ["cyber", "electronics-basics", "fac", "des"], "description": "Chave da área em AREAS (plan.js); igual ao nome do arquivo." },
+    "area": { "enum": ["cyber", "physics", "electronics-basics", "fac", "des"], "description": "Chave da área em AREAS ou PAUSED (plan.js); igual ao nome do arquivo." },
     "title": { "type": "string", "minLength": 1 },
     "source": { "$ref": "#/$defs/link", "description": "De onde veio o roadmap." },
     "sourcePace": { "type": "string", "minLength": 1, "description": "Ritmo que a fonte do roadmap supõe, por exemplo \"10 a 14 h por semana\". A Trilha compara com as horas da área." },
